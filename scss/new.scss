@@ -1105,7 +1105,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	div.titlebox span.number:after {
-		content: " puny man-things,";
+		content: " man-things,";
 	}
 	div.titlebox span.number {
 		//width:100%;
@@ -1154,6 +1154,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 		form.toggle {
 			background: inherit;
+		}
+		form.flairtoggle label[for=flair_enabled] {
+			display: inline-block;
+			position: relative;
+			top: -3px;
 		}
 	}
 
@@ -1591,7 +1596,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflairlabel {
 		color: $color_white;
-		padding: 1px 4px 0px 4px;
+		padding: 2px 4px 0px 4px;
 		font-size: 12px;
 		vertical-align: middle;
 		background-color: $color_linkFlairLabel;
@@ -1789,7 +1794,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.expando-button {
 		position: relative;
-		margin: 5px 6px 2px 0px !important;
+		margin: 8px 6px 2px 0px !important;
 		width: 16px;
 		height: 16px;
 		border-radius: 2px;
@@ -1799,7 +1804,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		cursor: pointer;
 		&.image, &.video-muted {
 			position: relative;
-			margin: 2px 6px 2px 0px !important;
+			margin: 8px 6px 2px 0px !important;
 			width: 16px !important;
 			height: 16px !important;
 			border-radius: 2px;
@@ -3442,7 +3447,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding: 0px 6px 0px 2px;
 	}
 
-
 	.flair-gamedev {
 		color: $color_white !important;
 		background-color: $color_wineRed;
@@ -3576,6 +3580,26 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.flair-steam:before {
 		background-position: 0px -60px;
+	}
+
+	.flair-mod {
+		color: $color_linkFlairLabelMod !important;
+		background-color: transparent;
+		padding: 0;
+		border: none;
+		line-height: 16px;
+		&:before {
+			height: 16px;
+		    width: 16px;
+		    display: block;
+		    content: " ";
+		    float: left;
+		    margin-right: 5px;
+
+			background-image: url(https://www.redditstatic.com/sprite-reddit.bTLvdEETokI.png);
+    		background-position: -44px -1625px;
+    		background-repeat: no-repeat;
+		}
 	}
 
 	.link .flair {
@@ -4875,6 +4899,33 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		a.voteWeight {
 			background: inherit !important;
 		}
+		.reddit-link {
+			a {
+				color: $color_white;
+			}
+			.score {
+				color: $color_bodyFont;
+			}
+		}
+		a.helplink {
+			min-height: 14px;
+			margin-top: 1px;
+
+			&:before {
+				width: 16px;
+				height: 14px;				
+				margin: -1px 4px 0 0;
+				content: " ";
+				display: block;
+				float: left;
+				background-image: url(%%sprite-alternate%%) !important;
+				background-repeat: no-repeat !important;
+				background-color: transparent;
+				transition: all 0.25s ease;
+				background-position: -32px -0px;
+				opacity: .8;
+			}			
+		}
 	}
 
 	.side .titlebox .md {
@@ -5034,6 +5085,18 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.usertext .entry.res-selected,
 	.usertext .entry.res-selected .md-container {
 		background: $color_dropdownLightBoxShadow !important;
+	}
+
+	/* color overwrites */
+	body.mod-toolbox .tb-general-button, body.mod-toolbox li a.tb-general-button, body.mod-toolbox .tb-bracket-button {
+		background: none!important;
+	    font: bold x-small Avenir,Verdana,Arial,sans-serif!important;
+	    text-align: center;
+	    border-width: 1px 1px 1px 2px;
+	    border-color: transparent!important;
+	    border-style: none!important;
+	    padding: 1px 3px;
+	    text-decoration: none;
 	}
 
 	.side .md>ul:nth-of-type(1):hover {

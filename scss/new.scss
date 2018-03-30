@@ -11,6 +11,7 @@ $color_whiteTransp : rgba(255, 255, 255, 0.6);
 $color_transp : rgba(255,255,255,0);
 $color_almostTransp : rgba(255,255,255,0.1);
 $color_flairselectorBeforeBG : rgba(255, 255, 255, 0.75);
+$color_flairCommentAreaBoxShadow : rgba(0, 195, 255, 0.55);
 $color_pagenameBGHover : rgba(0, 0, 0, 0.08);
 $color_textShadow : rgba(0, 0, 0, 0.5);
 $color_boxshadow : rgba(0, 0, 0, 0.16);
@@ -2715,7 +2716,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.usertext-edit textarea {
 		position: relative;
-		z-index: 999;
 	}
 
 	.usertext .bottom-area {
@@ -2970,6 +2970,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.res.comments-page .side {
 		margin-top: 326px;
+	}
+
+	.submit_text .md {
+		color: $color_wineRed;
 	}
 
 	.submit-page {
@@ -3454,6 +3458,30 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.side .flair:before {
 		margin-left: 0px;
+	}
+
+	.commentarea .flair-gamedev::before {
+		@media screen and (min-width:1770px), (min-width:1375px) and (max-width:1770px), (max-width:1375px) {
+			content: "Fatshark Response";
+			color: $color_wineRed;
+			position: absolute;
+			top: -1px;
+			right: -1px;
+			bottom: -1px;
+			left: -1px;
+			text-align: right;
+			padding: .25em .5em;
+			border: 1px solid $color_wineRed;
+			box-shadow: 0px 0px 3px $color_flairCommentAreaBoxShadow;	
+			pointer-events: none;
+			z-index: 0;
+		}
+
+		@media screen and (min-width:1770px), (min-width:1375px) and (max-width:1770px) {
+			background-image: url('%%fatshark-logo-big%%');
+			background-repeat: no-repeat;
+			background-position: top right;
+		}
 	}
 
 	.flair-waywatcher, .flair-witchhunter, .flair-dwarfranger, .flair-empiresoldier, .flair-brightwizard {
@@ -5000,6 +5028,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background: $color_RESDialogSmallLivePreview !important;
 	}
 
+	/*RES setColor fix*/
+	.thing .entry.res-selected,
+	.thing .entry.res-selected .md-container,
+	.usertext .entry.res-selected,
+	.usertext .entry.res-selected .md-container {
+		background: $color_dropdownLightBoxShadow !important;
+	}
 
 	.side .md>ul:nth-of-type(1):hover {
 		height: 372px;
@@ -5190,7 +5225,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding-top: 40px;
 	}
 
-	.menuarea, .subreddit-rules-page, .fancy-settings {
+	.menuarea .subreddit-rules-page, .fancy-settings {
 		background-color: $color_black;
 		z-index: 1;
 		position: relative;

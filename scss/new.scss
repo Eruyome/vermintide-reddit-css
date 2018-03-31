@@ -3482,7 +3482,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		@media screen and (min-width:1770px), (min-width:1375px) and (max-width:1770px) {
-			background-image: url('%%fatshark-logo-big%%');
+			background-image: url(%%fatshark-logo-big%%);
 			background-repeat: no-repeat;
 			background-position: top right;
 		}
@@ -4905,6 +4905,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			}
 			.score {
 				color: $color_bodyFont;
+			}
+			.linkflairlabel {
+				top: -1px;
 			}
 		}
 		a.helplink {

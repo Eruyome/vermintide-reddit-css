@@ -6,8 +6,10 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	gitmodified = require('gulp-gitmodified'),
 	imagemin = require('gulp-imagemin'),
-	pngquant = require('imagemin-pngquant');
-
+	pngquant = require('imagemin-pngquant'),
+	replace = require('gulp-replace'),
+	replacementConfig = require('./replacementConfig.json');
+	
 /* Compress images (only one modified in git) */
 gulp.task('images:gitmodified', function() {
 	return gulp.src('./img/exported/*.+(jpg|jpeg|gif|png|svg)')
@@ -53,13 +55,54 @@ gulp.task('styles:gitmodified', function() {
 	;
 });
 
+/* replace reddit url placeholders with hardcoded full urls for use in stylish */
+gulp.task('replace', function() {
+	var urls = replacementConfig.urls;
+	var failedReplacements = 0;
+	var missingUrls = [];
+	
+	var replacing = gulp.src(["./css/new.css"])
+		.pipe(replace(/(%%(.*?)%%)/g, function(match, p1, p2, offset, string) {
+			var url = searchUrl(p2, urls);
+			//console.log('Found "' + match + '" and replaced with "' + url + '" at ' + offset);			
+			if (typeof url === "undefined") {
+				failedReplacements++;
+				if (missingUrls.indexOf(p2) < 0) {
+					missingUrls.push(p2);
+				}
+				return match;
+			} else {
+				return '"' + url + '"';
+			}
+		}))
+		.pipe(rename({suffix: '.stylish'}))
+		.pipe(gulp.dest('./css/'))		
+	;
+	
+	replacing.on('end', function(){
+		if (failedReplacements > 0) {
+				console.log('           ' + failedReplacements + ' replacements failed because no matching url was found.');
+				console.log('           ' + '[' + missingUrls.join(", ") + ']');
+			};
+		
+	});
+});
+
+function searchUrl(placeholderKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].placeholder === placeholderKey) {
+            return myArray[i].url;
+        }
+    }
+}
+
 /* Compile sass and minify css (all) */
 gulp.task('styles:all', function() {
 	/* Compile nested (adding @charset "utf-8") */
-	gulp.src('./scss/*.scss')
+	var compileNested = gulp.src('./scss/*.scss')
 		.pipe(sass({outputStyle: 'nested'})
 			.on('error', sass.logError))
-		.pipe(gulp.dest('./css/'))
+		.pipe(gulp.dest('./css/'))		
 	;
 	/* Compile compressed (no added charset) */
 	gulp.src('./scss/*.scss')
@@ -71,6 +114,10 @@ gulp.task('styles:all', function() {
 		.pipe(cssmin({showLog :true,debug:true}))
 		.pipe(gulp.dest('./css/'))
 	;
+	
+	compileNested.on('end', function(){
+		gulp.start('replace');
+	});
 });
 
 

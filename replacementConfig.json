@@ -1,0 +1,51 @@
+{
+	"readme" : "This assumes that placeholders are enclosed with %%. Remove them from the placeholder key.",
+	"urls" : [
+		{
+			"placeholder": "header-light",
+			"url": "https://b.thumbs.redditmedia.com/IdwOeS8PUyA0T4dPhAfqihlnwzOBQLXxt_n9gUfeS3A.png"
+		},
+		{
+			"placeholder": "header-light-default",
+			"url": "https://b.thumbs.redditmedia.com/odKOUYnB3TNZ1tqj-POoue_YrOMTCXK3wOyistwKYSs.png"
+		},{
+			"placeholder": "sprite-alternate",
+			"url": "https://a.thumbs.redditmedia.com/Amr8R2PT7zV11bYlRTYpY7HocZnfRlDrltMCe-Ewo78.png"
+		},
+		{
+			"placeholder": "fatshark-logo-big",
+			"url": "https://b.thumbs.redditmedia.com/0_sTGSTMkZ7l6BXJI8BjriB2bZpD6ENcXWhBXesos-E.png"
+		},{
+			"placeholder": "fatshark-logo",
+			"url": "https://a.thumbs.redditmedia.com/2ogynRF7JAh5uKA30J6sa1NjukPWkKpF_Q4iClEa1R8.png"
+		},
+		{
+			"placeholder": "no-result",
+			"url": "https://b.thumbs.redditmedia.com/1zJSBlRS-bvSyBP8TpEF51Z_dtXLwpCPRskN3kjRHQQ.png"
+		},
+		{
+			"placeholder": "classicons-sprite",
+			"url": "https://b.thumbs.redditmedia.com/bHopx_Z7jowt4V5NOuBLb9d3pJEspu38oCVxQDfYE7g.png"
+		},
+		{
+			"placeholder": "sprite-vermintidelogo",
+			"url": "https://b.thumbs.redditmedia.com/vBgyi3DR6XJXdLvi6xARWIaeMH4glkJzn9CKvzbkGHM.png"
+		},
+		{
+			"placeholder": "additional-icons",
+			"url": "https://b.thumbs.redditmedia.com/oH98W_MkqlAHWOAKRse1r6tklhit2blPbQgaIyWChOo.png"
+		},
+		{
+			"placeholder": "skaven",
+			"url": "https://b.thumbs.redditmedia.com/y1wxkloAD9eikEpjJqa6g_nUHTG-xGJrSY9YaDisUeU.png"
+		},
+		{
+			"placeholder": "platform-flairs",
+			"url": "https://b.thumbs.redditmedia.com/Fa0EDUMhWL5HMpDn7onWcPTK1JpPfqyrK5eo3MJ5v_M.png"
+		},
+		{
+			"placeholder": "bg-dot",
+			"url": "https://b.thumbs.redditmedia.com/JQgfgZVmHIlgdo2CxcGI8hSgFlFTJxXPYiXS2kUT7PY.png"
+		}
+	]
+}

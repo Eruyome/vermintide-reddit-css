@@ -34,6 +34,7 @@ While simply using the command **`gulp`** or **`npm start`** handles all basic n
 gulp styles:all
 gulp styles:gitmodified
 gulp default
+gulp replace
 ```
 
 #### Using Stylish to develop reddit themes

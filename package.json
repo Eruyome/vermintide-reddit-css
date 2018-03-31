@@ -4,7 +4,6 @@
   "description": "Dark [Naut](https://www.reddit.com/r/naut) Theme for the [Vermintide](https://www.reddit.com/r/Vermintide/).",
   "main": "index.js",
   "dependencies": {
-    "gulp": ">=3.9.1",
     "gulp-cssnano": ">=2.1.1"
   },
   "devDependencies": {

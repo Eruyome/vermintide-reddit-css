@@ -8,42 +8,43 @@ var gulp = require('gulp'),
 	imagemin = require('gulp-imagemin'),
 	pngquant = require('imagemin-pngquant'),
 	replace = require('gulp-replace'),
-	replacementConfig = require('./replacementConfig.json');
+	replacementConfig = require('./replacementConfig.json'),
+	fs = require("fs");
 	
 /* Compress images (only one modified in git) */
 gulp.task('images:gitmodified', function() {
-	return gulp.src('./img/exported/*.+(jpg|jpeg|gif|png|svg)')
+	return gulp.src('./theme/img/exported/*.+(jpg|jpeg|gif|png|svg)')
 		.pipe(gitmodified('modified'))
 		.pipe(imagemin({
 			progressive: true,
 			svgoPlugins: [{removeViewBox: false}],
 			use: [pngquant()]
 		}))
-		.pipe(gulp.dest('./img/exported-minified/'));
+		.pipe(gulp.dest('./theme/img/exported-minified/'));
 });
 
 /* Compress images (all) */
 gulp.task('images:all', function() {
-	return gulp.src('./img/exported/*.+(jpg|jpeg|gif|png|svg)')
+	return gulp.src('./theme/img/exported/*.+(jpg|jpeg|gif|png|svg)')
 		.pipe(imagemin({
 			progressive: true,
 			svgoPlugins: [{removeViewBox: false}],
 			use: [pngquant()]
 		}))
-		.pipe(gulp.dest('./img/exported-minified/'));
+		.pipe(gulp.dest('./theme/img/exported-minified/'));
 });
 
 /* Compile sass and minify css (gitmodified) */
 gulp.task('styles:gitmodified', function() {
 	/* Compile nested (adding @charset "utf-8") */
-	var compileNested = gulp.src('./scss/*.scss')
+	var compileNested = gulp.src('./theme/scss/*.scss')
 		.pipe(gitmodified('modified'))
 		.pipe(sass({outputStyle: 'nested'})
 			.on('error', sass.logError))
-		.pipe(gulp.dest('./css/'))
+		.pipe(gulp.dest('./theme/css/'))
 	;
 	/* Compile compressed (no added charset) */
-	gulp.src('./scss/*.scss')
+	gulp.src('./theme/scss/*.scss')
 		.pipe(gitmodified('modified'))
 		.pipe(sass({outputStyle: 'compressed'})
 			.on('error', sass.logError))
@@ -51,7 +52,7 @@ gulp.task('styles:gitmodified', function() {
 		//.pipe(nano({zindex:false}))
 		//.pipe(minifyCss())
 		.pipe(cssmin({showLog :true,debug:true}))
-		.pipe(gulp.dest('./css/'))
+		.pipe(gulp.dest('./theme/css/'))
 	;
 	
 	compileNested.on('end', function(){
@@ -64,31 +65,41 @@ gulp.task('replace', function() {
 	var urls = replacementConfig.urls;
 	var failedReplacements = 0;
 	var missingUrls = [];
-	
-	var replacing = gulp.src(["./css/new.css"])
-		.pipe(replace(/(%%(.*?)%%)/g, function(match, p1, p2, offset, string) {
-			var url = searchUrl(p2, urls);
-			//console.log('Found "' + match + '" and replaced with "' + url + '" at ' + offset);			
-			if (typeof url === "undefined") {
-				failedReplacements++;
-				if (missingUrls.indexOf(p2) < 0) {
-					missingUrls.push(p2);
-				}
-				return match;
-			} else {
-				return '"' + url + '"';
-			}
-		}))
-		.pipe(rename({suffix: '.stylish'}))
-		.pipe(gulp.dest('./css/'))		
-	;
-	
-	replacing.on('end', function(){
-		if (failedReplacements > 0) {
-				console.log('           ' + failedReplacements + ' replacements failed because no matching url was found.');
-				console.log('           ' + '[' + missingUrls.join(", ") + ']');
-			};
-		
+	var file = './theme/css/style.css';
+
+	fs.access(file, (err) => {
+		if (!err) {
+			var replacing = gulp.src(file)
+				.pipe(replace(/(%%(.*?)%%)/g, function(match, p1, p2, offset, string) {
+					var url = searchUrl(p2, urls);
+					//console.log('Found "' + match + '" and replaced with "' + url + '" at ' + offset);			
+					if (typeof url === "undefined") {
+						failedReplacements++;
+						if (missingUrls.indexOf(p2) < 0) {
+							missingUrls.push(p2);
+						}
+						return match;
+					} else {
+						return '"' + url + '"';
+					}
+				}))
+				.pipe(rename({suffix: '.stylish'}))
+				.pipe(gulp.dest('./theme/css/'))
+			;
+			
+			replacing.on('end', function(){
+				if (failedReplacements > 0) {
+						console.log('           ' + failedReplacements + ' replacements failed because no matching url was found.');
+						console.log('           ' + '[' + missingUrls.join(", ") + ']');
+					};
+				
+			});
+		}
+		else if (err) {
+			// file/path is not visible to the calling process
+			console.log('           ' + err.message);
+			console.log('           ' + 'Replacing urls not possible!');
+		}
 	});
 });
 
@@ -103,20 +114,20 @@ function searchUrl(placeholderKey, myArray){
 /* Compile sass and minify css (all) */
 gulp.task('styles:all', function() {
 	/* Compile nested (adding @charset "utf-8") */
-	var compileNested = gulp.src('./scss/*.scss')
+	var compileNested = gulp.src('./theme/scss/*.scss')
 		.pipe(sass({outputStyle: 'nested'})
 			.on('error', sass.logError))
-		.pipe(gulp.dest('./css/'))		
+		.pipe(gulp.dest('./theme/css/'))
 	;
 	/* Compile compressed (no added charset) */
-	gulp.src('./scss/*.scss')
+	gulp.src('./theme/scss/*.scss')
 		.pipe(sass({outputStyle: 'compressed'})
 			.on('error', sass.logError))
 		.pipe(rename({suffix: '.min'}))
 		//.pipe(nano({zindex:false}))
 		//.pipe(minifyCss())
 		.pipe(cssmin({showLog :true,debug:true}))
-		.pipe(gulp.dest('./css/'))
+		.pipe(gulp.dest('./theme/css/'))
 	;
 	
 	compileNested.on('end', function(){
@@ -127,7 +138,7 @@ gulp.task('styles:all', function() {
 
 gulp.task('default', ['styles:all', 'images:all'], function() {
 	// Watch Stylesheets
-	gulp.watch('./scss/*.scss', ['styles:gitmodified']);
+	gulp.watch('./theme/scss/*.scss', ['styles:gitmodified']);
 	// Watch Images
-	gulp.watch(['./img/**/*.+(jpg|jpeg|gif|png|svg)'], ['images:gitmodified']);
+	gulp.watch(['./theme/img/**/*.+(jpg|jpeg|gif|png|svg)'], ['images:gitmodified']);
 });

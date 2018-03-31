@@ -36,7 +36,7 @@ gulp.task('images:all', function() {
 /* Compile sass and minify css (gitmodified) */
 gulp.task('styles:gitmodified', function() {
 	/* Compile nested (adding @charset "utf-8") */
-	gulp.src('./scss/*.scss')
+	var compileNested = gulp.src('./scss/*.scss')
 		.pipe(gitmodified('modified'))
 		.pipe(sass({outputStyle: 'nested'})
 			.on('error', sass.logError))
@@ -53,6 +53,10 @@ gulp.task('styles:gitmodified', function() {
 		.pipe(cssmin({showLog :true,debug:true}))
 		.pipe(gulp.dest('./css/'))
 	;
+	
+	compileNested.on('end', function(){
+		gulp.start('replace');
+	});
 });
 
 /* replace reddit url placeholders with hardcoded full urls for use in stylish */

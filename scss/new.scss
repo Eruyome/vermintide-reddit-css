@@ -5167,6 +5167,36 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding: 2px;
 	}
 
+	/* make 2 columns instead by letting the li's float */
+	.side .md>ul:nth-of-type(1) li:nth-of-type(3) {
+		margin-top: 6px;
+	}
+
+	.side .md>ul:nth-of-type(1) li {
+		&:nth-child(2n+2) {
+			float: left;
+			width: 120px;
+			a {
+				min-width: 100%;
+			}
+		}
+
+		&:nth-child(2n+3) {
+			float: right;
+			width: 120px;
+			a {
+				min-width: 100%;
+			}
+
+			a:after {
+				content: "";
+				display: inline-block;
+				clear: both;
+			}
+		}
+	}
+	/* float end */
+
 	.side .md [href*="search?q=flair"]{
 		display:inline-block;
 		padding:3px 5px;

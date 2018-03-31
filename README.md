@@ -4,7 +4,7 @@ Please compile SCSS to compressed css to use on reddit.
 
 There are multiple ways to compile SCSS to CSS, [here are some preprocessors](https://graygrids.com/best-tools-resources-compile-manage-sass-less-stylus-css-preprocessors/) in addition to the various web based solutions.
 
-The project includes **`package.json`** and **`gulpfile.js`** to use nodeJS for converting SCSS and for compressing/minifying CSS and images. This encludes **`watchers`/`tasks`** that run in the background (all via console/terminal). 
+The project includes **`package.json`** and **`gulpfile.js`** to use nodeJS for converting SCSS and for compressing/minifying CSS and images. This includes **`watchers`/`tasks`** that run in the background (all via console/terminal). 
 
 #### Installation:
 
@@ -43,6 +43,6 @@ Developing and testing reddit themes is annoying as hell. Testing css/images/sid
 1. Make a second subreddit to test everything, that's ok but still lacking in some ways.
 2. Use a browser plugin like [Stylish](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=en) to overwrite the subreddits style with your local code.
 
-The stylish approach is one that I highly prefer unless the css changes require sidebar content/structure changes. There's a small issue with images though sicne reddit uses placeholders like `%filename%` for image urls while stylish can't work with that. Therefore I have added a gulp task to create a CSS file where all those placeholders are replaced with the correct full urls. 
+The stylish approach is one that I highly prefer unless the css changes require sidebar content/structure changes. There's a small issue with images though since reddit uses placeholders like `%filename%` for image urls while stylish can't work with that. Therefore I have added a gulp task to create a CSS file where all those placeholders are replaced with the correct full urls. 
 
 These urls are defined in **`replacementConfig.json`**.

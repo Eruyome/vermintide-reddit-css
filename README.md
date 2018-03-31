@@ -36,3 +36,12 @@ gulp styles:gitmodified
 gulp default
 ```
 
+#### Using Stylish to develop reddit themes
+
+Developing and testing reddit themes is annoying as hell. Testing css/images/sidebar structures on the live subreddit is a bad idea. You basically have two alternatives:   
+1. Make a second subreddit to test everything, that's ok but still lacking in some ways.
+2. Use a browser plugin like [Stylish](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=en) to overwrite the subreddits style with your local code.
+
+The stylish approach is one that I highly prefer unless the css changes require sidebar content/structure changes. There's a small issue with images though sicne reddit uses placeholders like `%filename%` for image urls while stylish can't work with that. Therefore I have added a gulp task to create a CSS file where all those placeholders are replaced with the correct full urls. 
+
+These urls are defined in **`replacementConfig.json`**.

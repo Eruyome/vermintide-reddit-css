@@ -7,6 +7,7 @@ $color_bodyBG : #eeeeee;
 $color_headerBG : #2A2B2E;
 $color_white : #fff;
 $color_black : #000;
+$color_stickyBoxLink : #f1c75f;
 $color_whiteTransp : rgba(255, 255, 255, 0.6);
 $color_transp : rgba(255,255,255,0);
 $color_almostTransp : rgba(255,255,255,0.1);
@@ -2874,6 +2875,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.RESSubscriptionButton {
 		color: $color_wineRed !important;
 		background : none !important;
+		margin-right: 10px;
 	}
 
 	.comment {
@@ -3597,7 +3599,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		    float: left;
 		    margin-right: 5px;
 
-			background-image: url(https://www.redditstatic.com/sprite-reddit.bTLvdEETokI.png);
+			background-image: url(%%sprite-reddit-default%%);
     		background-position: -44px -1625px;
     		background-repeat: no-repeat;
 		}
@@ -5222,17 +5224,47 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	    a {
 			border: none;
 			background: none;
-			color: #EDA519;
+			color: $color_stickyBoxLink;
 			padding: 4px 0;
 			display: inline-block;
-			font-family: verdana, arial, sans-serif;
+			font-family: verdana, arial, sans-serif;			
 
-			&:before {
-				color: rgb(0, 195, 137);
-				content: "› Notice: ";
-				background: none;
-				padding: 0px;
-				margin: 0px;
+			&:visited {
+				color: $color_stickyBoxLink !important;
+			}
+
+			strong {
+				color: $color_wineRed;
+				font-weight: normal;
+				&:before {
+					color: inherit;
+					content: "› ";
+					background: none;
+					padding: 0px;
+					margin: 0px;
+				}
+			}			
+			em {
+				font-style: normal;
+				color: $color_white;
+				&:before {
+					color: inherit;
+					content: "› ";
+					background: none;
+					padding: 0px;
+					margin: 0px;
+				}
+			}
+
+			&:hover {
+				strong {
+					color: saturate($color_wineRed, 20);
+					font-weight: 500;
+				}
+				em {
+					color: saturate($color_white, 20);
+					font-weight: 500;
+				}
 			}
 	    }
 	}

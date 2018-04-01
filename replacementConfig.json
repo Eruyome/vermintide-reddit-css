@@ -54,6 +54,14 @@
 		{
 			"placeholder": "sticky-box-bg",
 			"url": "https://b.thumbs.redditmedia.com/yc67XnPpCiwsl4dCjfgYVNhT-EcNDpt5MgpzLFqV0Nw.png"
+		},
+		{
+			"placeholder": "sprites",
+			"url": "https://b.thumbs.redditmedia.com/mEqvHzTca4aGFqwmqElbO4HwunlxNJoO_xuylwZW7Qo.png"
+		},
+		{
+			"placeholder": "sprite-reddit-default",
+			"url": "https://b.thumbs.redditmedia.com/ETwTZx6FEq5AStNgxHmYcBxuj4IyV9gvmt_f9NWWV-M.png"
 		}
 	]
 }

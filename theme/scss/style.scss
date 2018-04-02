@@ -421,10 +421,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			&:after {
 				content: " ";
 				display: block;
-				margin: 0;
-				padding: 0px 0px;
-				width: 520px;
-				height: 300px;
+				margin: 10px 0 0 5px;
+				padding: 0;
+				width: 507px;
+				height: 240px;
 				background-image: url(%%sidebar-guide%%);
 				background-size: 100%;
 				background-repeat: no-repeat;

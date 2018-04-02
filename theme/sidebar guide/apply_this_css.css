@@ -4,7 +4,8 @@ html {
 }
 
 body {
-	font-size: 12px !important;
+	font-size: 11px !important;
+    line-height: 1.5rem !important;
 }
 
 h1, h2, h3, h4, h5, h6, p, span, li, ul {
@@ -12,7 +13,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, ul {
 }
 
 h5 {
-	font-size: 16px !important;
+	font-size: 14px !important;
 }
 
 #preview1, .split-preview {
@@ -36,5 +37,5 @@ ul, ol {
     padding-top: .16001rem !important;
 }
 p, pre {
-	margin-bottom: .33999rem !important;
+	margin-bottom: .13999rem !important;
 }

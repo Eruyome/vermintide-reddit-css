@@ -119,21 +119,57 @@ $color_blockquoteBorder : #E5E3DA;
 
 $color_flairPlatformFontBefore : #ad3429;
 $color_flairPlatform : rgb(104, 110, 123);
+
 $color_linkFlairLabel : #5FB04D;
-$color_linkFlairLabelMod : #65B354;
-$color_linkFlairLabelSuggestion : #12487d;
-$color_linkFlairLabelVerminScience : #550200;
-$color_linkFlairLabelGameplayGuide : #B24DFF;
-$color_linkFlairLabelNews : #AA6D39;
+$color_linkFlairLabelUpdate : #804615;
+
+/* flair group 1 */
+/*
+$color_linkFlairLabelVerminScience : #577892;
 $color_linkFlairLabelVerminArt : #333;
-$color_linkFlairLabelUmgak : #AA3C39;
+$color_linkFlairLabelGameplayGuide : #B24DFF;
+$color_linkFlairLabelModdedContent : #c3960d;
+*/
+$color_linkFlairLabelVerminScience : #577892;
+$color_linkFlairLabelVerminArt : saturate(darken($color_linkFlairLabelVerminScience, 15), 20);
+$color_linkFlairLabelGameplayGuide : saturate(darken($color_linkFlairLabelVerminScience, 20), 20);
+$color_linkFlairLabelModdedContent : saturate(darken($color_linkFlairLabelVerminScience, 25), 20);
+
+/* flair group 2 */
+/*
+$color_linkFlairLabelNews : #AA6D39;
+$color_linkFlairLabelDaily : #07610d;
+$color_linkFlairLabelMod : #65B354;		// announcement
+*/
+$color_linkFlairLabelMod : #65B354;	
+$color_linkFlairLabelDaily : saturate(darken($color_linkFlairLabelMod, 20), 20);
+$color_linkFlairLabelNews : saturate(darken($color_linkFlairLabelMod, 30), 20);
+
+/* flair group 3 */
+/*
+$color_linkFlairLabelDiscussion : #550200;
+$color_linkFlairLabelSuggestion : #12487d;
+$color_linkFlairLabelQuestion : #9da927;
 $color_linkFlairLabelIssue : #F45000;
 $color_linkFlairLabelSolved : #606060;
-$color_linkFlairLabelUpdate : #804615;
+*/
+$color_linkFlairLabelDiscussion : #c3960d;
+$color_linkFlairLabelSuggestion : saturate(darken($color_linkFlairLabelDiscussion, 5), 20);
+$color_linkFlairLabelQuestion : saturate(darken($color_linkFlairLabelDiscussion, 10), 20);
+$color_linkFlairLabelIssue : saturate(darken($color_linkFlairLabelDiscussion, 15), 20);
+$color_linkFlairLabelSolved : saturate(darken($color_linkFlairLabelDiscussion, 20), 20);
+
+/* flair group 4 */
+/*
+$color_linkFlairLabelUmgak : #AA3C39;
 $color_linkFlairLabelShowcase : #236467;
-$color_linkFlairLabelDaily : #07610d;
 $color_linkFlairLabelConsole : #659bf5;
-$color_linkFlairLabelLFG : #561845; 
+$color_linkFlairLabelLFG : #561845;
+*/
+$color_linkFlairLabelUmgak : #606060;
+$color_linkFlairLabelShowcase : saturate(darken($color_linkFlairLabelUmgak, 5), 5);
+$color_linkFlairLabelConsole : saturate(darken($color_linkFlairLabelUmgak, 10), 5);
+$color_linkFlairLabelLFG : saturate(darken($color_linkFlairLabelUmgak, 15), 5);
 
 //----------------------- yet unused test variables for color themes --------------------
 
@@ -1675,14 +1711,28 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		color: $color_white;
 		padding: 2px 4px 0px 4px;
 		font-size: 12px;
+		font-weight: bold;
+		font-style: normal;
+		font-variant: normal;
+		font-family: Arial, sans-serif;
+		height: 19px;
 		vertical-align: middle;
+		top: -2px;
 		background-color: $color_linkFlairLabel;
+		text-shadow: 0px 0px 5px #0a0a0a;
+
+		background-image: url(%%cloudy-bg%%);
+		background-size: cover;
+		border-radius: 0px;
+		border: 1px solid #696363;
+		box-shadow: 0px 0px 0px 1px rgb(23, 22, 22);
 	}
 
 	.linkflair-inspiration {
 		.linkflairlabel {
 			background-color: $color_haveMailBG;
 			color: $color_white;
+			border-color: lighten($color_haveMailBG, 5);
 		}
 		.thumbnail.self {
 			background: url(%%sprite-alternate%%) -143px -140px;
@@ -1693,6 +1743,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		.linkflairlabel {
 			background-color: $color_buttonBG;
 			color: $color_white;
+			border-color: lighten($color_buttonBG, 5);
 		}
 		.thumbnail.self {
 			background: url(%%sprite-alternate%%) -73px -140px;
@@ -1703,6 +1754,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		.linkflairlabel {
 			background-color: $color_linkFlairLabelMod;
 			color: $color_white;
+			border-color: lighten($color_linkFlairLabelMod, 5);
 		}
 		a {
 			color: $color_linkFlairLabelMod !important;
@@ -1716,6 +1768,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-announce .linkflairlabel {
 		background-color: $color_linkFlairLabelMod !important;
+		border-color: lighten($color_linkFlairLabelMod, 5);
 		a {
 			//color: $color_linkFlairLabelMod !important
 		}
@@ -1723,6 +1776,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-suggestion .linkflairlabel {
 		background-color: $color_linkFlairLabelSuggestion !important;
+		border-color: lighten($color_linkFlairLabelSuggestion, 5);
 		color: $color_white;
 		a {
 			//color: $color_linkFlairLabelSuggestion !important;
@@ -1731,6 +1785,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-verminscience .linkflairlabel {
 		background-color: $color_linkFlairLabelVerminScience !important;
+		border-color: lighten($color_linkFlairLabelVerminScience, 5);
 		a {
 			//color: $color_linkFlairLabelVerminScience !important;
 		}
@@ -1738,6 +1793,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-news .linkflairlabel {
 		background-color: $color_linkFlairLabelNews;
+		border-color: lighten($color_linkFlairLabelNews, 5);
 		a {
 			//color: $color_linkFlairLabelNews !important;
 		}
@@ -1745,6 +1801,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-verminart .linkflairlabel {
 		background-color: $color_linkFlairLabelVerminArt;
+		border-color: lighten($color_linkFlairLabelVerminArt, 5);
 		a {
 			//color: $color_linkFlairLabelVerminArt !important;
 		}
@@ -1752,13 +1809,39 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-umgak .linkflairlabel {
 		background-color: $color_linkFlairLabelUmgak !important;
+		border-color: lighten($color_linkFlairLabelUmgak, 5);
 		a {
 			//color: $color_linkFlairLabelUmgak !important;
 		}
 	}
 
+	.linkflair-discussion .linkflairlabel {
+		background-color: $color_linkFlairLabelDiscussion !important;
+		border-color: lighten($color_linkFlairLabelDiscussion, 5);
+		a {
+			//color: $color_linkFlairLabelDiscussion !important;
+		}
+	}
+
+	.linkflair-moddedcontent .linkflairlabel {
+		background-color: $color_linkFlairLabelModdedContent !important;
+		border-color: lighten($color_linkFlairLabelModdedContent, 5);
+		a {
+			//color: $color_linkFlairLabelModdedContent !important;
+		}
+	}
+
+	.linkflair-question .linkflairlabel {
+		background-color: $color_linkFlairLabelQuestion !important;
+		border-color: lighten($color_linkFlairLabelQuestion, 5);
+		a {
+			//color: $color_linkFlairLabelQuestion !important;
+		}
+	}
+
 	.linkflair-issue .linkflairlabel {
 		background-color: $color_linkFlairLabelIssue !important;
+		border-color: lighten($color_linkFlairLabelIssue, 5);
 		a {
 			//color: $color_linkFlairLabelIssue !important;
 		}
@@ -1766,6 +1849,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-gameplayguide .linkflairlabel {
 		background-color: $color_linkFlairLabelGameplayGuide !important;
+		border-color: lighten($color_linkFlairLabelGameplayGuide, 5);
 		a {
 			//color: $color_linkFlairLabelGameplayGuide !important;
 		}
@@ -1773,6 +1857,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-showcase .linkflairlabel {
 		background-color: $color_linkFlairLabelShowcase !important;
+		border-color: lighten($color_linkFlairLabelShowcase, 5);
 		a {
 			//color: $color_linkFlairLabelShowcase !important;
 		}
@@ -1780,6 +1865,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-solved .linkflairlabel {
 		background-color: $color_linkFlairLabelSolved !important;
+		border-color: lighten($color_linkFlairLabelSolved, 5);
 		a {
 			//color: $color_linkFlairLabelSolved !important;
 		}
@@ -1787,6 +1873,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-update .linkflairlabel {
 		background-color: $color_linkFlairLabelUpdate !important;
+		border-color: lighten($color_linkFlairLabelUpdate, 5);
 		a {
 			//color: $color_linkFlairLabelUpdate !important;
 		}
@@ -1794,6 +1881,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-daily .linkflairlabel {
 		background-color: $color_linkFlairLabelDaily !important;
+		border-color: lighten($color_linkFlairLabelDaily, 5);
 		a {
 			//color: $color_linkFlairLabelDaily !important;
 		}
@@ -1801,6 +1889,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-console .linkflairlabel {
 		background-color: $color_linkFlairLabelConsole !important;
+		border-color: lighten($color_linkFlairLabelConsole, 5);
 		a {
 			//color: $color_linkFlairLabelDaily !important;
 		}
@@ -1808,6 +1897,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-lfg .linkflairlabel {
 		background-color: $color_linkFlairLabelLFG !important;
+		border-color: lighten($color_linkFlairLabelLFG, 5);
 		a {
 			//color: $color_linkFlairLabelLFG !important;
 		}
@@ -5182,18 +5272,20 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	    text-decoration: none;
 	}
 
+	/* collapsing list on hover */
 	.side .md>ul:nth-of-type(1):hover {
-		height: 372px;
+		//height: 372px;
 	}
 
 	.side .md>ul:nth-of-type(1) {
 		list-style-type: none;
 		padding-left: 0;
 		overflow: hidden;
-		height: 35px;
-		transition: all .2s ease;
+		//height: 35px;
+		//transition: all .2s ease;
+		padding-bottom: 3px;
 	}
-
+	/* collapsing list on hover */
 
 	.side .md>ul:nth-of-type(1) li:first-of-type {
 		background-color: $color_wineRed;
@@ -5355,6 +5447,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		text-align:center;
 		background:$color_sidebarFlairLinkBG;
 		min-width: 165px;
+		text-shadow: 0px 0px 5px #0a0a0a;
+
+		background-image: url(%%cloudy-bg%%);
+		background-size: cover;
+		border-radius: 0px;
+		border: 1px solid #696363;
+		box-shadow: 0px 0px 0px 1px rgb(23, 22, 22);
 	}
 
 	.side .md [href*="search?q=flair%3Adaily"], .side .md [href*="search?q=flair%3Aweekly"]{
@@ -5362,55 +5461,67 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Aumgak"]{
-		background:$color_linkFlairLabelUmgak;
+		background-color:$color_linkFlairLabelUmgak;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Ashowcase"]{
-		background:$color_linkFlairLabelShowcase;
+		background-color:$color_linkFlairLabelShowcase;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Anews"]{
-		background:$color_linkFlairLabelNews;
+		background-color:$color_linkFlairLabelNews;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Aupdate"]{
-		background:$color_linkFlairLabelUpdate;
+		background-color:$color_linkFlairLabelUpdate;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Aissue"]{
-		background:$color_linkFlairLabelIssue;
+		background-color:$color_linkFlairLabelIssue;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Asolved"]{
-		background:$color_linkFlairLabelSolved;
+		background-color:$color_linkFlairLabelSolved;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Averminart"]{
-		background:$color_linkFlairLabelVerminArt;
+		background-color:$color_linkFlairLabelVerminArt;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Agameplay"]{
-		background:$color_linkFlairLabelGameplayGuide;
+		background-color:$color_linkFlairLabelGameplayGuide;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Asuggestion"]{
-		 background:$color_linkFlairLabelSuggestion;
+		 background-color:$color_linkFlairLabelSuggestion;
 		 color:$color_white;
 	 }
 	.side .md [href*="search?q=flair%3Averminscience"]{
-		background:$color_linkFlairLabelVerminScience;
+		background-color:$color_linkFlairLabelVerminScience;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Aannouncement"]{
-		background:$color_linkFlairLabelMod;
+		background-color:$color_linkFlairLabelMod;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Aconsole"]{
-		background:$color_linkFlairLabelConsole;
+		background-color:$color_linkFlairLabelConsole;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Alfg"]{
-		background:$color_linkFlairLabelLFG;
+		background-color:$color_linkFlairLabelLFG;
+		color:$color_white;
+	}
+	.side .md [href*="search?q=flair%3Adiscussion"]{
+		background-color:$color_linkFlairLabelDiscussion;
+		color:$color_white;
+	}
+	.side .md [href*="search?q=flair%3Amodded"]{
+		background-color:$color_linkFlairLabelModdedContent;
+		color:$color_white;
+	}
+	.side .md [href*="search?q=flair%3Aquestion"]{
+		background-color:$color_linkFlairLabelQuestion;
 		color:$color_white;
 	}
 

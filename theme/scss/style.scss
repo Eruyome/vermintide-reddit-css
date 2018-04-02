@@ -122,17 +122,18 @@ $color_flairPlatform : rgb(104, 110, 123);
 $color_linkFlairLabel : #5FB04D;
 $color_linkFlairLabelMod : #65B354;
 $color_linkFlairLabelSuggestion : #12487d;
-$color_linkFlairLabelDiscussion : #550200;
-$color_linkFlairLabelStrategy : #B24DFF;
+$color_linkFlairLabelVerminScience : #550200;
+$color_linkFlairLabelGameplayGuide : #B24DFF;
 $color_linkFlairLabelNews : #AA6D39;
-$color_linkFlairLabelCustom : #333;
-$color_linkFlairLabelFluff : #AA3C39;
+$color_linkFlairLabelVerminArt : #333;
+$color_linkFlairLabelUmgak : #AA3C39;
 $color_linkFlairLabelIssue : #F45000;
 $color_linkFlairLabelSolved : #606060;
 $color_linkFlairLabelUpdate : #804615;
-$color_linkFlairLabelGameplay : #236467;
+$color_linkFlairLabelShowcase : #236467;
 $color_linkFlairLabelDaily : #07610d;
 $color_linkFlairLabelConsole : #659bf5;
+$color_linkFlairLabelLFG : #561845; 
 
 //----------------------- yet unused test variables for color themes --------------------
 
@@ -359,7 +360,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	/* subreddit sidebar formatting comments/guide */
-	.pretty-form .linefield:nth-of-type(3) {
+	.create-reddit .pretty-form .linefield:nth-of-type(3) {
 		/*
 			This nice piece of CSS doesn't work since reddit won't parse it.
 			https://www.reddit.com/r/csshelp/comments/1vq77s/css_validation_error_on_backslash_in_content/
@@ -1728,17 +1729,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.linkflair-discussion .linkflairlabel {
-		background-color: $color_linkFlairLabelDiscussion !important;
+	.linkflair-verminscience .linkflairlabel {
+		background-color: $color_linkFlairLabelVerminScience !important;
 		a {
-			//color: $color_linkFlairLabelDiscussion !important;
-		}
-	}
-
-	.linkflair-strategy .linkflairlabel {
-		background-color: $color_linkFlairLabelStrategy !important;
-		a {
-			//color: $color_linkFlairLabelStrategy !important;
+			//color: $color_linkFlairLabelVerminScience !important;
 		}
 	}
 
@@ -1749,17 +1743,17 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.linkflair-custom .linkflairlabel {
-		background-color: $color_linkFlairLabelCustom;
+	.linkflair-verminart .linkflairlabel {
+		background-color: $color_linkFlairLabelVerminArt;
 		a {
-			//color: $color_linkFlairLabelCustom !important;
+			//color: $color_linkFlairLabelVerminArt !important;
 		}
 	}
 
-	.linkflair-fluff .linkflairlabel {
-		background-color: $color_linkFlairLabelFluff !important;
+	.linkflair-umgak .linkflairlabel {
+		background-color: $color_linkFlairLabelUmgak !important;
 		a {
-			//color: $color_linkFlairLabelFluff !important;
+			//color: $color_linkFlairLabelUmgak !important;
 		}
 	}
 
@@ -1770,17 +1764,17 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.linkflair-discussion .linkflairlabel {
-		background-color: $color_linkFlairLabelDiscussion !important;
+	.linkflair-gameplayguide .linkflairlabel {
+		background-color: $color_linkFlairLabelGameplayGuide !important;
 		a {
-			//color: $color_linkFlairLabelDiscussion !important;
+			//color: $color_linkFlairLabelGameplayGuide !important;
 		}
 	}
 
-	.linkflair-gameplay .linkflairlabel {
-		background-color: $color_linkFlairLabelGameplay !important;
+	.linkflair-showcase .linkflairlabel {
+		background-color: $color_linkFlairLabelShowcase !important;
 		a {
-			//color: $color_linkFlairLabelGameplay !important;
+			//color: $color_linkFlairLabelShowcase !important;
 		}
 	}
 
@@ -1809,6 +1803,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color: $color_linkFlairLabelConsole !important;
 		a {
 			//color: $color_linkFlairLabelDaily !important;
+		}
+	}
+
+	.linkflair-lfg .linkflairlabel {
+		background-color: $color_linkFlairLabelLFG !important;
+		a {
+			//color: $color_linkFlairLabelLFG !important;
 		}
 	}
 
@@ -3841,6 +3842,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			box-shadow: 0px 2px 6px $color_dropdownLightBoxShadow;
 			height: auto;
 			label {
+				display: inline;
 				padding-top: 13px;
 				padding-bottom: 13px;
 			}
@@ -5359,12 +5361,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background:$color_linkFlairLabelDaily;
 		color:$color_white;
 	}
-	.side .md [href*="search?q=flair%3Afluff"]{
-		background:$color_linkFlairLabelFluff;
+	.side .md [href*="search?q=flair%3Aumgak"]{
+		background:$color_linkFlairLabelUmgak;
 		color:$color_white;
 	}
-	.side .md [href*="search?q=flair%3Astrategy"]{
-		background:$color_linkFlairLabelStrategy;
+	.side .md [href*="search?q=flair%3Ashowcase"]{
+		background:$color_linkFlairLabelShowcase;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Anews"]{
@@ -5383,19 +5385,20 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background:$color_linkFlairLabelSolved;
 		color:$color_white;
 	}
-	.side .md [href*="search?q=flair%3Acustom"]{
-		background:$color_linkFlairLabelCustom;
+	.side .md [href*="search?q=flair%3Averminart"]{
+		background:$color_linkFlairLabelVerminArt;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Agameplay"]{
-		background:$color_linkFlairLabelGameplay;
+		background:$color_linkFlairLabelGameplayGuide;
 		color:$color_white;
-	}.side .md [href*="search?q=flair%3Asuggestion"]{
+	}
+	.side .md [href*="search?q=flair%3Asuggestion"]{
 		 background:$color_linkFlairLabelSuggestion;
 		 color:$color_white;
 	 }
-	.side .md [href*="search?q=flair%3Adiscussion"]{
-		background:$color_linkFlairLabelDiscussion;
+	.side .md [href*="search?q=flair%3Averminscience"]{
+		background:$color_linkFlairLabelVerminScience;
 		color:$color_white;
 	}
 	.side .md [href*="search?q=flair%3Aannouncement"]{
@@ -5404,6 +5407,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 	.side .md [href*="search?q=flair%3Aconsole"]{
 		background:$color_linkFlairLabelConsole;
+		color:$color_white;
+	}
+	.side .md [href*="search?q=flair%3Alfg"]{
+		background:$color_linkFlairLabelLFG;
 		color:$color_white;
 	}
 

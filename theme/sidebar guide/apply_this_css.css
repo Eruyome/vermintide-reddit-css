@@ -1,0 +1,40 @@
+html {
+	color: lightblue !important;
+    font-family: Verdana, "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+body {
+	font-size: 12px !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, li, ul {
+	font-family: Verdana, "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+h5 {
+	font-size: 16px !important;
+}
+
+#preview1, .split-preview {
+	background-color: #212121 !important;
+}
+
+s, strike {
+	text-decoration: none;
+}
+s>code {
+	text-decoration: none;
+    font-family: Verdana, "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    color: rgb(12, 134, 19) !important;
+    font-weight: bold;
+    background: none;
+}
+
+ul, ol {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    padding-top: .16001rem !important;
+}
+p, pre {
+	margin-bottom: .33999rem !important;
+}

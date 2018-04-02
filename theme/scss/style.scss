@@ -358,6 +358,54 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
+	/* subreddit sidebar formatting comments/guide */
+	.pretty-form .linefield:nth-of-type(3) {
+		.title {
+			&:after {
+				color: lightblue;		
+				display: inline-block;
+				font-family: Verdana, Arial, sans-serif;
+				text-transform: none;
+				font-size: 11px;
+				margin: 0;
+				padding: 0 10px;
+				width: 100%;
+				background-color: $color_darkGray;
+			}
+		}
+
+		.title {
+			&:after {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				white-space: pre; /* or pre-wrap */
+				/* 
+					Linebreaks can be added by using \A in the contents value.
+					Adding this escaped character to any scss variable seems to "destroy" it.
+					Therefore we add it directly to the contents property.
+
+					\2219 = bullet point
+					\A = linebreak
+				*/
+				$dT_01 : "[ Special sidebar formatting guide (CSS related) ]";
+				$dT_02 : "This subreddit uses some fancy CSS, which requires a specific sidebar structure.";
+				$dT_03 : "Important element/content order:";
+				$dT_04 : " " + "The flair filter selection has to be the first unordered list.";
+				$dT_05 : " " + "The sticky box list has to be the first ordered list.";
+				$dT_06 : "Sticky box formatting:";
+				$dT_07 : " " + "Every list item should be a link to avoid unexcepted formatting issues.";
+				$dT_08 : " " + "Every list item can have any string prepended as a 'type description'.";
+				$dT_09 : " " + "The syntax '**String**' styles any part of the link title in the color 'red'.";
+				$dT_10 : " " + "The syntax '_String_' styles any part of the link title in the color 'white'.";
+
+				content: $dT_01 + "\A\A" + $dT_02 + "\A\A" + $dT_03 + "\A \2219" + $dT_04 + "\A \2219" + $dT_05 "\A\A" + $dT_06 + "\A \2219" + $dT_07 + "\A \2219" + $dT_08 + "\A \2219" + $dT_09 + "\A \2219" + $dT_10;
+			}
+		}
+	}
+	/* guide end */
+
 	.login-form-side input {
 		&[type=text], &[type=password] {
 			box-shadow: none !important;

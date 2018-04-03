@@ -166,10 +166,10 @@ $color_linkFlairLabelShowcase : #236467;
 $color_linkFlairLabelConsole : #659bf5;
 $color_linkFlairLabelLFG : #561845;
 */
-$color_linkFlairLabelUmgak : #606060;
-$color_linkFlairLabelShowcase : saturate(darken($color_linkFlairLabelUmgak, 5), 5);
-$color_linkFlairLabelConsole : saturate(darken($color_linkFlairLabelUmgak, 10), 5);
-$color_linkFlairLabelLFG : saturate(darken($color_linkFlairLabelUmgak, 15), 5);
+$color_linkFlairLabelShowcase : #606060;
+$color_linkFlairLabelLFG : saturate(darken($color_linkFlairLabelShowcase, 5), 5);
+$color_linkFlairLabelConsole : saturate(darken($color_linkFlairLabelShowcase, 20), 5);
+$color_linkFlairLabelUmgak : #AA3C39;
 
 //----------------------- yet unused test variables for color themes --------------------
 
@@ -1720,11 +1720,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		top: -2px;
 		background-color: $color_linkFlairLabel;
 		text-shadow: 0px 0px 5px #0a0a0a;
+		margin-left: 1px;
 
 		background-image: url(%%cloudy-bg%%);
 		background-size: cover;
 		border-radius: 0px;
-		border: 1px solid #696363;
+		border: 1px solid #5d5858;
 		box-shadow: 0px 0px 0px 1px rgb(23, 22, 22);
 	}
 
@@ -1732,7 +1733,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		.linkflairlabel {
 			background-color: $color_haveMailBG;
 			color: $color_white;
-			border-color: lighten($color_haveMailBG, 5);
 		}
 		.thumbnail.self {
 			background: url(%%sprite-alternate%%) -143px -140px;
@@ -1743,7 +1743,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		.linkflairlabel {
 			background-color: $color_buttonBG;
 			color: $color_white;
-			border-color: lighten($color_buttonBG, 5);
 		}
 		.thumbnail.self {
 			background: url(%%sprite-alternate%%) -73px -140px;
@@ -1754,7 +1753,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		.linkflairlabel {
 			background-color: $color_linkFlairLabelMod;
 			color: $color_white;
-			border-color: lighten($color_linkFlairLabelMod, 5);
 		}
 		a {
 			color: $color_linkFlairLabelMod !important;
@@ -1768,7 +1766,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-announce .linkflairlabel {
 		background-color: $color_linkFlairLabelMod !important;
-		border-color: lighten($color_linkFlairLabelMod, 5);
 		a {
 			//color: $color_linkFlairLabelMod !important
 		}
@@ -1776,7 +1773,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-suggestion .linkflairlabel {
 		background-color: $color_linkFlairLabelSuggestion !important;
-		border-color: lighten($color_linkFlairLabelSuggestion, 5);
 		color: $color_white;
 		a {
 			//color: $color_linkFlairLabelSuggestion !important;
@@ -1785,7 +1781,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-verminscience .linkflairlabel {
 		background-color: $color_linkFlairLabelVerminScience !important;
-		border-color: lighten($color_linkFlairLabelVerminScience, 5);
 		a {
 			//color: $color_linkFlairLabelVerminScience !important;
 		}
@@ -1793,7 +1788,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-news .linkflairlabel {
 		background-color: $color_linkFlairLabelNews;
-		border-color: lighten($color_linkFlairLabelNews, 5);
 		a {
 			//color: $color_linkFlairLabelNews !important;
 		}
@@ -1801,7 +1795,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-verminart .linkflairlabel {
 		background-color: $color_linkFlairLabelVerminArt;
-		border-color: lighten($color_linkFlairLabelVerminArt, 5);
 		a {
 			//color: $color_linkFlairLabelVerminArt !important;
 		}
@@ -1809,7 +1802,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-umgak .linkflairlabel {
 		background-color: $color_linkFlairLabelUmgak !important;
-		border-color: lighten($color_linkFlairLabelUmgak, 5);
 		a {
 			//color: $color_linkFlairLabelUmgak !important;
 		}
@@ -1817,7 +1809,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-discussion .linkflairlabel {
 		background-color: $color_linkFlairLabelDiscussion !important;
-		border-color: lighten($color_linkFlairLabelDiscussion, 5);
 		a {
 			//color: $color_linkFlairLabelDiscussion !important;
 		}
@@ -1825,7 +1816,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-moddedcontent .linkflairlabel {
 		background-color: $color_linkFlairLabelModdedContent !important;
-		border-color: lighten($color_linkFlairLabelModdedContent, 5);
 		a {
 			//color: $color_linkFlairLabelModdedContent !important;
 		}
@@ -1833,7 +1823,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-question .linkflairlabel {
 		background-color: $color_linkFlairLabelQuestion !important;
-		border-color: lighten($color_linkFlairLabelQuestion, 5);
 		a {
 			//color: $color_linkFlairLabelQuestion !important;
 		}
@@ -1841,7 +1830,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-issue .linkflairlabel {
 		background-color: $color_linkFlairLabelIssue !important;
-		border-color: lighten($color_linkFlairLabelIssue, 5);
 		a {
 			//color: $color_linkFlairLabelIssue !important;
 		}
@@ -1849,7 +1837,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-gameplayguide .linkflairlabel {
 		background-color: $color_linkFlairLabelGameplayGuide !important;
-		border-color: lighten($color_linkFlairLabelGameplayGuide, 5);
 		a {
 			//color: $color_linkFlairLabelGameplayGuide !important;
 		}
@@ -1857,7 +1844,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-showcase .linkflairlabel {
 		background-color: $color_linkFlairLabelShowcase !important;
-		border-color: lighten($color_linkFlairLabelShowcase, 5);
 		a {
 			//color: $color_linkFlairLabelShowcase !important;
 		}
@@ -1865,7 +1851,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-solved .linkflairlabel {
 		background-color: $color_linkFlairLabelSolved !important;
-		border-color: lighten($color_linkFlairLabelSolved, 5);
 		a {
 			//color: $color_linkFlairLabelSolved !important;
 		}
@@ -1873,7 +1858,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-update .linkflairlabel {
 		background-color: $color_linkFlairLabelUpdate !important;
-		border-color: lighten($color_linkFlairLabelUpdate, 5);
 		a {
 			//color: $color_linkFlairLabelUpdate !important;
 		}
@@ -1881,7 +1865,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-daily .linkflairlabel {
 		background-color: $color_linkFlairLabelDaily !important;
-		border-color: lighten($color_linkFlairLabelDaily, 5);
 		a {
 			//color: $color_linkFlairLabelDaily !important;
 		}
@@ -1889,7 +1872,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-console .linkflairlabel {
 		background-color: $color_linkFlairLabelConsole !important;
-		border-color: lighten($color_linkFlairLabelConsole, 5);
 		a {
 			//color: $color_linkFlairLabelDaily !important;
 		}
@@ -1897,7 +1879,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflair-lfg .linkflairlabel {
 		background-color: $color_linkFlairLabelLFG !important;
-		border-color: lighten($color_linkFlairLabelLFG, 5);
 		a {
 			//color: $color_linkFlairLabelLFG !important;
 		}
@@ -5290,7 +5271,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.side .md>ul:nth-of-type(1) li:first-of-type {
 		background-color: $color_wineRed;
 		color: $color_white;
-		border-radius: 2px;
+		border-radius: 0px;
 		box-shadow: 0 2px 5px $color_sidebarFlairList;
 		padding: 6px 16px;
 		cursor: pointer;
@@ -5347,7 +5328,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.side .md>ul:nth-of-type(1) li {
 		&:nth-child(2n+2) {
 			float: left;
-			width: 120px;
+			width: 125px;
+			margin-left: 6px;
+			margin-right: 0px;
 			a {
 				min-width: 100%;
 			}
@@ -5355,7 +5338,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 		&:nth-child(2n+3) {
 			float: right;
-			width: 120px;
+			width: 125px;
+			margin-left: 0px;
+			margin-right: 6px;
 			a {
 				min-width: 100%;
 			}
@@ -5452,7 +5437,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-image: url(%%cloudy-bg%%);
 		background-size: cover;
 		border-radius: 0px;
-		border: 1px solid #696363;
+		border: 1px solid #5d5858;
 		box-shadow: 0px 0px 0px 1px rgb(23, 22, 22);
 	}
 

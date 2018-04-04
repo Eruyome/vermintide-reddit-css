@@ -8,8 +8,9 @@ var gulp = require('gulp'),
 	imagemin = require('gulp-imagemin'),
 	pngquant = require('imagemin-pngquant'),
 	replace = require('gulp-replace'),
-	replacementConfig = require('./replacementConfig.json'),
 	fs = require("fs");
+	
+const loadJsonFile = require('load-json-file');
 	
 /* Compress images (only one modified in git) */
 gulp.task('images:gitmodified', function() {
@@ -62,44 +63,48 @@ gulp.task('styles:gitmodified', function() {
 
 /* replace reddit url placeholders with hardcoded full urls for use in stylish */
 gulp.task('replace', function() {
-	var urls = replacementConfig.urls;
+	var urls = [];
 	var failedReplacements = 0;
 	var missingUrls = [];
 	var file = './theme/css/style.css';
-
-	fs.access(file, (err) => {
-		if (!err) {
-			var replacing = gulp.src(file)
-				.pipe(replace(/(%%(.*?)%%)/g, function(match, p1, p2, offset, string) {
-					var url = searchUrl(p2, urls);
-					//console.log('Found "' + match + '" and replaced with "' + url + '" at ' + offset);			
-					if (typeof url === "undefined") {
-						failedReplacements++;
-						if (missingUrls.indexOf(p2) < 0) {
-							missingUrls.push(p2);
+	
+	loadJsonFile('./replacementConfig.json').then(json => {    
+		urls = json.urls;
+	
+		fs.access(file, (err) => {
+			if (!err) {
+				var replacing = gulp.src(file)
+					.pipe(replace(/(%%(.*?)%%)/g, function(match, p1, p2, offset, string) {
+						var url = searchUrl(p2, urls);
+						//console.log('Found "' + match + '" and replaced with "' + url + '" at ' + offset);			
+						if (typeof url === "undefined") {
+							failedReplacements++;
+							if (missingUrls.indexOf(p2) < 0) {
+								missingUrls.push(p2);
+							}
+							return match;
+						} else {
+							return '"' + url + '"';
 						}
-						return match;
-					} else {
-						return '"' + url + '"';
-					}
-				}))
-				.pipe(rename({suffix: '.stylish'}))
-				.pipe(gulp.dest('./theme/css/'))
-			;
-			
-			replacing.on('end', function(){
-				if (failedReplacements > 0) {
-						console.log('           ' + failedReplacements + ' replacements failed because no matching url was found.');
-						console.log('           ' + '[' + missingUrls.join(", ") + ']');
-					};
+					}))
+					.pipe(rename({suffix: '.stylish'}))
+					.pipe(gulp.dest('./theme/css/'))
+				;
 				
-			});
-		}
-		else if (err) {
-			// file/path is not visible to the calling process
-			console.log('           ' + err.message);
-			console.log('           ' + 'Replacing urls not possible!');
-		}
+				replacing.on('end', function(){
+					if (failedReplacements > 0) {
+							console.log('           ' + failedReplacements + ' replacements failed because no matching url was found.');
+							console.log('           ' + '[' + missingUrls.join(", ") + ']');
+						};
+					
+				});
+			}
+			else if (err) {
+				// file/path is not visible to the calling process
+				console.log('           ' + err.message);
+				console.log('           ' + 'Replacing urls not possible!');
+			}
+		});
 	});
 });
 

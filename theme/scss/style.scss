@@ -167,7 +167,8 @@ $color_linkFlairLabelConsole : #659bf5;
 $color_linkFlairLabelLFG : #561845;
 */
 $color_linkFlairLabelShowcase : #606060;
-$color_linkFlairLabelLFG : saturate(darken($color_linkFlairLabelShowcase, 5), 5);
+$color_linkFlairLabelGameplay : saturate(darken($color_linkFlairLabelShowcase, 5), 5);
+$color_linkFlairLabelLFG : saturate(darken($color_linkFlairLabelShowcase, 10), 5);
 $color_linkFlairLabelConsole : saturate(darken($color_linkFlairLabelShowcase, 20), 5);
 $color_linkFlairLabelUmgak : #AA3C39;
 
@@ -1848,6 +1849,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			//color: $color_linkFlairLabelShowcase !important;
 		}
 	}
+
+	.linkflair-showcase .linkflairlabel {
+		background-color: $color_linkFlairLabelGameplay !important;
+		a {
+			//color: $color_linkFlairLabelGameplay !important;
+		}
+	}
+
 
 	.linkflair-solved .linkflairlabel {
 		background-color: $color_linkFlairLabelSolved !important;
@@ -3597,26 +3606,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding: 0px 6px 0px 2px;
 	}
 
-	.flair-gamedev {
-		color: $color_wineRed !important;
-		background-color: transparent;
-		line-height: 16px;
-
-		&:before {
-			display: block;
-			content: " ";
-			width: 28px;
-			height: 16px;
-			background-image: url(%%shark%%);
-			margin: 0;
-			padding: 0;
-			float: left;
-			margin-right: 4px;
-			background-repeat: no-repeat;
-			background-size: contain;
-		}
-	}
-
 	.flair:before {
 		margin-right: 3px;
 		height: auto;
@@ -3626,6 +3615,26 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.side .flair:before {
 		margin-left: 0px;
+	}
+
+	.flair-gamedev {
+		color: $color_wineRed !important;
+		background-color: transparent;
+		line-height: 20px;
+
+		&:before {
+			display: block;
+			content: "";
+			width: 35px;
+			height: 20px;
+			background-image: url(%%special-user-flair-sprite%%);
+			margin: 0;
+			padding: 0;
+			float: left;
+			margin-right: 4px;
+			background-repeat: no-repeat;
+			background-size: auto;
+		}
 	}
 
 	.commentarea .flair-gamedev::after {
@@ -3684,7 +3693,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-position: 23px 0px;
 	}
 
-	.flair-steam, .flair-xbox, .flair-playstation {
+	.flair-steam, .flair-xbox, .flair-playstation, .flair-twitch {
 		background-color: $color_RESDialogSmallLivePreview;
 		color: $color_white !important;
 		line-height: 18px;
@@ -3700,6 +3709,42 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			border-right: 1px solid $color_flairPlatform;
 			color: $color_flairPlatformFontBefore;
 		}
+	}
+
+	.flair-wiki, .flair-modder, .flair-scientist, .flair-artist, .flair-sweden {
+		color: $color_white !important;
+		background-color: transparent;
+		line-height: 18px;
+
+		&:before {
+			display: block;
+			content: "";
+			width: 18px;
+			height: 18px;
+			background-image: url(%%special-user-flair-sprite%%);
+			margin: 0;
+			padding: 0;
+			float: left;
+			margin-right: 6px;
+			background-repeat: no-repeat;
+			background-size: auto;
+		}
+	}
+
+	.flair-wiki:before {
+		background-position: 0px -20px;
+	}
+	.flair-scientist:before {
+		background-position: 0px -40px;
+	}
+	.flair-modder:before {
+		background-position: 0px -60px;
+	}
+	.flair-artist:before {
+		background-position: 0px -80px;
+	}
+	.flair-sweden:before {
+		background-position: 0px -100px;
 	}
 
 	.flair-green {
@@ -3745,6 +3790,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.flair-steam:before {
 		background-position: 0px -60px;
+	}
+
+	.flair-twitch:before {
+		background-position: 0px -83px;
 	}
 
 	.flair-mod {
@@ -5468,6 +5517,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color:$color_linkFlairLabelShowcase;
 		color:$color_white;
 	}
+	.side .md [href*="search?q=flair%3Agameplay+AND+NOT+flair%3Aguide"]{
+		background-color:$color_linkFlairLabelGameplay;
+		color:$color_white;
+	}
 	.side .md [href*="search?q=flair%3Anews"]{
 		background-color:$color_linkFlairLabelNews;
 		color:$color_white;
@@ -5488,7 +5541,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color:$color_linkFlairLabelVerminArt;
 		color:$color_white;
 	}
-	.side .md [href*="search?q=flair%3Agameplay"]{
+	.side .md [href*="search?q=flair%3gameplay+AND+flair%3Aguide"]{
 		background-color:$color_linkFlairLabelGameplayGuide;
 		color:$color_white;
 	}
@@ -5527,6 +5580,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.side .titlebox form .md ul li a:visited {
 		color: $color_white !important;
+	}
+
+	.side li .author[href*="user/Eruyome87"], .side li .author[href*="user/Eruyome87"] + span {    	
+    	//display: none;
+    	pointer-events: none;
+    	opacity: .4;
 	}
 
 	// https://www.reddit.com/r/Enhancement/comments/4pj28n/collapse_post_like_in_roverwatch/

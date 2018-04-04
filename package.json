@@ -17,7 +17,8 @@
     "gulp-replace": ">=0.6.1",
     "gulp-sass": ">=2.2.0",
     "gulp-util": ">=3.0.7",
-    "imagemin-pngquant": ">=4.2.2"
+    "imagemin-pngquant": ">=4.2.2",
+    "load-json-file": "^4.0.0"
   },
   "scripts": {
     "prestart": "npm install",

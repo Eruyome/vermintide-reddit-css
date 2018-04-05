@@ -70,7 +70,7 @@ gulp.task('replace', function() {
 	
 	loadJsonFile('./replacementConfig.json').then(json => {    
 		urls = json.urls;
-	
+
 		fs.access(file, (err) => {
 			if (!err) {
 				var replacing = gulp.src(file)

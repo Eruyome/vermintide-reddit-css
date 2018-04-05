@@ -7,7 +7,7 @@ $color_bodyBG : #eeeeee;
 $color_headerBG : #2A2B2E;
 $color_white : #fff;
 $color_black : #000;
-$color_stickyBoxLink : #f1c75f;
+$color_stickyBoxLink : #ffdf9a;
 $color_whiteTransp : rgba(255, 255, 255, 0.6);
 $color_transp : rgba(255,255,255,0);
 $color_almostTransp : rgba(255,255,255,0.1);
@@ -462,7 +462,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				margin: 10px 0 0 5px;
 				padding: 0;
 				width: 507px;
-				height: 240px;
+				height: 482px;
 				background-image: url(%%sidebar-guide%%);
 				background-size: 100%;
 				background-repeat: no-repeat;
@@ -823,10 +823,36 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.side {
 		margin: 200px 16px 0px 0px;
-		padding: 6px 16px;
+		padding: 6px 12px;
 		background-color: $color_white;
 		border-radius: 2px;
 		box-shadow: 0px 1px 5px $color_boxshadow;
+
+		background-size: cover;
+		background-repeat: no-repeat;
+		border-width: 4px 4px;
+		border: 4px solid #fff;
+		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch;
+
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			right: 15px;
+			background-size: auto;
+			background-repeat: no-repeat;
+			width: 302px;
+			height: 28px;
+			background-image: url(%%sidebar-corners%%);
+		}
+
+		&:before {
+			top: 445px;			
+		}
+		&:after {
+			transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
+			margin-top: -17px;
+		}
 	}
 
 	#header-bottom-right {
@@ -959,21 +985,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background: url(%%sprite-alternate%%) -16px -0px;
 	}
 
-	.side:after {
-		display: block;
-		margin: 10px 0px;
-		padding: 10px 0px;
-		color: $color_sideAfterFont;
-		content: "CSS Theme via /r/Naut";
-		text-transform: none;
-		font-size: 16px;
-		font-family: arial, sans-serif;
-		position: absolute;
-		width: 300px;
-		text-align: center;
-		right: 16px;
-	}
-
 	#search {
 		position: absolute;
 		right: 16px;
@@ -1103,46 +1114,47 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.morelink {
 		position: absolute;
-		top: 148px;
-		box-shadow: 0px 1px 5px $color_mailBoxshadow;
-		background-color: $color_buttonBG;
-		background-image: url(%%sprite-alternate%%) !important;
-		background-position: 268px -214px !important;
-		background-repeat: no-repeat !important;
-		right: 16px;
-		width: 300px;
-		height: 36px;
-		border-radius: 2px;
-		line-height: 36px;
 		border: none;
-		text-align: left;
 		padding: 0px 16px;
-		transition: all 0.25s ease;
 		font-family: verdana, arial, sans-serif;
+		
+		background-image: url(%%submit-button%%) !important;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		width: 317px;
+		background-color: transparent;
+		background-position: 0px 0px !important;
+		height: 58px;
+		line-height: 58px;
+		top: 383px;
+		right: 6px;
+		text-align: center;
+
 		&:hover {
-			background-color: $color_fancyToggleButtonBGHover;
-			box-shadow: 0px 5px 8px $color_buttonBoxShadowHover;
+			background-position: 0px -60px !important;
+			a {
+				color: $color_stickyBoxLink;
+			}
 		}
 		&:active {
-			background-color: $color_ButtonBGActive;
-			box-shadow: 0px 8px 12px $color_textShadow;
+			background-position: 0px -60px !important;
 		}
 		a {
-			background-image: none;
-			color: $color_white;
+			background-image: none;			
+			color: $color_stickyBoxLink;
 			font-weight: normal;
-			font-size: 14px;
+			font-size: 16px;
 			letter-spacing: 0px;
+			text-align: center;
 		}
 		&:after {
 			content: "Please remember to read the rules. Thank you!";
 			padding: 16px;
-			width: 300px;
+			width: 310px;
 			position: absolute;
-			right: 0px;
+			right: 5px;
 			margin-top: 0px;
 			display: block;
-			background-color: $color_buttonBG;
 			color: $color_white;
 			letter-spacing: 0px;
 			z-index: 100;
@@ -1150,14 +1162,17 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			transition: all 0.25s ease;
 			transition-delay: 0s;
 			font-weight: normal;
-			line-height: 1.4em;
-			border-radius: 2px 2px 0px 0px;
-			box-shadow: 0px 1px 5px $color_boxshadow;
+			line-height: 1.2em;
 			visibility: hidden;
 			pointer-events: none;
+
+			border: 9px solid #fff;
+			border-width: 9px 12px;
+			border-image: url(%%content-box-border-image%%) 13 16 stretch;
+			background-color: $color_darkGray;
 		}
 		&:hover:after {
-			margin-top: 16px;
+			margin-top: 4px;
 			opacity: 100;
 			visibility: visible;
 			transition-delay: 0.25s;
@@ -1249,13 +1264,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		.tagline {
 			font-size: 12px;
 			margin: 0;
-			&:after {
-				content: "";
-				height: 2px;
-				background-color: $color_titleBoxTaglineBG;
-				display: block;
-				margin-top: 16px;
-			}
+
 			a.flairselectbtn {
 				color: $color_inputBorderActive;
 				&:after {
@@ -1268,6 +1277,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 		form.toggle {
 			background: inherit;
+			margin-bottom: 5px;
 		}
 		form.flairtoggle label[for=flair_enabled] {
 			display: inline-block;
@@ -1415,7 +1425,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			h2 {
 				margin: 16px 0px 2px 0px;
 			}
-			h3 a {
+			h3 a, h4 a {
 				padding: 12px 16px;
 				width: 100%;
 				border-radius: 2px;
@@ -1435,19 +1445,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 					background-color: $color_ButtonBGActive;
 					box-shadow: 0px 4px 12px $color_headline3LinkActiveBoxShadow;
 				}
-			}
-			h4 a {
-				padding: 12px 16px;
-				background-color: $color_white;
-				border: 1px solid $color_wikiPageContentHeadline4Border;
-				border-radius: 2px;
-				box-shadow: 0px 2px 5px $color_headline4LinkBoxShadow;
-				color: $color_wikiPageContentHeadline4Font;
-				font-weight: bold;
-				transition: all 0.15s ease;
-				display: block;
-				margin: 1.5em 0em;
-				font-size: 12px;
 			}
 		}
 
@@ -1596,6 +1593,30 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			&.dislikes {
 				color: $color_linkScoresDislike;
 			}
+		}
+	}
+
+	.linklisting .link {		
+		border: 9px solid #fff;
+		border-width: 9px 12px;
+		border-image: url(%%content-box-border-image%%) 13 16 stretch;
+		&.stickied {
+			border: 14px solid #fff;
+			border-width: 14px 17px;
+			border-image: url(%%prominent-content-box-border-image%%) 18 21 stretch;			
+		}
+
+		.entry {
+			padding: 8px 0px 4px 0px;
+			border-bottom: none;
+		}
+
+		.thumbnail {
+			margin: 11px 16px 0px 0px;
+		}
+
+		.midcol {
+			margin: 10px 14px 0px 11px;
 		}
 	}
 
@@ -3821,7 +3842,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.footer {
-		border: 0px solid;
+		border: 9px solid #fff;
+    	border-width: 9px 12px;
+    	border-image: url(%%content-box-border-image%%) 13 16 stretch;
+    	background-color: $color_darkGray;
 	}
 
 	.res {
@@ -4623,10 +4647,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		top: 342px;
 	}
 
-	.morelink {
-		top: 394px;
-	}
-
 	#header-bottom-left {
 		top: 278px;
 	}
@@ -4635,7 +4655,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color: $color_headerTabmenuLinkHover;
 	}
 
-	.morelink, .titlebox .fancy-toggle-button .add, .morelink:after, .content .infobar {
+	.titlebox .fancy-toggle-button .add, .content .infobar {
 		background-color: $color_wineRed;
 	}
 
@@ -4659,7 +4679,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color: $color_wineRed;
 	}
 
-	.morelink:hover, .submit-page #newlink.submit.content .tabmenu.formtab .selected a:hover, .btn:hover, button:hover, .side .titlebox .md h3 a:hover {
+	.submit-page #newlink.submit.content .tabmenu.formtab .selected a:hover, .btn:hover, button:hover, .side .titlebox .md h3 a:hover {
 		background-color: $color_moreLinkBG;
 	}
 
@@ -4670,7 +4690,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.morelink:active, .side .titlebox .md h3 a:active, .btn:active, button:active {
+	.side .titlebox .md h3 a:active, .btn:active, button:active {
 		background-color: $color_moreLinkActiveBG;
 	}
 
@@ -4793,10 +4813,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.side:after {
-		content: "CSS Theme via /r/Naut";
-	}
-
 	#header .tabmenu li a:hover, .pagename a:hover {
 		background-color: $color_headerTabmenuLinkHoverLigth;
 	}
@@ -4876,9 +4892,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.side {
 		background-color: $color_darkGray;
-		.titlebox .md h4 a {
-			background-color: $color_darkGray;
-		}
 	}
 
 	.wiki-page .wiki-page-content .md.wiki h4 .comments-page .side .linkinfo, .commentarea .thing, .stylesheet-customize-container .pretty-form, #images, .submit-page .roundfield, .linefield, .btn, button, .drop-choices, .hover-bubble, .search-page .searchpane, .content.submit .info-notice, .submit-page #newlink.submit.content .tabmenu.formtab a {
@@ -4950,7 +4963,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.link .entry, .side .titlebox .md h4 a, .wiki-page .wiki-page-content .md.wiki h4, .link .usertext .md, input:not([type="submit"]), textarea, .btn, button {
+	.link .entry, .wiki-page .wiki-page-content .md.wiki h4, .link .usertext .md, input:not([type="submit"]), textarea, .btn, button {
 		border-color: $color_inputBorderDark;
 	}
 
@@ -4987,8 +5000,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.search-page #search input[type=text], .footer .col {
+	.search-page #search input[type=text] {
 		border-color: $color_inputBorderDark;
+	}
+	.footer .col {
+		border-color: darken($color_inputBorderDark,10);	
 	}
 
 	.linefield {
@@ -5092,7 +5108,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.side .titlebox .md h4 a, .wiki-page .wiki-page-content .md.wiki h4 {
+	.wiki-page .wiki-page-content .md.wiki h4 {
 		color: $color_titleBoxVisitedFont;
 	}
 
@@ -5125,24 +5141,81 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				top: -1px;
 			}
 		}
-		a.helplink {
-			min-height: 14px;
-			margin-top: 1px;
 
-			&:before {
-				width: 16px;
-				height: 14px;				
-				margin: -1px 4px 0 0;
-				content: " ";
+		a.helplink {			
+			position: absolute;
+		    margin-top: 60px;
+		    z-index: 200;
+		    right: 121px;
+		    font-size: 10px;
+		    line-height: 20px;
+		    font-size:0;
+
+			&:before {				
+				width: 25px;
+			    height: 17px;
+			    margin: 2px 6px 0 0;
+			    content: " ";
+			    display: block;
+			    float: left;
+			    background-image: url(%%message%%)!important;
+			    background-repeat: no-repeat!important;
+			    background-color: transparent;
+			    transition: all .25s ease;
+			    opacity: 1;
+			    background-size: contain;
+			    border-radius: 3px;
+
+			    box-shadow: 0 0 0 rgba(228, 30, 16, 0.5);
+  				animation: pulse 2s infinite;
+			}
+			&:after {
 				display: block;
-				float: left;
-				background-image: url(%%sprite-alternate%%) !important;
-				background-repeat: no-repeat !important;
-				background-color: transparent;
-				transition: all 0.25s ease;
-				background-position: -32px -0px;
-				opacity: .8;
-			}			
+				content: "message the moderators";
+				width: 150px;
+				height: 20px;
+				font-size: 10px;
+				float: right;
+				line-height: 12px;
+				padding: 4px;
+			}
+
+			&:hover:after {
+				
+			}
+		}
+	}
+
+	@-webkit-keyframes pulse {
+		0% {
+			-webkit-box-shadow: 0 0 0 0 rgba(228, 30, 16, 0.4);
+			opacity: .8;
+		}
+		70% {
+			-webkit-box-shadow: 0 0 0 6px rgba(228, 30, 16, 0);
+			opacity: 1;
+		}
+		100% {
+			-webkit-box-shadow: 0 0 0 0 rgba(228, 30, 16, 0);
+			opacity: 1;
+		}
+	}
+
+	@keyframes pulse {
+		0% {
+			-moz-box-shadow: 0 0 0 0 rgba(228, 30, 16, 0.5);
+			box-shadow: 0 0 0 0 rgba(228, 30, 16, 0.5);
+			opacity: .8;
+		}
+		70% {
+			-moz-box-shadow: 0 0 0 6px rgba(228, 30, 16, 0);
+			box-shadow: 0 0 0 6px rgba(228, 30, 16, 0);
+			opacity: 1;
+		}
+		100% {
+			-moz-box-shadow: 0 0 0 0 rgba(228, 30, 16, 0);
+			box-shadow: 0 0 0 0 rgba(228, 30, 16, 0);
+			opacity: 1;
 		}
 	}
 
@@ -5150,30 +5223,32 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		//position: relative;
 	}
 
-	.side .titlebox .md h2{
+	.side .titlebox .md h2, .side .sidecontentbox div.title h1 {
 		position: relative;
 		color: $color_white;
 		text-shadow: none;
-		padding: 6px 16px;
-		margin: 6px -16px 10px -25px;
-		border: medium none;
-		font-size: 16px;
-		//background: transparent linear-gradient(to bottom, #C3352B 0%, #B93229 50%, #A62D25 51%, #9C2A22 100%) repeat scroll 0% 0%;
-		background: transparent linear-gradient(to bottom, $color_wineRed 0%, $color_gradient50 50%,$color_gradient51 51%, $color_gradient100 100%) repeat scroll 0% 0%;
-
-		&::before {
-			display: block;
-			content: "";
-			width: 0px;
-			height: 0px;
-			border-top: 6px solid transparent;
-			border-bottom: 6px solid transparent;
-			border-left: 6px solid $color_sideTitleboxHeadline2BeforeBorder;
-			transform: rotate(-45deg);
+		padding: 0;
+		margin: 10px -16px 10px -25px;
+		border: none;
+		font-size: 16px;		
+		background: url(%%skull-header%%) no-repeat;
+		height: 54px;
+		width: 320px;
+		display: block;
+		line-height: 49px;
+		text-align: center !important;
+	}
+	.side .sidecontentbox div.title h1 {
+		text-transform: none !important;
+		color: $color_white !important;		
+	}
+	.side #moderation_tools .title  {
+		position: relative;
+		.collapse-button {
 			position: absolute;
-			left: 4px;
-			bottom: -8px;
-		}
+			top: 19px;
+			right: 18px;
+		}	
 	}
 
 	.side .titlebox .md ul {
@@ -5254,7 +5329,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		box-shadow: none;
 	}
 
-	.side .titlebox .md h4 a, .wiki-page .wiki-page-content .md.wiki h4, .side .titlebox h4 a:hover, .wiki-page .wiki-page-content .md.wiki h4:hover {
+	.wiki-page .wiki-page-content .md.wiki h4, .wiki-page .wiki-page-content .md.wiki h4:hover {
 		box-shadow: 0px 3px 8px $color_buttonBoxShadowHover;
 	}
 
@@ -5332,6 +5407,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 	/* collapsing list on hover */
 
+	/*
 	.side .md>ul:nth-of-type(1) li:first-of-type {
 		background-color: $color_wineRed;
 		color: $color_white;
@@ -5364,9 +5440,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		transition: .2s transform ease;
 		//opacity: .6;
 	}
+	*/
 
 	.side .md>ul:nth-of-type(1) li:nth-of-type(2) {
-		margin-top: 6px;
+		//margin-top: 6px;
 	}
 
 	.side .md>ul:nth-of-type(1) li {
@@ -5386,11 +5463,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	/* make 2 columns instead by letting the li's float */
 	.side .md>ul:nth-of-type(1) li:nth-of-type(3) {
-		margin-top: 6px;
+		//margin-top: 6px;
 	}
 
 	.side .md>ul:nth-of-type(1) li {
-		&:nth-child(2n+2) {
+		&:nth-child(2n+1), &:nth-child(1) {
 			float: left;
 			width: 125px;
 			margin-left: 6px;
@@ -5400,7 +5477,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			}
 		}
 
-		&:nth-child(2n+3) {
+		&:nth-child(2n+2) {
 			float: right;
 			width: 125px;
 			margin-left: 0px;
@@ -5417,6 +5494,33 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 	/* float end */
+
+	/* flair hover popups */
+	.side .md>ul:nth-of-type(1) li>ul {
+		display: none;
+	}
+	.side .md>ul:nth-of-type(1) li:hover>ul {
+		z-index: 1000;
+		display: block;		
+		position: absolute;
+		right: 330px;
+		margin: 0;
+		padding: 15px;
+		margin-top: -24px;
+		background: $color_darkGray;
+		border: 1px solid lighten($color_darkGray,10);
+
+		li {
+			max-width: 300px;
+
+			&:after {
+				display: none;
+				background: transparent;
+			}
+		}
+	}
+
+	/* flair hover end */
 
 	/* sticky box */
 	.side .md>ol:nth-of-type(1) {
@@ -5487,6 +5591,89 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	    }
 	}
 	/* sticky end */
+
+	/* subreddit rules hover popups*/
+	.side .titlebox .md h3{
+		counter-increment: h3-counter;
+		&:before {		
+			content: " "counter(h3-counter);
+		}
+	} 
+	.side .titlebox .md h4 {
+		counter-increment: h4-counter;
+		&:before {		
+			content: " "counter(h4-counter);
+		}
+	}
+
+	.side .titlebox .md h3, .side .titlebox .md h4 {
+		position: relative;
+		color: #fff;
+		font-size: 12px;
+		font-weight: normal;
+		margin: 0 10px 0 0px;
+		padding: 5px 5px 5px 30px;
+		transition: 0.3s all;
+		line-height: 16px;
+
+		&:before {
+			position: absolute;
+			width: 22px;
+			color: $color_darkGray;
+			height: 25px;
+			text-align: center;
+			line-height: 23px;
+			font-weight: bold;
+			font-size: 11px;
+			display: inline;
+			border-radius: 1px;
+			margin-left: -30px;
+			margin-top: -4px;
+			background-image: url(%%shield-icon%%);
+			background-repeat: no-repeat;
+			background-size: contain;
+			text-shadow: 0px 0px 1px $color_wineRed;
+		}
+
+		a {
+			background: initial;
+			box-shadow: initial;
+			display: inline;
+			padding: 0px;
+			margin: 0px;
+			color: $color_wineRed;
+
+			&:hover {
+				background: initial;
+				box-shadow: initial;
+			}
+		}
+
+		& + blockquote {
+			display: none;
+
+			ul {
+				list-style-type: disc;
+			}
+		}
+
+		&:hover + blockquote {
+			display: block;
+			width: 300px;
+			padding: 15px;
+			position: absolute;
+			right: 310px;
+			color: $color_white;
+			margin-top: -26px;
+			margin-right: 20px;
+			font-weight: normal;
+			background: $color_darkGray;
+			border: 1px solid lighten($color_darkGray,10);
+			z-index: 2000;
+		}
+	}
+
+	/* subreddit rules hover end */
 
 	.side .md [href*="search?q=flair"]{
 		display:inline-block;
@@ -5587,6 +5774,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
     	pointer-events: none;
     	opacity: .4;
 	}
+	.side li:nth-child(1) .author {
+		margin-top: 20px;
+		display: inline-block;
+	}
 
 	// https://www.reddit.com/r/Enhancement/comments/4pj28n/collapse_post_like_in_roverwatch/
 	.commentarea .thing.noncollapsed, .res .commentarea .thing.noncollapsed, html.res-commentBoxes.res-commentBoxes-rounded .comment.noncollapsed {
@@ -5604,65 +5795,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			color: $color_white;
 		}
 	}
-
-	// console posts link addon
-	// this addon uses the first <p> found in the sidebar and display it at the top of the post are
-
-	/*
-	.side .titlebox .md {
-		position: static;
-	}
-	.side .md>p:nth-of-type(1) a {
-		position: absolute;
-		top: 350px;
-		left: 32px;
-		z-index: 1;
-		display: inline;
-		background: transparent;
-		min-width: initial;
-		font-size: 18px;
-		font-weight: normal;
-	}
-
-	.listing-page .sitetable {
-		padding-top: 37px;
-		background-color: $color_darkGray;
-		border-radius: 2px 2px 0px 0px;
-		position: relative;
-		z-index: 0;
-	}
-
-	.content>span {
-		background: $color_black;
-		z-index: 100;
-		position: relative;
-		height: 35px;
-		display: inline-block;
-	}
-
-	.comments-page .link {
-		position: relative;
-		z-index: 1;
-	}
-
-	.stylesheet-customize-container .pretty-form {
-		padding-top: 40px;
-	}
-
-	.menuarea .subreddit-rules-page, .fancy-settings {
-		background-color: $color_black;
-		z-index: 1;
-		position: relative;
-	}
-
-	.fancy-settings .pretty-form {
-
-	}
-
-	.subreddit-rules-page, .fancy-settings {
-		margin-right: 316px;
-	}
-	*/
 }
 
 // -- lazy approach to implement different themes --

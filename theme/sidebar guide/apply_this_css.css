@@ -35,7 +35,27 @@ ul, ol {
     margin-bottom: 0 !important;
     margin-top: 0 !important;
     padding-top: .16001rem !important;
+	padding-left: 1.5rem;
 }
+
+li ul {
+	padding-left: 0.5rem;	
+}
+
 p, pre {
 	margin-bottom: .13999rem !important;
+}
+
+li p, li pre {
+	padding: 0;
+	margin: 0;
+	background: initial;
+	border: none;
+}
+
+li p code, li pre code {
+	font-size: 12px !important;
+	padding: 5px;
+	background: #423f3f;
+	color: white;
 }

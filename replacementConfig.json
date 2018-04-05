@@ -65,7 +65,7 @@
 		},
 		{
 			"placeholder": "sidebar-guide",
-			"url": "https://b.thumbs.redditmedia.com/XBiIKQLUnNHmj_oO2X5EHwvk-J9FvwvDqU-AMeuR-7c.png"
+			"url": "https://a.thumbs.redditmedia.com/zgXRO_liVl-1ztpFhWq-9wojrxqyeQH3vnOkAxMDQ24.png"
 		},
 		{
 			"placeholder": "cloudy-bg",
@@ -74,6 +74,38 @@
 		{
 			"placeholder": "special-user-flair-sprite",
 			"url": "https://b.thumbs.redditmedia.com/HHf51h_4M17tZUd6Za4piZALpAM2fWjhRVL2uWRpTGk.png"
+		},
+		{
+			"placeholder": "sidebar-corners",
+			"url": "https://b.thumbs.redditmedia.com/fgQumnZk-kVq-3d9lXoT5V2HOHTX-gzk-PTq62yT3ms.png"
+		},
+		{
+			"placeholder": "prominent-content-box-border-image",
+			"url": "https://a.thumbs.redditmedia.com/Urq1GTIvJoqsbRDnqYaur_RDFSK_iCcA9GExgASd9F4.png"
+		},
+		{
+			"placeholder": "content-box-border-image",
+			"url": "https://b.thumbs.redditmedia.com/d__czh5R8zEbkIvaSv0ZTh4538zmNd1LdJeT96vZOMw.png"
+		},
+		{
+			"placeholder": "content-box-border-image-nocorner",
+			"url": "https://b.thumbs.redditmedia.com/8mbXzEGE2rliIm4okMfycdF87zuFw6XoAljz6CONefg.png"
+		},
+		{
+			"placeholder": "skull-header",
+			"url": "https://b.thumbs.redditmedia.com/xJuHNL42GTBDlL4ZAW4sEm_ZTHmpL_vUvpHG2GH_ePg.png"
+		},
+		{
+			"placeholder": "message",
+			"url": "https://b.thumbs.redditmedia.com/Q14nzrk0d7LtU84sEyCD8wd_IOhycUW__Tk-WIGCdyg.png"
+		},
+		{
+			"placeholder": "shield-icon",
+			"url": "https://b.thumbs.redditmedia.com/onitvN04i30prPdNND-NA1NTmRBOvGPHMt8A99z84XA.png"
+		},
+		{
+			"placeholder": "submit-button",
+			"url": "https://b.thumbs.redditmedia.com/J-lFGoHUe5rWHu92g8vlmCvmJJ15FESkOTAPmnubcEo.png"
 		}
 	]
 }

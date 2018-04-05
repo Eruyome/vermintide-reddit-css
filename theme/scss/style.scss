@@ -1143,7 +1143,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background-image: none;			
 			color: $color_stickyBoxLink;
 			font-weight: normal;
-			font-size: 16px;
+			font-size: 0px;
 			letter-spacing: 0px;
 			text-align: center;
 		}
@@ -1162,6 +1162,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			transition: all 0.25s ease;
 			transition-delay: 0s;
 			font-weight: normal;
+			font-size: 16px;
 			line-height: 1.2em;
 			visibility: hidden;
 			pointer-events: none;
@@ -1599,11 +1600,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.linklisting .link {		
 		border: 9px solid #fff;
 		border-width: 9px 12px;
-		border-image: url(%%content-box-border-image%%) 13 16 stretch;
+		border-image: url(%%content-box-border-image%%) 13 16 stretch !important;
 		&.stickied {
 			border: 14px solid #fff;
 			border-width: 14px 17px;
-			border-image: url(%%prominent-content-box-border-image%%) 18 21 stretch;			
+			border-image: url(%%prominent-content-box-border-image%%) 18 21 stretch !important;			
 		}
 
 		.entry {
@@ -1871,13 +1872,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.linkflair-showcase .linkflairlabel {
+	.linkflair-gameplay .linkflairlabel {
 		background-color: $color_linkFlairLabelGameplay !important;
 		a {
 			//color: $color_linkFlairLabelGameplay !important;
 		}
 	}
-
 
 	.linkflair-solved .linkflairlabel {
 		background-color: $color_linkFlairLabelSolved !important;
@@ -5377,7 +5377,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.thing .entry.res-selected .md-container,
 	.usertext .entry.res-selected,
 	.usertext .entry.res-selected .md-container {
-		background: $color_dropdownLightBoxShadow !important;
+		//background: $color_dropdownLightBoxShadow !important;
+		background: transparent !important;
 	}
 
 	/* color overwrites */
@@ -5495,6 +5496,36 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 	/* float end */
 
+	/* meme button */
+	.side .md h5:nth-of-type(1) {
+		clear: both;
+		margin-top: 10px;
+		background-image: url(%%meme-button%%);
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+		width: 252px;
+		height: 58px;
+		font-size: 0;
+
+		&:hover {
+			background-position: 0px -60px;
+		}
+
+		a[href*="ft.reddit.com/r/vermintide/#ft"], a[href*="www.reddit.com/r/vermintide"] {
+			width: 120px;
+			height: 57px;
+			min-width: 120px;	
+			display: inline-block;	
+		}
+		a[href*="ft.reddit.com/r/vermintide/#ft"] {
+			float: right;
+		}
+		a[href*="www.reddit.com/r/vermintide"] {
+			float: left;
+		}		
+	}
+	/* meme button end */
+
 	/* flair hover popups */
 	.side .md>ul:nth-of-type(1) li>ul {
 		display: none;
@@ -5507,7 +5538,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		margin: 0;
 		padding: 15px;
 		margin-top: -24px;
-		background: $color_darkGray;
+		background: darken($color_darkGray,3);
 		border: 1px solid lighten($color_darkGray,10);
 
 		li {
@@ -5519,7 +5550,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			}
 		}
 	}
-
 	/* flair hover end */
 
 	/* sticky box */
@@ -5667,7 +5697,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			margin-top: -26px;
 			margin-right: 20px;
 			font-weight: normal;
-			background: $color_darkGray;
+			background: darken($color_darkGray,3);
 			border: 1px solid lighten($color_darkGray,10);
 			z-index: 2000;
 		}

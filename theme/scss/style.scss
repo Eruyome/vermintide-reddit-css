@@ -2808,7 +2808,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.comments-page .link {
+	.comments-page .link {		
+		border: initial !important;
 		border-radius: 2px 2px 0px 0px;
 		.entry {
 			border-bottom: none;
@@ -4679,7 +4680,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color: $color_wineRed;
 	}
 
-	.submit-page #newlink.submit.content .tabmenu.formtab .selected a:hover, .btn:hover, button:hover, .side .titlebox .md h3 a:hover {
+	.btn:hover, button:hover {
+		//background-color: $color_moreLinkBG;
+		// this "breaks" the report window "next" button background
+	}
+	.submit-page #newlink.submit.content .tabmenu.formtab .selected a:hover, .side .titlebox .md h3 a:hover {
 		background-color: $color_moreLinkBG;
 	}
 
@@ -5343,7 +5348,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.btn, button {
-		background-color: $color_dropdownLightBoxShadow;
+		//background-color: $color_dropdownLightBoxShadow;
 		cursor: pointer;
 	}
 
@@ -5499,7 +5504,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	/* meme button */
 	.side .md h5:nth-of-type(1) {
 		clear: both;
-		margin-top: 10px;
+		margin: 0 auto;
 		background-image: url(%%meme-button%%);
 		background-position: 0px 0px;
 		background-repeat: no-repeat;

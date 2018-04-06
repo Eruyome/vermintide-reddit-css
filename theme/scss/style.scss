@@ -1914,6 +1914,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			//color: $color_linkFlairLabelUmgak !important;
 		}
 	}
+	html:lang(ft) .linkflair-umgak {
+		display:none !important;
+	}
 
 	.linkflair-discussion .linkflairlabel {
 		background-color: $color_linkFlairLabelDiscussion !important;
@@ -2381,6 +2384,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.thing.stickied {
 		border-radius: 2px 2px 0px 0px;
+		background-color: darken($color_darkGray,5);
 		a {
 			&.title {
 				color: $color_linkFlairLabelMod !important;
@@ -5608,10 +5612,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			display: inline-block;	
 		}
 		a[href*="ft.reddit.com/r/vermintide/#ft"] {
-			float: right;
+			float: left;
 		}
 		a[href*="www.reddit.com/r/vermintide"] {
-			float: left;
+			float: right;
 		}		
 	}
 	/* meme button end */

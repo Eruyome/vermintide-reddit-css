@@ -774,7 +774,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		left: 16px;
 
 		border: 4px solid #fff;
-    	border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch;
+    	border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
     	background-color: darken($color_darkGray,5);
 
 		&:before, &:after, &>ul:before, &>ul:after {
@@ -815,7 +815,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		margin: 0px;
 		li a {
 			display: inline-block;
-			margin: 0px 4px;
+			margin: 0px 0px;
 			padding: 16px 16px;
 			background-color: transparent;
 			border: 0px;
@@ -833,6 +833,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		.tb-metrics, .tb-queuetools-tab, .res-tabmenu-button {
 			a {
 				font-size: 11px !important;
+				padding-left: 8px;
+				padding-right: 8px;
 			}
 		}
 	}
@@ -859,7 +861,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.listing-page .tabmenu li:nth-of-type(3), .wiki-page .tabmenu li:nth-of-type(3), .listing-page .tabmenu li:nth-of-type(4), .wiki-page .tabmenu li:nth-of-type(4), .listing-page .tabmenu li:nth-of-type(6), .wiki-page .tabmenu li:nth-of-type(6) {
+	.listing-page .tabmenu li:nth-of-type(4), .wiki-page .tabmenu li:nth-of-type(4), .listing-page .tabmenu li:nth-of-type(6), .wiki-page .tabmenu li:nth-of-type(6) {
 		display: none;
 	}
 
@@ -897,7 +899,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	#header-bottom-right {
+	#header #header-bottom-right, #header .res #header-bottom-right {
 		position: absolute;
 		top: 0px;
 		right: 0px;
@@ -908,6 +910,39 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		font-size: 11px;
 		color: $color_headerBottomFont;
 		padding: 5px 8px 4px 2px;
+
+		background-image: url(%%skull-bar-small%%);
+		background-repeat: no-repeat;
+		height: 37px;
+		top: 205px;
+		right: 30px;
+		max-width: 500px;
+		background-size: cover;
+		padding: 7px 0 0 2px;
+		background-position: 0 0;
+
+		&:before, &:after {
+			display: block;
+			content: "";
+			width: 28px;
+			height: 37px;
+			position: absolute;
+			background-image: url(%%skull-bar-small%%);
+			background-repeat: no-repeat;
+			top: 1px;
+		}
+		&:before {
+			background-position: 0px -39px;
+			left: -28px;
+		}
+		&:after {
+			background-position: -30px -39px;
+			right: -28px;
+		}
+		.beta-hint a {
+			margin-left: -17px;
+			margin-top: 5px;
+		}
 	}
 
 	body:not(.loggedin) #header-bottom-right {
@@ -3981,7 +4016,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.footer {
 		position: relative;
 		border: 4px solid #fff;
-    	border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch;
+    	border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
     	background-color: $color_darkGray;
 
     	&:before, &:after, & div:last-of-type:before, & div:last-of-type:after {
@@ -4202,7 +4237,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.gearIcon {
 		background: url(%%sprite-alternate%%) 0px 0px !important;
 		position: relative;
-		top: 2px;
+		top: 4px;
 		transition: all 0.25s ease;
 	}
 
@@ -5636,10 +5671,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	/* make 2 columns instead by letting the li's float */
-	.side .md>ul:nth-of-type(1) li:nth-of-type(3) {
-		//margin-top: 6px;
-	}
-
 	.side .md>ul:nth-of-type(1) li {
 		&:nth-child(2n+1), &:nth-child(1) {
 			float: left;

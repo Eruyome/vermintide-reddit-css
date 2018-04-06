@@ -869,6 +869,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		margin: 200px 16px 0px 0px;
 		padding: 6px 12px;
 		background-color: $color_white;
+	}
+	.side, .comments-page .side .linkinfo {
 		border-radius: 2px;
 		box-shadow: 0px 1px 5px $color_boxshadow;
 
@@ -876,7 +878,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-repeat: no-repeat;
 		border-width: 4px 4px;
 		border: 4px solid #fff;
-		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch;
+		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 
 		&:before, &:after {
 			content: "";
@@ -896,6 +898,20 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			transform: rotate(180deg);
 			-webkit-transform: rotate(180deg);
 			margin-top: -17px;
+		}
+	}
+	.comments-page .side:before {
+		top: 581px;
+	}
+	.comments-page .side .linkinfo {
+		&:before {
+			top: -5px;	
+			right: -5px;		
+		}
+		&:after {			
+			margin-top: 0px;
+			bottom: -5px;
+			right: -5px;		
 		}
 	}
 
@@ -3379,7 +3395,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.comments-page .side {
-		margin-top: 312px;
+		margin-top: 322px;
 		.linkinfo {
 			position: absolute;
 			right: 16px;
@@ -3387,9 +3403,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			padding: 16px;
 			width: 300px;
 			background-color: $color_white;
-			border-radius: 2px;
-			box-shadow: 0px 1px 5px $color_boxshadow;
-			border: none;
 			.date {
 				color: $color_linkDomain;
 				&:first-letter {
@@ -3407,7 +3420,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.res.comments-page .side {
-		margin-top: 326px;
+		margin-top: 336px;
 	}
 
 	.submit_text .md {
@@ -4922,11 +4935,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.comments-page .side {
-		margin-top: 558px;
+		margin-top: 568px;
 	}
 
 	.res .comments-page .side {
-		margin-top: 572px;
+		margin-top: 582px;
 	}
 
 	.comments-page .side .linkinfo {

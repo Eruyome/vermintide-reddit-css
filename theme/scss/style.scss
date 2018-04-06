@@ -1597,14 +1597,41 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.linklisting .link {		
-		border: 9px solid #fff;
-		border-width: 9px 12px;
-		border-image: url(%%content-box-border-image%%) 13 16 stretch !important;
-		&.stickied {
-			border: 14px solid #fff;
-			border-width: 14px 17px;
-			border-image: url(%%prominent-content-box-border-image%%) 18 21 stretch !important;			
+	/* linklisting border + corner and RES fixes */
+	.listing-page .sitetable {
+		border: 4px solid #fff;		
+		border-width: 4px 4px;
+		background-color: $color_darkGray;		
+		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+
+		&:before, &:after {
+			content: "";
+			display: block;
+			position: absolute;
+			background-image: url(%%corner%%);
+			background-repeat: no-repeat;
+			width: 27px;
+			height: 27px;
+		}
+		&:before {
+			top: -5px;
+    		left: -5px;
+		}
+		&:after {
+			top: -5px;
+    		right: -5px;
+			transform: rotate(90deg);
+			-webkit-transform: rotate(90deg);
+		}
+	}
+
+	.linklisting .link {
+		border-width: 4px 4px;
+		border-bottom: 4px solid #fff;
+		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+
+		&:last-of-type {
+			border: none;
 		}
 
 		.entry {
@@ -1620,6 +1647,64 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			margin: 10px 14px 0px 11px;
 		}
 	}
+
+	.linklisting>div:last-of-type {
+		margin-bottom: -3px;
+		border-bottom: none;
+		&:before, &:after {
+			content: "";
+			display: block;
+			position: absolute;
+			background-image: url(%%corner%%);
+			background-repeat: no-repeat;
+			width: 27px;
+			height: 27px;
+		}
+		&:before {
+			bottom: -4px;
+    		left: -5px;
+    		transform: rotate(270deg);
+			-webkit-transform: rotate(270deg);
+		}
+		&:after {
+			bottom: -4px;
+    		right: -5px;
+			transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
+		}
+	}
+	.linklisting>.nav-buttons {
+		margin-bottom: 0px !important;
+	}
+
+	.res .sitetable .sitetable {
+		margin: 0px -3px 0px -3px !important;
+		&:before {
+			bottom: -5px;
+    		left: -5px;
+    		transform: rotate(0deg);
+			-webkit-transform: rotate(0deg);
+		}
+		&:after {
+			bottom: -5px;
+    		right: -5px;
+			transform: rotate(90deg);
+			-webkit-transform: rotate(90deg);
+		}
+
+		&>div:last-of-type {
+			margin-bottom: 0px;
+		}
+	}
+	.res .NERPageMarker {
+		background-color: $color_darkGray !important;
+	}
+	.res-ner-listing div.nav-buttons {
+		display: block;
+		margin: 0px 0px -5px 0px;
+		padding: 9px;
+	}
+	/*  linklisting border + corner and RES fixes end */
 
 	.arrow {
 		margin: 0px 0px 0px 2px;
@@ -5626,6 +5711,36 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	    }
 	}
 	/* sticky end */
+
+	
+	/* vermintide 1 - 2 distinction for links */
+	.side .titlebox em>strong>a, .side .titlebox strong>em>a  {
+		font-weight: normal;
+		font-style: normal;
+		position: relative;
+		display: inline;
+		padding-right: 20px !important;
+
+		&:after {
+			display: block;
+			width: 19px;
+			height: 16px;
+			font-size: 8px;
+			position: absolute;
+			right: -3px;
+			top: -4px;
+			color: $color_white;
+		}
+	}
+	.side .titlebox em>strong>a:after {		
+		content: "VT1";
+	}
+	.side .titlebox strong>em>a:after {
+		content: "VT2";
+	}
+
+	/* vermintide 1 - 2 distinction for links end */
+
 
 	/* subreddit rules hover popups*/
 	.side .titlebox .md h3{

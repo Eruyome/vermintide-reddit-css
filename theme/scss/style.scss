@@ -923,12 +923,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		color: $color_headerBottomFont;
 
 		background-image: url(%%skull-bar-small%%);
-		background-repeat: no-repeat;
+		background-repeat: repeat-x;
 		height: 37px;
 		top: 205px;
 		right: 30px;
 		max-width: 500px;
-		background-size: cover;
+		background-size: auto;
 		padding: 7px 0 0 2px;
 		background-position: 0 0;
 
@@ -940,7 +940,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			position: absolute;
 			background-image: url(%%skull-bar-small%%);
 			background-repeat: no-repeat;
-			top: 1px;
+			top: 0px;
 		}
 		&:before {
 			background-position: 0px -39px;
@@ -2356,6 +2356,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		li .comments:hover {
 			text-decoration: none;
 		}
+	}
+	.new-comment .md :not(pre)>code, .link .md :not(pre)>code, .usertext.border .md :not(pre)>code, .new-comment .md pre, .link .md pre, .usertext.border .md pre {
+		background-color: $color_RESDialogSmallLivePreview;
 	}
 
 	.action-form {
@@ -5548,6 +5551,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		display: block;
 		line-height: 49px;
 		text-align: center !important;
+		letter-spacing: 1px;
 	}
 	.side .sidecontentbox div.title h1 {
 		text-transform: none !important;

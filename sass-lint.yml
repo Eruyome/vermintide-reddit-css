@@ -10,7 +10,7 @@ options:
   # Output file instead of logging results
   output-file: 'sass-lint-report.html'
   # Raise an error if more than 50 warnings are generated
-  max-warnings: 100000
+  max-warnings: 100
 # File Options
 files:
   include: './theme/scss/**/*.s+(a|c)ss'
@@ -33,7 +33,6 @@ rules:
   no-invalid-hex: 1
   no-mergeable-selectors: 1
   no-misspelled-properties: 1
-  no-trailing-whitespace: 1
   no-url-protocols: 1
   one-declaration-per-line: 1
   space-after-bang: 1

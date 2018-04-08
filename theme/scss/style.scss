@@ -2139,6 +2139,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-image: url(%%sprite-alternate%%) !important;
 		border: 1px solid $color_expandoBtnBorder;
 		cursor: pointer;
+
 		&.image, &.video-muted {
 			position: relative;
 			margin: 8px 6px 2px 0 !important;
@@ -2222,6 +2223,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 					background-position: -80px -32px;
 				}
 			}
+		}
+	}
+
+	.res-freetext-expando {
+		.expando-button.image, .expando-button.video-muted, .expando-button.video {
+			margin: -3px 0 0 0 !important;
 		}
 	}
 
@@ -2712,14 +2719,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		&.RES-keyNav-activeElement {
 			background-color: transparent !important;
 			padding-left: 8px !important;
-			border-left: 2px solid $color_wineRed;
-			border-radius : 5px;
+			border-left: 1px solid darken($color_wineRed, 27);
+			border-radius: 0;
 		}
 		&.commentarea div.RES-keyNav-activeElement {
 			&.entry div.noncollapsed {
 				background-color: transparent !important;
 				padding-left: 8px !important;
-				border-left: 2px solid $color_inputBorderActive;
+				border-left: 1px solid $color_inputBorderActive;
 			}
 			.md {
 				background-color: transparent !important;
@@ -3169,7 +3176,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.gold-accent {
 		&.comment-visits-box {
-			margin: 0 0 12px 0;
+			margin: 0 0 12px 5px;
 			border-radius: 2px;
 		}
 		.title {
@@ -3248,7 +3255,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 			&:hover {
 				text-decoration: none;
-				background: $color_wineRed;
+				background: darken($color_wineRed, 30);
+				border-radius: 0;				
 				color: $color_white;
 			}
 		}
@@ -3343,7 +3351,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			padding: 8px;
 		}
 		blockquote {
-			border-left: 2px solid $color_blockquoteBorder;
+			border-left: 2px solid darken($color_blockquoteBorder, 25);
 			color: $color_blockquoteFont;
 		}
 		h1, h2 {
@@ -4182,6 +4190,26 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background-color: transparent !important;
 			color: $color_headerBottomFont !important;
 			top: 1px !important;
+		}
+	}
+	.RESUserTag {
+		.RESUserTagImage:after {
+			display: inline-block;
+			margin-top: -4px;
+			margin-right: 3px;
+		}
+	}
+	.usertext .md {
+		&>p {
+			position: relative;
+		}
+
+		a.voteWeight {
+			font-size: 0.8em;
+			line-height: 1em;
+			top: 7px;
+			background-color: transparent !important;
+			position: absolute;
 		}
 	}
 
@@ -5776,11 +5804,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 			&:hover {
 				background-color: darken($color_darkGrayTrans, 11);
-				border-color: darken($color_darkGrayTrans, 17);				
+				border-color: darken($color_darkGrayTrans, 17);
 			}
 		}
 	}
-	
 
 	.side .md>ul:nth-of-type(1) {
 		list-style-type: none;

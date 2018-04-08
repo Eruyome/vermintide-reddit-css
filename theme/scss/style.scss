@@ -9,8 +9,8 @@ $color_white : #fff;
 $color_black : #000;
 $color_stickyBoxLink : #ffdf9a;
 $color_whiteTransp : rgba(255, 255, 255, 0.6);
-$color_transp : rgba(255,255,255,0);
-$color_almostTransp : rgba(255,255,255,0.1);
+$color_transp : rgba(255, 255, 255, 0);
+$color_almostTransp : rgba(255, 255, 255, 0.1);
 $color_flairselectorBeforeBG : rgba(255, 255, 255, 0.75);
 $color_flairCommentAreaBoxShadow : rgba(0, 195, 255, 0.55);
 $color_pagenameBGHover : rgba(0, 0, 0, 0.08);
@@ -105,7 +105,7 @@ $color_gradient100 : #5F0303;
 $color_sideTitleboxHeadline2BeforeBorder : #380703;
 $color_btnHoverBoxShadow : rgba(0, 0, 0, 0.42);
 $color_newcommentBG : rgba(229, 239, 255, 0.1);
-$color_sidebarFlairList : rgba(0,0,0,0.12);
+$color_sidebarFlairList : rgba(0, 0, 0, 0.12);
 $color_sidebarFlairLinkBG : #CCC;
 $color_linkScoreLikes : #ff6422;
 $color_linkScoresDislike : #5c5bd7;
@@ -138,7 +138,7 @@ $color_linkFlairLabelGameplayGuide : saturate(darken($color_linkFlairLabelVermin
 $color_linkFlairLabelModdedContent : saturate(darken($color_linkFlairLabelVerminScience, 25), 20);
 
 /* flair group 2 */
-$color_linkFlairLabelMod : #65B354;	
+$color_linkFlairLabelMod : #65B354;
 $color_linkFlairLabelDaily : saturate(darken($color_linkFlairLabelMod, 20), 20);
 $color_linkFlairLabelNews : saturate(darken($color_linkFlairLabelMod, 30), 20);
 
@@ -324,7 +324,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.roundfield {
 		textarea {
 			box-shadow: none !important;
-			//background-color: $color_white;
 			background-color: $color_messageParent;
 			border: 1px solid $color_inputBorder;
 			color: $color_inputFont;
@@ -333,7 +332,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		input {
 			&[type=text], &[type=url], &[type=password], &[type=number] {
 				box-shadow: none !important;
-				//background-color: $color_white;
 				background-color: $color_messageParent;
 				border: 1px solid $color_inputBorder;
 				color: $color_inputFont;
@@ -399,7 +397,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		/*
 		.title {
 			&:after {
-				color: lightblue;		
+				color: lightblue;
 				display: inline-block;
 				font-family: Verdana, Arial, sans-serif;
 				text-transform: none;
@@ -417,7 +415,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				margin-bottom: 10px;
 				padding-top: 10px;
 				padding-bottom: 10px;
-				white-space: pre; 
+				white-space: pre;
 
 				$dT_01 : "[ Special sidebar formatting guide (CSS related) ]";
 				$dT_02 : "This subreddit uses some fancy CSS, which requires a specific sidebar structure.";
@@ -438,7 +436,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		/*
 			As an alternative we can insert this info as an image.
 		*/
-		
+
 		.title {
 			&:after {
 				content: " ";
@@ -571,12 +569,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.btn, button {
-		margin: 4px 16px 4px 0px;
+		margin: 4px 16px 4px 0;
 		padding: 2px 18px;
 		background-color: $color_buttonBG;
 		border: none;
 		border-radius: 2px;
-		box-shadow: 0px 1px 3px $color_mailBoxshadow;
+		box-shadow: 0 1px 3px $color_mailBoxshadow;
 		color: $color_white !important;
 		text-transform: uppercase;
 		font-weight: bold;
@@ -587,12 +585,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.btn:hover, button:hover {
-		box-shadow: 0px 2px 8px $color_buttonBoxShadow;
+		box-shadow: 0 2px 8px $color_buttonBoxShadow;
 		background-color: $color_fancyToggleButtonBGHover;
 	}
 
 	.btn:active, button:active {
-		box-shadow: 0px 1px 4px $color_boxshadow;
+		box-shadow: 0 1px 4px $color_boxshadow;
 		background-color: $color_ButtonBGActive;
 	}
 
@@ -606,13 +604,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-clip: border-box;
 		background-origin: padding-box;
 		height: 260px;
-		margin: 0px 0px -260px;
+		margin: 0 0 -260px;
 		background-size: cover;
 	}
 
 	#sr-header-area {
 		background: transparent;
-		border: 0px solid;
+		border: 0 solid;
 		transition: all 0.15s ease;
 		height: 24px;
 		line-height: 23px;
@@ -659,14 +657,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 		.sr-bar a:hover {
 			background-color: transparent;
-			border: 0px solid;
+			border: 0 solid;
 			transition: all 0.15s ease;
 		}
 	}
 
 	#sr-more-link:hover, #sr-header-area .dropdown.srdrop .selected:hover {
 		background-color: transparent;
-		border: 0px solid;
+		border: 0 solid;
 		transition: all 0.15s ease;
 	}
 
@@ -679,8 +677,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	#sr-header-area {
 		.dropdown.srdrop .selected {
-			margin: 0px 12px 0px 8px;
-			padding: 0px;
+			margin: 0 12px 0 8px;
+			padding: 0;
 			background-image: none;
 			&:hover {
 				text-decoration: underline;
@@ -696,7 +694,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			&.srdrop {
 				background-color: $color_white;
 				border: none;
-				box-shadow: 0px 2px 3px $color_dropdownBoxShadow;
+				box-shadow: 0 2px 3px $color_dropdownBoxShadow;
 			}
 			a.choice {
 				border-bottom: 1px solid $color_dropdownBorder;
@@ -713,7 +711,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		&.default-header {
 			z-index: 99;
 			width: 48px;
-			padding-left: 0px;
+			padding-left: 0;
 			height: 58px;
 			position: relative;
 			top: 4px;
@@ -721,10 +719,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 		z-index: 99;
 		width: 40px;
-		padding-left: 0px;
+		padding-left: 0;
 		height: auto;
 		position: relative;
-		top: 0px;
+		top: 0;
 		margin: 0;
 	}
 
@@ -762,7 +760,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 		border: 4px solid #fff;
 		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
-		background-color: darken($color_darkGray,5);
+		background-color: darken($color_darkGray, 5);
 
 		&:before, &:after, &>ul:before, &>ul:after {
 			display: block;
@@ -799,22 +797,21 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	#header .tabmenu {
 		border: none;
-		margin: 0px;
+		margin: 0;
 		li a {
 			display: inline-block;
-			margin: 0px 0px;
-			padding: 16px 16px;
+			margin: 0;
+			padding: 16px;
 			background-color: transparent;
-			border: 0px;
-			border-radius: 0px;
-			color: $color_whiteTransp;
+			border: 0;
+			border-radius: 0;
 			text-transform: uppercase;
 			font-weight: normal;
 			font-size: 14px;
 			font-family: Arial, sans-serif;
 			transition: color 0.25s ease, background-color 0.25s ease;
 			color: $color_white;
-			text-shadow: 0px 1px 8px $color_textShadow;
+			text-shadow: 0 1px 8px $color_textShadow;
 		}
 
 		.tb-metrics, .tb-queuetools-tab, .res-tabmenu-button {
@@ -827,7 +824,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.pagename a {
-		text-shadow: 0px 1px 8px $color_textShadow;
+		text-shadow: 0 1px 8px $color_textShadow;
 	}
 
 	#header .tabmenu li {
@@ -838,7 +835,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		&.selected a {
 			padding: 16px;
 			background-color: transparent;
-			border: 0px;
+			border: 0;
 			border-bottom: 2px solid $color_white;
 			color: $color_white;
 			font-weight: bold;
@@ -853,17 +850,17 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.side {
-		margin: 200px 16px 0px 0px;
+		margin: 200px 16px 0 0;
 		padding: 6px 12px;
 		background-color: $color_white;
 	}
 	.side, .comments-page .side .linkinfo {
 		border-radius: 2px;
-		box-shadow: 0px 1px 5px $color_boxshadow;
+		box-shadow: 0 1px 5px $color_boxshadow;
 
 		background-size: cover;
 		background-repeat: no-repeat;
-		border-width: 4px 4px;
+		border-width: 4px;
 		border: 4px solid #fff;
 		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 
@@ -879,7 +876,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		&:before {
-			top: 445px;			
+			top: 445px;
 		}
 		&:after {
 			transform: rotate(180deg);
@@ -892,13 +889,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 	.comments-page .side .linkinfo {
 		&:before {
-			top: -5px;	
-			right: -5px;		
+			top: -5px;
+			right: -5px;
 		}
-		&:after {			
-			margin-top: 0px;
+		&:after {
+			margin-top: 0;
 			bottom: -5px;
-			right: -5px;		
+			right: -5px;
 		}
 	}
 
@@ -923,7 +920,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		a.pref-lang, #mail, .logout a {
 			top: 11px;
 		}
-			
+
 		&:before, &:after {
 			display: block;
 			content: "";
@@ -932,10 +929,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			position: absolute;
 			background-image: url(%%skull-bar-small%%);
 			background-repeat: no-repeat;
-			top: 0px;
+			top: 0;
 		}
 		&:before {
-			background-position: 0px -39px;
+			background-position: 0 -39px;
 			left: -28px;
 		}
 		&:after {
@@ -995,7 +992,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.message-count {
 		background-color: $color_messageCount;
 		position: relative;
-		top: 0px;
+		top: 0;
 		line-height: 12px;
 	}
 
@@ -1006,13 +1003,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			bottom: 24px;
 			z-index: 100;
 			border-radius: 2px;
-			box-shadow: 0px 1px 5px $color_mailBoxshadow;
+			box-shadow: 0 1px 5px $color_mailBoxshadow;
 			color: $color_white;
 			width: 300px;
 			height: 48px;
 			left: 24px;
 			content: "You have new messages!";
-			text-indent: 0px;
+			text-indent: 0;
 			font-size: 14px;
 			font-family: arial, sans-serif;
 			line-height: 1;
@@ -1023,11 +1020,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 		&:hover:before {
 			background-color: $color_haveMailBGBefore;
-			box-shadow: 0px 3px 12px $color_buttonBoxShadowHover;
+			box-shadow: 0 3px 12px $color_buttonBoxShadowHover;
 		}
 		&:active:before {
 			background-color: $color_haveMailBGBeforeActive;
-			box-shadow: 0px 4px 14px $color_haveMailActiveBoxShadow;
+			box-shadow: 0 4px 14px $color_haveMailActiveBoxShadow;
 		}
 	}
 
@@ -1048,7 +1045,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		height: 14px;
 		display: inline-block;
 		text-indent: -9999px;
-		margin: 0px;
+		margin: 0;
 		position: relative;
 		top: -1px;
 		transition: all 0.25s ease;
@@ -1059,7 +1056,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		height: 14px;
 		display: inline-block;
 		text-indent: -9999px;
-		margin: 0px;
+		margin: 0;
 		position: relative;
 		top: -1px;
 		transition: all 0.25s ease;
@@ -1075,18 +1072,18 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		input {
 			&[type=text] {
 				padding: 10px 25px 10px 16px;
-				border: 0px solid;
+				border: 0 solid;
 				border-radius: 2px;
-				box-shadow: 0px 1px 5px $color_mailBoxshadow !important;
+				box-shadow: 0 1px 5px $color_mailBoxshadow !important;
 				transition: all 0.25s ease;
 				&:hover {
-					box-shadow: 0px 3px 12px $color_searchInputHoverBoxShadow !important;
+					box-shadow: 0 3px 12px $color_searchInputHoverBoxShadow !important;
 				}
 				&:focus {
-					border-radius: 2px 2px 0px 0px;
+					border-radius: 2px 2px 0 0;
 					outline: none;
 					&:hover {
-						box-shadow: 0px 1px 5px $color_mailBoxshadow !important;
+						box-shadow: 0 1px 5px $color_mailBoxshadow !important;
 					}
 				}
 			}
@@ -1122,11 +1119,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		#searchexpando {
 			background-color: $color_titleBoxTaglineBG;
 			border: none;
-			border-radius: 0px 0px 2px 2px;
+			border-radius: 0 0 2px 2px;
 			margin-top: -5px;
 			padding-top: 10px;
-			padding-left: 0px;
-			padding-right: 0px;
+			padding-left: 0;
+			padding-right: 0;
 			height: 57px;
 			line-height: 45px;
 			label {
@@ -1147,7 +1144,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.search-result-group {
-		padding-left: 0px;
+		padding-left: 0;
 		padding-right: 30px;
 		background-color: $color_darkGray;
 
@@ -1161,10 +1158,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			padding-bottom: 15px;
 			margin-bottom: 15px;
 			border-bottom: 1px solid $color_inputBorderDark;
-			a {
-				color: $color_wineRed !important;
-			}
-			a > mark {
+			a, a > mark {
 				color: $color_wineRed !important;
 			}
 
@@ -1196,15 +1190,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.morelink {
 		position: absolute;
 		border: none;
-		padding: 0px 16px;
+		padding: 0 16px;
 		font-family: verdana, arial, sans-serif;
-		
+
 		background-image: url(%%submit-button%%) !important;
 		background-repeat: no-repeat;
-		background-position: 0 0;
-		width: 317px;
 		background-color: transparent;
-		background-position: 0px 0px !important;
+		background-position: 0 0 !important;
+		width: 317px;
 		height: 58px;
 		line-height: 58px;
 		top: 383px;
@@ -1212,20 +1205,20 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		text-align: center;
 
 		&:hover {
-			background-position: 0px -60px !important;
+			background-position: 0 -60px !important;
 			a {
 				color: $color_stickyBoxLink;
 			}
 		}
 		&:active {
-			background-position: 0px -60px !important;
+			background-position: 0 -60px !important;
 		}
 		a {
-			background-image: none;			
+			background-image: none;
 			color: $color_stickyBoxLink;
 			font-weight: normal;
-			font-size: 0px;
-			letter-spacing: 0px;
+			font-size: 0;
+			letter-spacing: 0;
 			text-align: center;
 		}
 		&:after {
@@ -1234,10 +1227,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			width: 310px;
 			position: absolute;
 			right: 5px;
-			margin-top: 0px;
+			margin-top: 0;
 			display: block;
 			color: $color_white;
-			letter-spacing: 0px;
+			letter-spacing: 0;
 			z-index: 100;
 			opacity: 0;
 			transition: all 0.25s ease;
@@ -1318,15 +1311,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	div.titlebox span.number:after {
 		content: " man-things,";
 	}
-	div.titlebox span.number {
-		//width:100%;
-		//display: inline-block;
-	}
 
 	.titlebox .users-online .number {
 		font-style: italic;
-		//display: inline-block;
-		//width:100%;
+
 		&:before {
 			content: "";
 		}
@@ -1383,8 +1371,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			top: -36px;
 			border-radius: 32px;
 			background: $color_fancyToggleButtonBG url(%%sprite-alternate%%);
-			border: 0px solid;
-			box-shadow: 0px 2px 4px $color_mailBoxshadow;
+			border: 0 solid;
+			box-shadow: 0 2px 4px $color_mailBoxshadow;
 			transition: all 0.25s ease, background-position 0.25s ease, background-color 0.5s ease;
 			outline: none !important;
 		}
@@ -1398,19 +1386,19 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		right: -268px;
 		top: -36px;
 		border-radius: 32px;
-		border: 0px solid;
-		box-shadow: 0px 2px 4px $color_mailBoxshadow;
+		border: 0 solid;
+		box-shadow: 0 2px 4px $color_mailBoxshadow;
 		background: $color_fancyToggleButtonBG url(%%sprite-alternate%%);
 		transition: all 0.25s ease, background-position 0.25s ease, background-color 0.5s ease;
 		outline: none !important;
 	}
 
 	.titlebox .fancy-toggle-button .add:hover, .fancy-toggle-button .remove:hover {
-		box-shadow: 0px 3px 6px $color_buttonBoxShadowHover;
+		box-shadow: 0 3px 6px $color_buttonBoxShadowHover;
 	}
 
 	.titlebox .fancy-toggle-button .add:active, .fancy-toggle-button .remove:active {
-		box-shadow: 0px 4px 16px $color_buttonBoxShadowActive;
+		box-shadow: 0 4px 16px $color_buttonBoxShadowActive;
 	}
 
 	.titlebox .fancy-toggle-button .add {
@@ -1427,9 +1415,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-position: 105px 66px;
 		&:hover {
 			background-color: $color_actionFormListBG;
-		}
-		&:active {
-			//background: #$color_fancyToggleButtonBGHover -208px -144px;
 		}
 	}
 
@@ -1452,7 +1437,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		transition: all 0.25s ease;
 		pointer-events: none;
 		text-indent: 0;
-		box-shadow: 0px 0px 0px $color_fancyToggleButtonAfterBoxShadow;
+		box-shadow: 0 0 0 $color_fancyToggleButtonAfterBoxShadow;
 	}
 
 	.titlebox .fancy-toggle-button {
@@ -1465,7 +1450,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				margin-top: 40px;
 				color: $color_white;
 				background-color: $color_buttonBG;
-				box-shadow: 0px 1px 5px $color_mailBoxshadow;
+				box-shadow: 0 1px 5px $color_mailBoxshadow;
 			}
 		}
 		.remove {
@@ -1477,7 +1462,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				color: $color_inputFontActive;
 				background-color: $color_white;
 				margin-top: 40px;
-				box-shadow: 0px 1px 5px $color_mailBoxshadow;
+				box-shadow: 0 1px 5px $color_mailBoxshadow;
 			}
 		}
 	}
@@ -1505,7 +1490,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				margin: 0.5em 0 0 0 !important;
 			}
 			h2 {
-				margin: 16px 0px 2px 0px;
+				margin: 16px 0 2px 0;
 			}
 			h3 a, h4 a {
 				padding: 12px 16px;
@@ -1515,17 +1500,17 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				font-family: verdana, arial, sans-serif;
 				transition: all 0.25s ease;
 				color: $color_white;
-				box-shadow: 0px 1px 5px $color_mailBoxshadow;
+				box-shadow: 0 1px 5px $color_mailBoxshadow;
 				display: block;
 				margin: 1.5em 0em;
 				font-size: 12px;
 				&:hover {
 					background-color: $color_fancyToggleButtonBGHover;
-					box-shadow: 0px 2px 8px $color_headline3LinkHoverBoxShadow;
+					box-shadow: 0 2px 8px $color_headline3LinkHoverBoxShadow;
 				}
 				&:active {
 					background-color: $color_ButtonBGActive;
-					box-shadow: 0px 4px 12px $color_headline3LinkActiveBoxShadow;
+					box-shadow: 0 4px 12px $color_headline3LinkActiveBoxShadow;
 				}
 			}
 		}
@@ -1542,7 +1527,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color: $color_white;
 		border: 1px solid $color_wikiPageContentHeadline4Border;
 		border-radius: 2px;
-		box-shadow: 0px 2px 5px $color_headline4LinkBoxShadow;
+		box-shadow: 0 2px 5px $color_headline4LinkBoxShadow;
 		color: $color_wikiPageContentHeadline4Font;
 		font-weight: bold;
 		transition: all 0.15s ease;
@@ -1552,14 +1537,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.side .titlebox h4 a:hover, .wiki-page .wiki-page-content .md.wiki h4:hover {
-		box-shadow: 0px 3px 8px $color_mailBoxshadow;
+		box-shadow: 0 3px 8px $color_mailBoxshadow;
 		color: $color_inputFontActive;
 	}
 
 	.side .titlebox h4 a:active, .wiki-page .wiki-page-content .md.wiki h4:active {
 		background-color: $color_inputBorder;
 		color: $color_wikiPageContentHeadline4ActiveFont;
-		box-shadow: 0px 6px 12px $color_wikiPageContentHeadline4ActiveBoxShadow;
+		box-shadow: 0 6px 12px $color_wikiPageContentHeadline4ActiveBoxShadow;
 	}
 
 	.md hr {
@@ -1585,7 +1570,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 		.sidecontentbox .content {
 			border: none;
-			padding: 8px 0px;
+			padding: 8px 0;
 		}
 	}
 
@@ -1599,7 +1584,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	#ad_sponsorship {
 		margin-top: -18px;
-		border-radius: 2px 2px 0px 0px;
+		border-radius: 2px 2px 0 0;
 	}
 
 	.gadget .midcol {
@@ -1607,15 +1592,15 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.content {
-		margin: 96px 16px 0px 16px;
-		padding: 0px;
+		margin: 96px 16px 0 16px;
+		padding: 0;
 		&:before {
 			height: 166px;
-			top: 0px;
+			top: 0;
 			position: absolute;
 			width: 100%;
-			left: 0px;
-			right: 0px;
+			left: 0;
+			right: 0;
 			background: none;
 			content: "";
 			text-indent: -9999px;
@@ -1631,7 +1616,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.sitetable {
 		margin-right: 316px;
-		box-shadow: 0px 1px 5px $color_boxshadow;
+		box-shadow: 0 1px 5px $color_boxshadow;
 		position: relative;
 
 		.message-parent {
@@ -1649,7 +1634,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.link {
-		margin: 0px;
+		margin: 0;
 		padding: 0;
 		background-color: $color_white;
 	}
@@ -1661,14 +1646,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.link {
 		.midcol {
 			width: 36px !important;
-			margin: 15px 14px 0px 11px;
+			margin: 15px 14px 0 11px;
 			overflow: visible;
 			height: 60px;
 		}
 		.score {
 			line-height: 16px;
 			font-size: 12px;
-			margin: 1px 0px 1px 0px;
+			margin: 1px 0;
 			&.likes {
 				color: $color_linkScoreLikes;
 			}
@@ -1684,9 +1669,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.listing-page .sitetable, .wiki-page-content {
-		border: 4px solid #fff;		
-		border-width: 4px 4px;
-		background-color: $color_darkGray;		
+		border: 4px solid #fff;
+		border-width: 4px;
+		background-color: $color_darkGray;
 		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 
 		&:before, &:after {
@@ -1711,7 +1696,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.linklisting .link {
-		border-width: 4px 4px;
+		border-width: 4px;
 		border-bottom: 4px solid #fff;
 		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 
@@ -1720,16 +1705,16 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		.entry {
-			padding: 8px 0px 4px 0px;
+			padding: 8px 0 4px 0;
 			border-bottom: none;
 		}
 
 		.thumbnail {
-			margin: 11px 16px 0px 0px;
+			margin: 11px 16px 0 0;
 		}
 
 		.midcol {
-			margin: 10px 14px 0px 11px;
+			margin: 10px 14px 0 11px;
 		}
 	}
 
@@ -1759,11 +1744,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 	.linklisting>.nav-buttons {
-		margin-bottom: 0px !important;
+		margin-bottom: 0 !important;
 	}
 
 	.res .sitetable .sitetable {
-		margin: 0px -3px 0px -3px !important;
+		margin: 0 -3px !important;
 		&:before {
 			bottom: -5px;
 			left: -5px;
@@ -1778,7 +1763,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		&>div:last-of-type {
-			margin-bottom: 0px;
+			margin-bottom: 0;
 		}
 	}
 	.res .NERPageMarker {
@@ -1786,13 +1771,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 	.res-ner-listing div.nav-buttons {
 		display: block;
-		margin: 0px 0px -5px 0px;
+		margin: 0 0 -5px 0;
 		padding: 9px;
 	}
 	/*  linklisting border + corner and RES fixes end */
 
 	.arrow {
-		margin: 0px 0px 0px 2px;
+		margin: 0 0 0 2px;
 		background-image: url(%%sprite-alternate%%) !important;
 		background-color: transparent;
 		width: 33px;
@@ -1803,12 +1788,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 		&.up {
 			height: 20px;
-			background-position: -64px 0px;
+			background-position: -64px 0;
 			transition: background-color 0.25s ease;
 		}
 		&.upmod {
 			height: 20px;
-			background-position: -128px 0px;
+			background-position: -128px 0;
 			position: relative;
 			&:focus:after {
 				position: absolute;
@@ -1827,12 +1812,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 		&.down {
 			height: 20px;
-			background-position: -160px 0px;
+			background-position: -160px 0;
 			transition: background-color 0.25s ease;
 		}
 		&.downmod {
 			height: 20px;
-			background-position: -224px 0px;
+			background-position: -224px 0;
 		}
 		&.down {
 			&:after {
@@ -1844,9 +1829,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				margin-left: 32px;
 				padding: 12px;
 				background-color: darken($color_darkGray, 5);
-				border: 1px solid lighten($color_darkGray,5);
-				border: none;
-				border-radius: 0px;
 				color: $color_transp;
 				content: "For content that does not contribute to any discussion.";
 				text-align: center;
@@ -1856,8 +1838,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				transition: all 0.25s ease;
 				pointer-events: none;
 
-				border-width: 4px 4px;
-				border: 4px solid #fff;
+				border-width: 4px;
+				border: 4px solid $color_white;
 				border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 			}
 			&:hover:after {
@@ -1871,7 +1853,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.thumbnail {
 		max-width: 64px;
 		max-height: 56px;
-		margin: 16px 16px 0px 0px;
+		margin: 16px 16px 0 0;
 		a img, &.self, &.default {
 			height: 56px;
 		}
@@ -1887,10 +1869,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.linkflairlabel {
-		padding: 1px 6px 1px 6px;
+		padding: 1px 6px;
 		height: 17px;
 		border-radius: 2px;
-		border: 0px solid;
+		border: 0 solid;
 		color: $color_white;
 		font-weight: bold;
 		font-style: normal;
@@ -1906,7 +1888,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.linkflairlabel {
 		color: $color_white;
-		padding: 2px 4px 0px 4px;
+		padding: 2px 4px 0 4px;
 		font-size: 12px;
 		font-weight: bold;
 		font-style: normal;
@@ -1916,14 +1898,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		vertical-align: middle;
 		top: -2px;
 		background-color: $color_linkFlairLabel;
-		text-shadow: 0px 0px 5px #0a0a0a;
+		text-shadow: 0 0 5px #0a0a0a;
 		margin-left: 1px;
 
 		background-image: url(%%cloudy-bg%%);
 		background-size: cover;
-		border-radius: 0px;
+		border-radius: 0;
 		border: 1px solid #5d5858;
-		box-shadow: 0px 0px 0px 1px rgb(23, 22, 22);
+		box-shadow: 0 0 0 1px rgb(23, 22, 22);
 	}
 
 	.linkflair-inspiration {
@@ -2004,7 +1986,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 	html:lang(ft) .linkflair-umgak {
-		display:none !important;
+		display: none !important;
 	}
 
 	.linkflair-discussion .linkflairlabel {
@@ -2092,7 +2074,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.link .title {
-		margin: -2px 0px 0px 0px;
+		margin: -2px 0 0 0;
 		font-size: 18px;
 		font-family: Arial, sans-serif;
 		overflow: visible;
@@ -2104,7 +2086,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.link .entry {
-		padding: 15px 32px 14px 0px;
+		padding: 15px 32px 14px 0;
 		border-bottom: 1px solid $color_titleBoxTaglineBG;
 		margin-left: 0;
 	}
@@ -2149,7 +2131,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.expando-button {
 		position: relative;
-		margin: 8px 6px 2px 0px !important;
+		margin: 8px 6px 2px 0 !important;
 		width: 16px;
 		height: 16px;
 		border-radius: 2px;
@@ -2159,7 +2141,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		cursor: pointer;
 		&.image, &.video-muted {
 			position: relative;
-			margin: 8px 6px 2px 0px !important;
+			margin: 8px 6px 2px 0 !important;
 			width: 16px !important;
 			height: 16px !important;
 			border-radius: 2px;
@@ -2248,9 +2230,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding-top: 3px;
 		padding-left: 0;
 		background-color: transparent;
-		border: 0px solid;
+		border: 0 solid;
 		border-top: 1px solid $color_linkDomain;
-		border-radius: 0px;
+		border-radius: 0;
 		color: $color_inputFontActive;
 	}
 
@@ -2366,7 +2348,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding: 24px;
 		background-color: $color_white;
 		z-index: 100;
-		box-shadow: 0px 0px 16px $color_mailBoxshadow;
+		box-shadow: 0 0 16px $color_mailBoxshadow;
 		border: none;
 		border-radius: 2px;
 		.reason-prompt {
@@ -2378,12 +2360,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				text-transform: capitalize;
 			}
 			li {
-				padding: 4px 4px 4px 0px;
+				padding: 4px 4px 4px 0;
 				display: block;
 			}
 		}
 		li label {
-			padding: 4px 4px 4px 0px;
+			padding: 4px 4px 4px 0;
 			cursor: pointer;
 			display: block;
 			color: $color_inputFontActive;
@@ -2425,7 +2407,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background-image: none;
 			border: 1px solid;
 			border-radius: 20px;
-			box-shadow: inset 0px 0px 0px $color_searchExpandoLabelActiveBG;
+			box-shadow: inset 0 0 0 $color_searchExpandoLabelActiveBG;
 			color: $color_white;
 			line-height: 15px;
 			transition: all 0.25s ease;
@@ -2456,12 +2438,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			}
 			&.pressed {
 				background-image: none;
-				box-shadow: inset 0px 3px 1px $color_dropdownBoxShadow;
+				box-shadow: inset 0 3px 1px $color_dropdownBoxShadow;
 			}
 		}
 		&.neutral.pressed, &.negative.pressed {
 			background-image: none;
-			box-shadow: inset 0px 3px 1px $color_dropdownBoxShadow;
+			box-shadow: inset 0 3px 1px $color_dropdownBoxShadow;
 		}
 	}
 
@@ -2475,8 +2457,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.thing.stickied {
-		border-radius: 2px 2px 0px 0px;
-		background-color: darken($color_darkGray,5);
+		border-radius: 2px 2px 0 0;
+		background-color: darken($color_darkGray, 5);
 		a {
 			&.title {
 				color: $color_linkFlairLabelMod !important;
@@ -2532,10 +2514,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding: 0;
 		z-index: 9999;
 		position: relative;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		margin-right: 316px;
 		border: none;
-		border-radius: 2px 2px 0px 0px;
+		border-radius: 2px 2px 0 0;
 		.help {
 			margin-bottom: 16px;
 			margin-right: 16px;
@@ -2550,7 +2532,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.link.compressed {
 		margin: 0;
 		.entry {
-			padding: 11px 32px 9px 0px;
+			padding: 11px 32px 9px 0;
 		}
 		.title {
 			margin: 0;
@@ -2559,7 +2541,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	body > .content .link.compressed .midcol {
 		height: auto;
-		margin: 8px 0px 0px 4px;
+		margin: 8px 0 0 4px;
 	}
 
 	.flairselector {
@@ -2571,7 +2553,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		width: 250px !important;
 		border: none;
 		border-radius: 2px;
-		box-shadow: 0px 0px 16px $color_buttonBoxShadowActive;
+		box-shadow: 0 0 16px $color_buttonBoxShadowActive;
 		&.drop-choices.active {
 			border: 1px solid $color_flairselectorBorder;
 		}
@@ -2592,28 +2574,28 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.flairselector .flairoptionpane ul li {
-		padding: 0px !important;
+		padding: 0 !important;
 	}
 
 	.flairoptionpane ul li .linkflair {
 		text-align: left;
-		padding: 0px;
+		padding: 0;
 		&:hover {
 			background-color: $color_topPageContentDropsBorderLinkHoverBG;
-			border: 0px solid;
+			border: 0 solid;
 		}
 	}
 
 	.flairselector li:hover {
 		background-color: $color_almostTransp;
-		border: 0px solid;
+		border: 0 solid;
 		border-radius: 2px;
 	}
 
 	.flairoptionpane ul li .linkflair {
 		span.linkflairlabel {
 			line-height: 1.35;
-			margin: 8px 6px 8px 0px;
+			margin: 8px 6px 8px 0;
 		}
 		a.title {
 			font-size: 13px !important;
@@ -2640,7 +2622,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 					cursor: default;
 				}
 				.flairremove {
-					padding: 4px 0px;
+					padding: 4px 0;
 					margin-bottom: 8px;
 					visibility: hidden;
 					display: block !important;
@@ -2678,13 +2660,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			opacity: 0.5;
 		}
 		.flairoptionpane ul li {
-			margin: 4px 0px;
+			margin: 4px 0;
 		}
 		li.selected {
 			border: none;
 		}
 		.flairoptionpane ul li.flairsample-right {
-			padding: 5px 0px !important;
+			padding: 5px 0 !important;
 			border: none;
 		}
 		li a, form .flairselection a.author {
@@ -2694,8 +2676,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		&:before {
 			display: block;
 			position: fixed;
-			top: 0px;
-			left: 0px;
+			top: 0;
+			left: 0;
 			z-index: -2;
 			overflow: hidden;
 			//width: 100%;
@@ -2709,7 +2691,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.unvotable-message {
-		border: 0px solid;
+		border: 0 solid;
 		color: $color_linkDomain;
 		&:first-letter {
 			text-transform: capitalize;
@@ -2718,7 +2700,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.res {
 		.RES-keyNav-activeElement {
-			outline: 0px dashed $color_RES_keyNavOutline !important;
+			outline: 0 dashed $color_RES_keyNavOutline !important;
 			transition: all 0.35s ease;
 		}
 		.entry {
@@ -2753,7 +2735,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.res .commentarea {
 		.thing {
-			padding: 16px 16px 0px 14px !important;
+			padding: 16px 16px 0 14px !important;
 		}
 		.entry .flat-list {
 			padding-bottom: 16px;
@@ -2762,15 +2744,15 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.userTagLink.hasTag, #userTaggerPreview {
 		font-size: 11px !important;
-		border-radius: 0px !important;
-		border: 0px solid !important;
-		margin-top: 0px !important;
+		border-radius: 0 !important;
+		border: 0 solid !important;
+		margin-top: 0 !important;
 		margin-left: 4px !important;
 	}
 
 	.RESDialogSmall {
 		border: none;
-		box-shadow: 0px 2px 3px $color_guiderFont;
+		box-shadow: 0 2px 3px $color_guiderFont;
 		> h3 {
 			color: $color_inputBorderActive;
 			background-color: $color_white;
@@ -2805,14 +2787,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.toggleButton {
 		line-height: 0.8;
 		.toggleOn {
-			border-radius: 0px;
+			border-radius: 0;
 			border: 1px solid $color_inputBorderActive;
 			background-color: $color_inputBorderActive;
 			color: $color_white;
 			text-transform: capitalize;
 		}
 		.toggleOff {
-			border-radius: 0px;
+			border-radius: 0;
 			border: 1px solid $color_togglebuttonOffBorder;
 			background-color: transparent;
 			text-transform: capitalize;
@@ -2840,7 +2822,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			.dropdown-title.lightdrop {
 				visibility: hidden;
 			}
-			border-bottom: 0px;
+			border-bottom: 0;
 			padding: 0;
 			margin: 0;
 			height: 36px;
@@ -2853,7 +2835,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				text-transform: capitalize;
 				font-size: 12px;
 				pointer-events: none;
-				padding: 10px 16px 10px 16px;
+				padding: 10px 16px;
 				background: $color_fancyToggleButtonBGHover none;
 				overflow: visible;
 				color: $color_white;
@@ -2862,7 +2844,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				padding: 10px 16px 10px 104px;
 				margin-left: 16px;
 				margin-top: 1px;
-				border-radius: 2px 2px 0px 0px;
+				border-radius: 2px 2px 0 0;
 				border: none;
 				border-bottom: 1px solid $color_topPageContentDropsBorder;
 				width: calc(100% - 348px);
@@ -2872,7 +2854,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 					color: $color_inputFontActive;
 					transition: all 0.25s ease;
 					&[href*="/?t=all"] {
-						border-right: 0px solid;
+						border-right: 0 solid;
 					}
 					&:hover {
 						background-color: $color_topPageContentDropsBorderLinkHoverBG;
@@ -2888,7 +2870,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.guider {
 		border: none;
-		box-shadow: 0px 2px 3px $color_guiderFont;
+		box-shadow: 0 2px 3px $color_guiderFont;
 	}
 
 	.guider_content h1 {
@@ -2909,9 +2891,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.x_button {
 		transition: all 0.25s ease;
-		box-shadow: 0px 1px 4px $color_fancyToggleButtonAfterBoxShadow;
+		box-shadow: 0 1px 4px $color_fancyToggleButtonAfterBoxShadow;
 		&:hover {
-			box-shadow: 0px 1px 4px $color_dropdownBoxShadow;
+			box-shadow: 0 1px 4px $color_dropdownBoxShadow;
 		}
 	}
 
@@ -2922,7 +2904,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		margin: 0 316px 11px 0 !important;
 		background-color: transparent;
 		color: $color_white;
-		box-shadow: 0px 1px 5px $color_mailBoxshadow;
+		box-shadow: 0 1px 5px $color_mailBoxshadow;
 		border-radius: 2px;
 	}
 
@@ -2960,8 +2942,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		height: 312px;
 		background: transparent url(%%no-result%%) no-repeat 50% 50%;
 		text-indent: -9999px;
-		font-size: 0px;
-		
+		font-size: 0;
+
 		display: block;
 	}
 
@@ -2978,18 +2960,18 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			color: $color_linkDomain;
 			font-size: 14px;
 			a {
-				border: 0px;
+				border: 0;
 				background-color: transparent;
 				&:hover {
 					text-decoration: underline;
-					border: 0px;
+					border: 0;
 					background-color: transparent;
 				}
 			}
 		}
 	}
 
-	.comments-page .link {		
+	.comments-page .link {
 		.entry {
 			border-bottom: none;
 			padding-bottom: 15px;
@@ -3010,9 +2992,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.comments-page #siteTable {
-		border: 4px solid #fff;		
-		border-width: 4px 4px;
-		background-color: $color_darkGray;		
+		border: 4px solid #fff;
+		border-width: 4px;
+		background-color: $color_darkGray;
 		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 
 		&:before, &:after {
@@ -3037,9 +3019,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.commentarea {
-		border: 4px solid #fff;		
-		border-width: 4px 4px;
-		background-color: $color_RESDialogSmallLivePreview;		
+		border: 4px solid #fff;
+		border-width: 4px;
+		background-color: $color_RESDialogSmallLivePreview;
 		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 
 		&:before, &:after {
@@ -3093,9 +3075,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.commentarea {
 		&>form.usertext {
-			border-bottom: 4px solid #fff;		
-			border-width: 4px 4px;
-			background-color: $color_RESDialogSmallLivePreview;		
+			border-bottom: 4px solid #fff;
+			border-width: 4px;
+			background-color: $color_RESDialogSmallLivePreview;
 			border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 		}
 	}
@@ -3117,11 +3099,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			cursor: pointer;
 			text-decoration: none;
 			background-image: none;
-			padding-right: 0px;
+			padding-right: 0;
 			font-weight: normal;
 			color: $color_linkDomain;
 			&:hover {
-				color: $color_inputBorderActive;
 				color: $color_wineRed;
 			}
 			&:after {
@@ -3134,7 +3115,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		&.lightdrop {
 			border: none;
 			z-index: 1001;
-			box-shadow: 0px 1px 3px $color_dropdownLightBoxShadow;
+			box-shadow: 0 1px 3px $color_dropdownLightBoxShadow;
 		}
 		a.choice {
 			padding: 6px;
@@ -3152,21 +3133,20 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.commentarea .menuarea .toggle a:hover, .help-hoverable:hover {
-		color: $color_inputBorderActive;
 		color: $color_wineRed;
 	}
 
 	.commentarea > .usertext {
 		background-color: $color_commentareaUsertextBG;
-		border-radius: 0px 0px 2px 2px;
+		border-radius: 0 0 2px 2px;
 		margin: -58px 0 16px 0;
 		padding: 64px 16px 16px 16px;
-		box-shadow: 0px 1px 5px $color_boxshadow;
+		box-shadow: 0 1px 5px $color_boxshadow;
 		overflow: visible;
 	}
 
 	.usertext button {
-		margin: 4px 16px 8px 0px;
+		margin: 4px 16px 8px 0;
 	}
 
 	.commentarea .usertext-edit {}
@@ -3189,30 +3169,30 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.gold-accent {
 		&.comment-visits-box {
-			margin: 0px 0px 12px 0px;
+			margin: 0 0 12px 0;
 			border-radius: 2px;
 		}
 		.title {
 			color: $color_goldAccentTitle;
-			margin-top: 0px !important;
+			margin-top: 0 !important;
 		}
 	}
 
 	.commentarea {
 		.md {
-			margin-top: 0px;
-			margin-bottom: 0px;
+			margin-top: 0;
+			margin-bottom: 0;
 			padding-top: 5px;
 			padding-bottom: 5px;
 		}
 		.sitetable {
-			margin: 0px;
+			margin: 0;
 			box-shadow: none;
 		}
 		.thing {
 			border-radius: 2px;
 			background-color: $color_RESDialogSmallLivePreview;
-			//box-shadow: 0px 1px 5px $color_boxshadow;
+			//box-shadow: 0 1px 5px $color_boxshadow;
 			margin: 0 0 8px 0;
 			padding: 16px 16px 16px 14px;
 
@@ -3236,13 +3216,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.comment {
 		.child, .showreplies {
 			border-left: 1px dotted $color_commentChildBorder;
-			margin-top: 0px;
+			margin-top: 0;
 		}
 		.midcol {
 			width: 24px;
-			margin-right: 0px;
+			margin-right: 0;
 			.arrow {
-				margin-left: 0px;
+				margin-left: 0;
 				margin-bottom: 4px;
 			}
 		}
@@ -3252,7 +3232,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		.entry .tagline {
 			color: $color_linkDomain;
 			font-size: 12px;
-			font-family: Arial,sans-serif;
+			font-family: Arial, sans-serif;
 		}
 		.expand {
 			background-color: transparent;
@@ -3297,16 +3277,16 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding: 1px 4px;
 		border-radius: 1px;
 		background-color: $color_inputBorderActive !important;
-		box-shadow: 0px 0px 0px $color_fancyToggleButtonAfterBoxShadow;
+		box-shadow: 0 0 0 $color_fancyToggleButtonAfterBoxShadow;
 		transition: all 0.15s ease;
 		&:hover {
-			box-shadow: 0px 2px 4px $color_dropdownLightBoxShadow;
+			box-shadow: 0 2px 4px $color_dropdownLightBoxShadow;
 			background-color: $color_inputBorderActive !important;
 		}
 	}
 
 	.usertext-edit .RESDialogSmall {
-		box-shadow: 0px 2px 3px $color_boxshadow;
+		box-shadow: 0 2px 3px $color_boxshadow;
 
 		.md.RESDialogContents {
 			//background-color: $color_RESDialogSmallLivePreview;
@@ -3347,7 +3327,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		.usertext .md {
 			color: $color_inputFontActive;
 			p {
-				margin-top: 0px;
+				margin-top: 0;
 			}
 		}
 	}
@@ -3486,7 +3466,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			}
 		}
 		.formtabs-content {
-			border-top: 0px;
+			border-top: 0;
 			padding-top: 0;
 		}
 		.roundfield {
@@ -3495,7 +3475,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background-color: $color_white;
 			border-radius: 2px;
 			margin-bottom: 16px;
-			box-shadow: 0px 1px 5px $color_boxshadow;
+			box-shadow: 0 1px 5px $color_boxshadow;
 			.title {
 				color: $color_inputFontActive;
 				text-transform: capitalize;
@@ -3509,7 +3489,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			border-radius: 0 0 2px 2px;
 			border: none;
 			margin: -12px 0 0;
-			font-size: 0px;
+			font-size: 0;
 			&:before {
 				font-size: 14px;
 				content: "Please submit insightful content that allows for discussion, use Imgur for pictures and read the sidebar for additional rules before you post.";
@@ -3522,9 +3502,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color: $color_white;
 		border-radius: 2px;
 		padding: 16px;
-		box-shadow: 0px 1px 5px $color_boxshadow;
+		box-shadow: 0 1px 5px $color_boxshadow;
 		border: none;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 	}
 
 	.submit-page {
@@ -3536,10 +3516,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background-color: $color_buttonBG;
 			border: none;
 			color: $color_white;
-			box-shadow: 0px 1px 5px $color_mailBoxshadow;
+			box-shadow: 0 1px 5px $color_mailBoxshadow;
 			cursor: pointer;
 			&:hover {
-				box-shadow: 0px 2px 12px $color_buttonBoxShadowHover;
+				box-shadow: 0 2px 12px $color_buttonBoxShadowHover;
 				color: $color_white;
 			}
 		}
@@ -3559,8 +3539,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background: $color_white none;
 		padding: 16px;
 		border: none;
-		border-radius: 2px 2px 0px 0px;
-		box-shadow: 0px 1px 5px $color_mailBoxshadow;
+		border-radius: 2px 2px 0 0;
+		box-shadow: 0 1px 5px $color_mailBoxshadow;
 		position: relative;
 	}
 
@@ -3585,7 +3565,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				}
 			}
 			label {
-				padding: 1em 1em 1em 1em;
+				padding: 1em;
 				margin: 0.5em 0em;
 				transition: background-color 0.1s ease;
 				cursor: pointer;
@@ -3608,7 +3588,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.combined-search-page .search-submit-button {
-		padding: 0px 15px;
+		padding: 0 15px;
 		margin-top: 0;
 	}
 
@@ -3624,12 +3604,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			margin-top: 148px;
 		}
 		.searchfacets {
-			box-shadow: 0px 1px 5px $color_mailBoxshadow;
+			box-shadow: 0 1px 5px $color_mailBoxshadow;
 			border: none;
 			padding: 16px;
 			margin: 0 316px 0 0;
 			background-color: $color_searchfacetsBG;
-			border-radius: 0px 0px 2px 2px;
+			border-radius: 0 0 2px 2px;
 		}
 	}
 
@@ -3658,13 +3638,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.search-page {
 		.menuarea {
-			border-radius: 2px 2px 0px 0px;
-			border-bottom: 0px;
-			margin: 16px 316px 0px 0px;
+			border-radius: 2px 2px 0 0;
+			border-bottom: 0;
+			margin: 16px 316px 0 0;
 			padding: 16px;
 			color: $color_linkDomain;
 			background-color: $color_white;
-			box-shadow: 0px 1px 5px $color_boxshadow;
+			box-shadow: 0 1px 5px $color_boxshadow;
 			.dropdown.lightdrop .selected {
 				text-decoration: none;
 				color: $color_inputFontActive;
@@ -3680,9 +3660,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background-color: $color_white;
 			padding: 9px 16px 10px 16px;
 			border-radius: 2px;
-			box-shadow: 0px 1px 5px $color_boxshadow;
+			box-shadow: 0 1px 5px $color_boxshadow;
 			font-size: 16px;
-			font-family: arial,sans-serif;
+			font-family: arial, sans-serif;
 			text-transform: capitalize;
 			margin: 0;
 		}
@@ -3690,13 +3670,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background-color: $color_white;
 			margin-left: 16px;
 			border-radius: 2px;
-			padding: 0px 16px;
+			padding: 0 16px;
 			border: none;
-			box-shadow: 0px 1px 5px $color_boxshadow;
+			box-shadow: 0 1px 5px $color_boxshadow;
 			.wikiaction {
 				margin: 0;
 				background-color: transparent;
-				border-radius: 0px;
+				border-radius: 0;
 				padding: 10px 16px 11px 16px;
 				color: $color_linkDomain;
 			}
@@ -3710,11 +3690,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			}
 		}
 		.wiki-page-content {
-			margin: 16px 316px 16px 0px;
+			margin: 16px 316px 16px 0;
 			background-color: $color_white;
 			padding: 16px;
 			border-radius: 2px;
-			box-shadow: 0px 1px 5px $color_boxshadow;
+			box-shadow: 0 1px 5px $color_boxshadow;
 			.wiki {
 				> .toc > ul {
 					border: none;
@@ -3757,7 +3737,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color: $color_white;
 		color: $color_linkDomain;
 		border-radius: 2px;
-		box-shadow: 0px 1px 5px $color_boxshadow;
+		box-shadow: 0 1px 5px $color_boxshadow;
 		margin: 0 0 8px 0;
 		width: 531px;
 		.title {
@@ -3823,7 +3803,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.fancy-settings .pretty-form {
-		padding-top: 0px;
+		padding-top: 0;
 	}
 
 	.stylesheet-customize-container {
@@ -3832,7 +3812,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			padding: 16px;
 			margin-right: 316px;
 			border-radius: 2px;
-			box-shadow: 0px 1px 5px $color_boxshadow;
+			box-shadow: 0 1px 5px $color_boxshadow;
 			margin-bottom: 16px;
 			.sheets {
 				margin-right: 0;
@@ -3850,7 +3830,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		#image-preview-list {
-			overflow:auto;
+			overflow: auto;
 			width: 100%;
 		}
 
@@ -3860,8 +3840,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		.img-url {
 			color: $color_white;
 		}
-		#images{
-			height:auto;
+		#images {
+			height: auto;
 			min-height: 400px;
 		}
 	}
@@ -3877,7 +3857,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding: 16px;
 		background-color: $color_white;
 		border-radius: 2px;
-		box-shadow: 0px 1px 5px $color_boxshadow;
+		box-shadow: 0 1px 5px $color_boxshadow;
 		height: 560px;
 		margin-right: 316px;
 		#image-upload {
@@ -3888,7 +3868,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.flair {
 		border: none;
 		font-size: 11px;
-		font-family: arial,sans-serif;
+		font-family: arial, sans-serif;
 		font-weight: normal;
 		margin-right: inherit;
 		margin-left: 4px;
@@ -3904,7 +3884,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.tagline .flair-council {
-		padding: 0px 6px 0px 2px;
+		padding: 0 6px 0 2px;
 	}
 
 	.flair:before {
@@ -3915,7 +3895,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.side .flair:before {
-		margin-left: 0px;
+		margin-left: 0;
 	}
 
 	.flair-gamedev {
@@ -3939,7 +3919,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.commentarea .flair-gamedev::after {
-		@media screen and (min-width:1770px), (min-width:1375px) and (max-width:1770px), (max-width:1375px) {
+		@media screen and (min-width: 1770px), (min-width: 1375px) and (max-width: 1770px), (max-width: 1375px) {
 			content: "Fatshark Response";
 			color: $color_wineRed;
 			position: absolute;
@@ -3949,14 +3929,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			left: -1px;
 			text-align: right;
 			padding: .25em .5em;
-			border: 0px solid $color_wineRed;
+			border: 0 solid $color_wineRed;
 			border-left: 4px dashed $color_wineRed;
-			box-shadow: 0px 0px 3px $color_flairCommentAreaBoxShadow;	
+			box-shadow: 0 0 3px $color_flairCommentAreaBoxShadow;
 			pointer-events: none;
 			z-index: 0;
 		}
 
-		@media screen and (min-width:1770px), (min-width:1375px) and (max-width:1770px) {
+		@media screen and (min-width: 1770px), (min-width: 1375px) and (max-width: 1770px) {
 			background-image: url(%%fatshark-logo-big%%);
 			background-repeat: no-repeat;
 			background-position: top right;
@@ -3979,19 +3959,19 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.flair-witchhunter:before {
-		background-position: 0px 0px;
+		background-position: 0 0;
 	}
 	.flair-dwarfranger:before {
-		background-position: 92px 0px;
+		background-position: 92px 0;
 	}
 	.flair-brightwizard:before {
-		background-position: 69px 0px;
+		background-position: 69px 0;
 	}
 	.flair-empiresoldier:before {
-		background-position: 46px 0px;
+		background-position: 46px 0;
 	}
 	.flair-waywatcher:before {
-		background-position: 23px 0px;
+		background-position: 23px 0;
 	}
 
 	.flair-steam, .flair-xbox, .flair-playstation, .flair-twitch {
@@ -4033,19 +4013,19 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.flair-wiki:before {
-		background-position: 0px -20px;
+		background-position: 0 -20px;
 	}
 	.flair-scientist:before {
-		background-position: 0px -40px;
+		background-position: 0 -40px;
 	}
 	.flair-modder:before {
-		background-position: 0px -60px;
+		background-position: 0 -60px;
 	}
 	.flair-artist:before {
-		background-position: 0px -80px;
+		background-position: 0 -80px;
 	}
 	.flair-sweden:before {
-		background-position: 0px -100px;
+		background-position: 0 -100px;
 	}
 
 	.flair-green {
@@ -4058,7 +4038,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			margin: 0;
 			padding: 0;
 			background: transparent url(%%platform-flairs%%) repeat scroll 0 0;
-			background-position: 0px -35px;
+			background-position: 0 -35px;
 		}
 	}
 
@@ -4078,23 +4058,23 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.flair-xbox:before {
-		background-position: 0px 0px;
+		background-position: 0 0;
 	}
 
 	.flair-playstation:before {
-		background-position: 0px -18px;
+		background-position: 0 -18px;
 	}
 
 	.flair-skaven:before {
-		background-position: 0px -35px;
+		background-position: 0 -35px;
 	}
 
 	.flair-steam:before {
-		background-position: 0px -60px;
+		background-position: 0 -60px;
 	}
 
 	.flair-twitch:before {
-		background-position: 0px -83px;
+		background-position: 0 -83px;
 	}
 
 	.flair-mod {
@@ -4123,7 +4103,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.footer-parent {
 		margin: 15px 16px -40px 16px;
-		padding-top: 0px;
+		padding-top: 0;
 
 		position: relative;
 		border: 4px solid $color_white;
@@ -4131,7 +4111,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color: $color_darkGray;
 
 		background-image: url(%%header-light%%);
-		background-position: 0px -34px;
+		background-position: 0 -34px;
 		background-blend-mode: soft-light;
 
 		&:before, &:after, & div:last-of-type:before, & div:last-of-type:after {
@@ -4185,7 +4165,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.tb-toolbar {
 
-	} 
+	}
 
 	.res {
 		.link .tagline a.voteWeight {
@@ -4219,21 +4199,21 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.res {
 		#header-bottom-right {
 			top: 1px;
-			border-radius: 0px;
+			border-radius: 0;
 			height: 18px;
-			padding: 0px 8px 0px 0px;
+			padding: 0 8px 0 0;
 		}
 		#userbarToggle {
 			background-color: transparent;
 			color: $color_headerBottomFont;
-			border-radius: 0px;
+			border-radius: 0;
 			border: none;
 		}
 		#header-bottom-right .user {
 			.userkarma {
 				display: none;
 			}
-			font-size: 0px;
+			font-size: 0;
 			a {
 				font-size: 11px;
 			}
@@ -4265,7 +4245,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background-color: $color_fancyToggleButtonAfterBoxShadow;
 			line-height: inherit;
 			font-size: 11px;
-			font-family: verdana,arial,sans-serif;
+			font-family: verdana, arial, sans-serif;
 			box-shadow: none;
 			font-weight: normal;
 			color: $color_inputFontActive;
@@ -4279,7 +4259,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	html.res-commentBoxes .comment {
 		margin-left: 0 !important;
-		margin-right: 0px !important;
+		margin-right: 0 !important;
 	}
 
 	.res {
@@ -4288,8 +4268,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 		.titlebox {
 			span.subscribers, .users-online, .number {
-				top: 0px;
-				left: 0px;
+				top: 0;
+				left: 0;
 			}
 			.tagline {
 				margin-top: 6px;
@@ -4301,8 +4281,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			color: $color_inputFontActive;
 			text-transform: uppercase;
 			text-decoration: none;
-			border-radius: 0px;
-			padding: 4px 6px 4px 0px;
+			border-radius: 0;
+			padding: 4px 6px 4px 0;
 			margin: 2px 6px 2px -4px;
 			text-align: left;
 			width: auto;
@@ -4313,10 +4293,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 		#progressIndicator {
 			width: inherit;
-			border-radius: 0px;
+			border-radius: 0;
 			border: none;
 			padding: 16px;
-			margin: 16px 316px 16px 0px;
+			margin: 16px 316px 16px 0;
 			color: $color_white;
 			background-color: $color_black;
 			height: inherit;
@@ -4325,19 +4305,19 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			}
 		}
 		.NERPageMarker {
-			border-radius: 0px;
+			border-radius: 0;
 			border: none;
-			padding: 16px 0px;
-			margin: 0px;
+			padding: 16px 0;
+			margin: 0;
 			background-color: $color_black;
 			color: $color_wineRed;
 		}
 		.sitetable .sitetable {
-			margin-right: 0px;
+			margin-right: 0;
 		}
 		#search #searchexpando {
 			width: 300px;
-			box-shadow: 0px 2px 6px $color_dropdownLightBoxShadow;
+			box-shadow: 0 2px 6px $color_dropdownLightBoxShadow;
 			height: auto;
 			label {
 				display: inline;
@@ -4364,13 +4344,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			}
 		}
 		.commentarea .panestack-title {
-			margin-top: 0px;
+			margin-top: 0;
 			padding-top: 12px;
 		}
 	}
 
 	.gearIcon {
-		background: url(%%sprite-alternate%%) 0px 0px !important;
+		background: url(%%sprite-alternate%%) 0 0 !important;
 		position: relative;
 		top: 4px;
 		transition: all 0.25s ease;
@@ -4378,9 +4358,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	#RESMainGearOverlay {
 		background-color: $color_buttonBG;
-		top: 0px !important;
+		top: 0 !important;
 		height: 26px !important;
-		border-radius: 0px !important;
+		border-radius: 0 !important;
 	}
 
 	.RESDropdownList {
@@ -4410,7 +4390,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 		border: 4px solid $color_white;
 		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
-		background-color: darken($color_darkGray,5);
+		background-color: darken($color_darkGray, 5);
 
 		&:before, &:after, &>ul:before, &>ul:after {
 			display: block;
@@ -4449,21 +4429,21 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		li {
 			border-bottom: 4px solid $color_white;
 			border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
-			background-color: darken($color_darkGray,5);
+			background-color: darken($color_darkGray, 5);
 			&:hover {
 				background-color: $color_darkGray;
 			}
 			a:hover {
-				background-color: $color_darkGray;	
+				background-color: $color_darkGray;
 			}
 		}
 		ul>li:last-of-type {
-			margin-bottom: 0px;
+			margin-bottom: 0;
 			border: none;
 		}
 
-		.gearIcon {			
-			position: absolute;	
+		.gearIcon {
+			position: absolute;
 			top: 10px;
     	}
 	}
@@ -4505,7 +4485,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			margin-top: 144px;
 		}
 		.link, .commentarea, .stylesheet-customize-container .pretty-form, .sitetable, #images, .organic-listing {
-			margin-right: 0px;
+			margin-right: 0;
 		}
 		.subscriber .morelink a:after {
 			display: none;
@@ -4514,7 +4494,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			-webkit-transition: all 0.5s ease-in-out;
 			transition: all 0.5s ease-in-out;
 			position: fixed;
-			padding-top: 0px;
+			padding-top: 0;
 			z-index: 5000;
 			right: -350px;
 			margin: 0;
@@ -4532,11 +4512,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				background-color: $color_white;
 				content: "≡";
 				border-radius: 1px;
-				box-shadow: 0px 1px 5px $color_mediaContentSideAfterBoxShadow;
+				box-shadow: 0 1px 5px $color_mediaContentSideAfterBoxShadow;
 				position: fixed;
-				padding: 0px 12px;
+				padding: 0 12px;
 				display: block;
-				right: 0px;
+				right: 0;
 				color: $color_mediaContentSideAfterFont;
 				z-index: 98;
 				width: 36px;
@@ -4546,7 +4526,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				top: 24px;
 			}
 			&:hover {
-				right: 0px;
+				right: 0;
 				&:after {
 					opacity: 0;
 				}
@@ -4720,7 +4700,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		&:hover:before {
 			-webkit-animation-play-state: paused;
 			-moz-animation-play-state: paused;
-			-o-animation-play-state: paused;
+			-o-animation-play-state: paused;	// sass-lint:disable-line no-misspelled-properties
 			animation-play-state: paused;
 		}
 	}
@@ -4999,7 +4979,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	form.toggle.sr_style_toggle {
 		display: block;
-		padding-top: 0px;
+		padding-top: 0;
 	}
 
 	.res form.toggle.sr_style_toggle {
@@ -5137,13 +5117,13 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		position: absolute;
 		text-indent: -9999px;
 		top: -298px;
-		background: url(%%sprite-vermintidelogo%%) no-repeat 0px 0px;
+		background: url(%%sprite-vermintidelogo%%) no-repeat 0 0;
 		margin: 52px 0 0;
 		left: 130px;
 		width: 429px;
 		height: 216px;
 		&:hover {
-			background: transparent url(%%sprite-vermintidelogo%%) 0px -216px;
+			background: transparent url(%%sprite-vermintidelogo%%) 0 -216px;
 		}
 	}
 	.submit-page {
@@ -5152,8 +5132,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				top: -56px;
 			}
 			#header-img-a {
-				top:242px;
-				position:relative;
+				top: 242px;
+				position: relative;
 			}
 		}
 
@@ -5541,9 +5521,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			margin-top: 60px;
 			z-index: 200;
 			right: 121px;
-			font-size: 10px;
 			line-height: 20px;
-			font-size:0;
+			font-size: 0;
 
 			&:before {
 				width: 25px;
@@ -5552,8 +5531,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				content: " ";
 				display: block;
 				float: left;
-				background-image: url(%%message%%)!important;
-				background-repeat: no-repeat!important;
+				background-image: url(%%message%%) !important;
+				background-repeat: no-repeat !important;
 				background-color: transparent;
 				transition: all .25s ease;
 				opacity: 1;
@@ -5572,10 +5551,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				float: right;
 				line-height: 12px;
 				padding: 4px;
-			}
-
-			&:hover:after {
-				
 			}
 		}
 	}
@@ -5620,7 +5595,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding: 0;
 		margin: 10px -16px 10px -25px;
 		border: none;
-		font-size: 16px;		
+		font-size: 16px;
 		background: url(%%skull-header%%) no-repeat;
 		height: 54px;
 		width: 320px;
@@ -5631,7 +5606,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 	.side .sidecontentbox div.title h1 {
 		text-transform: none !important;
-		color: $color_white !important;		
+		color: $color_white !important;
 	}
 	.side #moderation_tools .title  {
 		position: relative;
@@ -5639,7 +5614,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			position: absolute;
 			top: 19px;
 			right: 18px;
-		}	
+		}
 	}
 
 	.side .titlebox .md ul {
@@ -5712,8 +5687,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.btn:hover, button:hover {
-		box-shadow: 0px 6px 7px 0 $color_btnHoverBoxShadow;
-		-webkit-box-shadow: 0px 6px 7px 0 $color_btnHoverBoxShadow;
+		box-shadow: 0 6px 7px 0 $color_btnHoverBoxShadow;
+		-webkit-box-shadow: 0 6px 7px 0 $color_btnHoverBoxShadow;
 	}
 
 	.btn:active, button:active {
@@ -5721,7 +5696,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.wiki-page .wiki-page-content .md.wiki h4, .wiki-page .wiki-page-content .md.wiki h4:hover {
-		box-shadow: 0px 3px 8px $color_buttonBoxShadowHover;
+		box-shadow: 0 3px 8px $color_buttonBoxShadowHover;
 	}
 
 	.search-page input[type="text"] {
@@ -5730,7 +5705,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.new-comment .usertext-body {
 		background-color: $color_newcommentBG;
-		border: 0px solid;
+		border: 0 solid;
 	}
 
 	.btn, button {
@@ -5774,12 +5749,12 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	/* color overwrites */
 	body.mod-toolbox .tb-general-button, body.mod-toolbox li a.tb-general-button, body.mod-toolbox .tb-bracket-button {
-		background: none!important;
-		font: bold x-small Avenir,Verdana,Arial,sans-serif!important;
+		background: none !important;
+		font: bold x-small Avenir, Verdana, Arial, sans-serif !important;
 		text-align: center;
 		border-width: 1px 1px 1px 2px;
-		border-color: transparent!important;
-		border-style: none!important;
+		border-color: transparent !important;
+		border-style: none !important;
 		padding: 1px 3px;
 		text-decoration: none;
 	}
@@ -5812,7 +5787,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			float: left;
 			width: 125px;
 			margin-left: 6px;
-			margin-right: 0px;
+			margin-right: 0;
 			a {
 				min-width: 100%;
 			}
@@ -5821,7 +5796,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		&:nth-child(2n+2) {
 			float: right;
 			width: 125px;
-			margin-left: 0px;
+			margin-left: 0;
 			margin-right: 6px;
 			a {
 				min-width: 100%;
@@ -5841,28 +5816,28 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		clear: both;
 		margin: 0 auto;
 		background-image: url(%%meme-button%%);
-		background-position: 0px 0px;
+		background-position: 0 0;
 		background-repeat: no-repeat;
 		width: 252px;
 		height: 58px;
 		font-size: 0;
 
 		&:hover {
-			background-position: 0px -60px;
+			background-position: 0 -60px;
 		}
 
 		a[href*="ft.reddit.com/r/vermintide/#ft"], a[href*="www.reddit.com/r/vermintide"] {
 			width: 120px;
 			height: 57px;
-			min-width: 120px;	
-			display: inline-block;	
+			min-width: 120px;
+			display: inline-block;
 		}
 		a[href*="ft.reddit.com/r/vermintide/#ft"] {
 			float: left;
 		}
 		a[href*="www.reddit.com/r/vermintide"] {
 			float: right;
-		}		
+		}
 	}
 	/* meme button end */
 
@@ -5872,16 +5847,15 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 	.side .md>ul:nth-of-type(1) li:hover>ul {
 		z-index: 1000;
-		display: block;		
+		display: block;
 		position: absolute;
 		right: 325px;
 		margin: 0;
 		padding: 15px;
 		margin-top: -24px;
-		background: darken($color_darkGray,3);
-		//border: 1px solid lighten($color_darkGray,10);
+		background: darken($color_darkGray, 3);
 
-		border-width: 4px 4px;
+		border-width: 4px;
 		border: 4px solid $color_white;
 		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 
@@ -5913,7 +5887,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		border-image: url(%%sticky-box%%) 18 21 stretch;
 
 		padding: 0;
-		box-shadow: 0 1px 5px rgba(41,15,4,0.5);
+		box-shadow: 0 1px 5px rgba(41, 15, 4, 0.5);
 		width: 320px;
 		max-height: 126px;
 
@@ -5923,7 +5897,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			color: $color_stickyBoxLink;
 			padding: 4px 0;
 			display: inline-block;
-			font-family: verdana, arial, sans-serif;			
+			font-family: verdana, arial, sans-serif;
 
 			&:visited {
 				color: $color_stickyBoxLink !important;
@@ -5936,10 +5910,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 					color: inherit;
 					content: "› ";
 					background: none;
-					padding: 0px;
-					margin: 0px;
+					padding: 0;
+					margin: 0;
 				}
-			}			
+			}
 			em {
 				font-style: normal;
 				color: $color_white;
@@ -5947,8 +5921,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 					color: inherit;
 					content: "› ";
 					background: none;
-					padding: 0px;
-					margin: 0px;
+					padding: 0;
+					margin: 0;
 				}
 			}
 
@@ -5966,7 +5940,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 	/* sticky end */
 
-	
 	/* vermintide 1 - 2 distinction for links */
 	.side .titlebox em>strong>a, .side .titlebox strong>em>a  {
 		font-weight: normal;
@@ -5986,7 +5959,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			color: $color_white;
 		}
 	}
-	.side .titlebox em>strong>a:after {		
+	.side .titlebox em>strong>a:after {
 		content: "VT1";
 	}
 	.side .titlebox strong>em>a:after {
@@ -5997,15 +5970,15 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 
 	/* subreddit rules hover popups*/
-	.side .titlebox .md h3{
+	.side .titlebox .md h3 {
 		counter-increment: h3-counter;
-		&:before {		
+		&:before {
 			content: " "counter(h3-counter);
 		}
-	} 
+	}
 	.side .titlebox .md h4 {
 		counter-increment: h4-counter;
-		&:before {		
+		&:before {
 			content: " "counter(h4-counter);
 		}
 	}
@@ -6015,7 +5988,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		color: $color_white;
 		font-size: 12px;
 		font-weight: normal;
-		margin: 0 10px 0 0px;
+		margin: 0 10px 0 0;
 		padding: 5px 5px 5px 30px;
 		transition: 0.3s all;
 		line-height: 16px;
@@ -6036,15 +6009,15 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background-image: url(%%shield-icon%%);
 			background-repeat: no-repeat;
 			background-size: contain;
-			text-shadow: 0px 0px 1px $color_wineRed;
+			text-shadow: 0 0 1px $color_wineRed;
 		}
 
 		a {
 			background: none;
 			box-shadow: none;
 			display: inline;
-			padding: 0px;
-			margin: 0px;
+			padding: 0;
+			margin: 0;
 			color: $color_wineRed;
 
 			&:hover {
@@ -6071,10 +6044,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			margin-top: -26px;
 			margin-right: 15px;
 			font-weight: normal;
-			background: darken($color_darkGray,3);
-			//border: 1px solid lighten($color_darkGray,10);
+			background: darken($color_darkGray, 3);
 
-			border-width: 4px 4px;
+			border-width: 4px;
 			border: 4px solid $color_white;
 			border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 			z-index: 2000;
@@ -6083,101 +6055,100 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	/* subreddit rules hover end */
 
-	.side .md [href*="search?q=flair"]{
-		display:inline-block;
-		padding:3px 5px;
-		font-weight:bold;
-		border-radius:3px;
-		text-align:center;
-		background:$color_sidebarFlairLinkBG;
+	.side .md [href*="search?q=flair"] {
+		display: inline-block;
+		padding: 3px 5px;
+		font-weight: bold;
+		text-align: center;
+		background: $color_sidebarFlairLinkBG;
 		min-width: 165px;
-		text-shadow: 0px 0px 5px #0a0a0a;
+		text-shadow: 0 0 5px #0a0a0a;
 
 		background-image: url(%%cloudy-bg%%);
 		background-size: cover;
-		border-radius: 0px;
 		border: 1px solid #5d5858;
-		box-shadow: 0px 0px 0px 1px rgb(23, 22, 22);
+		border-radius: 0;
+		box-shadow: 0 0 0 1px rgb(23, 22, 22);
 	}
 
-	.side .md [href*="search?q=flair%3Adaily"], .side .md [href*="search?q=flair%3Aweekly"]{
-		background:$color_linkFlairLabelDaily;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Adaily"], .side .md [href*="search?q=flair%3Aweekly"] {
+		background: $color_linkFlairLabelDaily;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Aumgak"]{
-		background-color:$color_linkFlairLabelUmgak;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Aumgak"] {
+		background-color: $color_linkFlairLabelUmgak;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Ashowcase"]{
-		background-color:$color_linkFlairLabelShowcase;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Ashowcase"] {
+		background-color: $color_linkFlairLabelShowcase;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Agameplay+AND+NOT+flair%3Aguide"]{
-		background-color:$color_linkFlairLabelGameplay;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Agameplay+AND+NOT+flair%3Aguide"] {
+		background-color: $color_linkFlairLabelGameplay;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Anews"]{
-		background-color:$color_linkFlairLabelNews;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Anews"] {
+		background-color: $color_linkFlairLabelNews;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Aupdate"]{
-		background-color:$color_linkFlairLabelUpdate;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Aupdate"] {
+		background-color: $color_linkFlairLabelUpdate;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Aissue"]{
-		background-color:$color_linkFlairLabelIssue;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Aissue"] {
+		background-color: $color_linkFlairLabelIssue;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Asolved"]{
-		background-color:$color_linkFlairLabelSolved;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Asolved"] {
+		background-color: $color_linkFlairLabelSolved;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Averminart"]{
-		background-color:$color_linkFlairLabelVerminArt;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Averminart"] {
+		background-color: $color_linkFlairLabelVerminArt;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3gameplay+AND+flair%3Aguide"]{
-		background-color:$color_linkFlairLabelGameplayGuide;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3gameplay+AND+flair%3Aguide"] {
+		background-color: $color_linkFlairLabelGameplayGuide;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Asuggestion"]{
-		background-color:$color_linkFlairLabelSuggestion;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Asuggestion"] {
+		background-color: $color_linkFlairLabelSuggestion;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Averminscience"]{
-		background-color:$color_linkFlairLabelVerminScience;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Averminscience"] {
+		background-color: $color_linkFlairLabelVerminScience;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Aannouncement"]{
-		background-color:$color_linkFlairLabelMod;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Aannouncement"] {
+		background-color: $color_linkFlairLabelMod;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Aconsole"]{
-		background-color:$color_linkFlairLabelConsole;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Aconsole"] {
+		background-color: $color_linkFlairLabelConsole;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Alfg"]{
-		background-color:$color_linkFlairLabelLFG;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Alfg"] {
+		background-color: $color_linkFlairLabelLFG;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Adiscussion"]{
-		background-color:$color_linkFlairLabelDiscussion;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Adiscussion"] {
+		background-color: $color_linkFlairLabelDiscussion;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Amodded"]{
-		background-color:$color_linkFlairLabelModdedContent;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Amodded"] {
+		background-color: $color_linkFlairLabelModdedContent;
+		color: $color_white;
 	}
-	.side .md [href*="search?q=flair%3Aquestion"]{
-		background-color:$color_linkFlairLabelQuestion;
-		color:$color_white;
+	.side .md [href*="search?q=flair%3Aquestion"] {
+		background-color: $color_linkFlairLabelQuestion;
+		color: $color_white;
 	}
 
 	.side .titlebox form .md ul li a:visited {
 		color: $color_white !important;
 	}
 
-	.side li .author[href*="user/Eruyome87"], .side li .author[href*="user/Eruyome87"] + span {    	
+	.side li .author[href*="user/Eruyome87"], .side li .author[href*="user/Eruyome87"] + span {
 		pointer-events: none;
 		opacity: .4;
 	}

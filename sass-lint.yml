@@ -30,6 +30,24 @@ rules:
 
   no-warn: 1
   no-debug: 1
+  no-invalid-hex: 1
+  no-mergeable-selectors: 1
+  no-misspelled-properties: 1
+  no-trailing-whitespace: 1
+  no-url-protocols: 1
+  one-declaration-per-line: 1
+  space-after-bang: 1
+  space-after-colon: 1
+  space-after-comma: 1
+  space-before-bang: 1
+  space-before-brace: 1
+  trailing-semicolon: 1
+  zero-unit: 1
+  no-duplicate-properties:
+   - 1
+   -
+    exclude:
+      - background
   indentation:
     - 1
     -
@@ -44,3 +62,9 @@ rules:
         - 'darken'
         - 'lighten'
         - 'saturate'
+  shorthand-values:
+    - 1
+    -
+      allowed-shorthands:
+        - 1
+        - 2

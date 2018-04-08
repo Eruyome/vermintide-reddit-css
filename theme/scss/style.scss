@@ -28,10 +28,13 @@ $color_headline3LinkHoverBoxShadow : rgba(0, 0, 0, 0.54);
 $color_headline3LinkActiveBoxShadow : rgba(0, 0, 0, 0.54);
 $color_headline4LinkBoxShadow : rgba(0, 0, 0, 0.12);
 $color_messageParent : rgb(33, 33, 33);
+$color_messageCount: #f50;
 $color_arrowDownHoverAfter :   rgba(79, 77, 192, 0.9);
 $color_fancySettingsHeadlineFont : rgba(255, 255, 255, 0.8);
 $color_titleBoxVisitedFont : #D2D2D2;
 $color_haveMailBG : #EA4848;
+$color_haveMailBGBefore: #ec5b5b;
+$color_haveMailBGBeforeActive: #c73d3d;
 $color_haveMailActiveBoxShadow : rgba(0, 0, 0, 0.76);
 $color_inputBorder : #e5e5e5;
 $color_inputFont : #707070;
@@ -51,6 +54,7 @@ $color_fancyToggleButtonBG : #51A3E8;
 $color_fancyToggleButtonBGHover : #5A72EE;
 $color_dropdownBorder : #edeeee;
 $color_dropdownBoxShadow : rgba(0, 0, 0, 0.15);
+$color_dropdownChoiceLink: #f1f1f1;
 $color_linkDomain : #b3b3b3;
 $color_linkUsertextBorder : #F7F7F7;
 $color_wikiPageContentHeadline4Border : #D4D4D4;
@@ -116,6 +120,10 @@ $color_prettyButtonPositiveHoverBG : #22e1a6;
 $color_linkPromotedBG : #EFF7FF;
 $color_flairselectorBorder : #e2e2e2;
 $color_blockquoteBorder : #E5E3DA;
+$color_goldAccentTitle: #9a7d2e;
+$color_flairCouncil: #228822;
+$color_flairGreen: #009900;
+$color_modToolTitle: #ccc;
 
 $color_flairPlatformFontBefore : #ad3429;
 $color_flairPlatform : rgb(104, 110, 123);
@@ -124,35 +132,17 @@ $color_linkFlairLabel : #5FB04D;
 $color_linkFlairLabelUpdate : #804615;
 
 /* flair group 1 */
-/*
-$color_linkFlairLabelVerminScience : #577892;
-$color_linkFlairLabelVerminArt : #333;
-$color_linkFlairLabelGameplayGuide : #B24DFF;
-$color_linkFlairLabelModdedContent : #c3960d;
-*/
 $color_linkFlairLabelVerminScience : #577892;
 $color_linkFlairLabelVerminArt : saturate(darken($color_linkFlairLabelVerminScience, 15), 20);
 $color_linkFlairLabelGameplayGuide : saturate(darken($color_linkFlairLabelVerminScience, 20), 20);
 $color_linkFlairLabelModdedContent : saturate(darken($color_linkFlairLabelVerminScience, 25), 20);
 
 /* flair group 2 */
-/*
-$color_linkFlairLabelNews : #AA6D39;
-$color_linkFlairLabelDaily : #07610d;
-$color_linkFlairLabelMod : #65B354;		// announcement
-*/
 $color_linkFlairLabelMod : #65B354;	
 $color_linkFlairLabelDaily : saturate(darken($color_linkFlairLabelMod, 20), 20);
 $color_linkFlairLabelNews : saturate(darken($color_linkFlairLabelMod, 30), 20);
 
 /* flair group 3 */
-/*
-$color_linkFlairLabelDiscussion : #550200;
-$color_linkFlairLabelSuggestion : #12487d;
-$color_linkFlairLabelQuestion : #9da927;
-$color_linkFlairLabelIssue : #F45000;
-$color_linkFlairLabelSolved : #606060;
-*/
 $color_linkFlairLabelDiscussion : #c3960d;
 $color_linkFlairLabelSuggestion : saturate(darken($color_linkFlairLabelDiscussion, 5), 20);
 $color_linkFlairLabelQuestion : saturate(darken($color_linkFlairLabelDiscussion, 10), 20);
@@ -160,12 +150,6 @@ $color_linkFlairLabelIssue : saturate(darken($color_linkFlairLabelDiscussion, 15
 $color_linkFlairLabelSolved : saturate(darken($color_linkFlairLabelDiscussion, 20), 20);
 
 /* flair group 4 */
-/*
-$color_linkFlairLabelUmgak : #AA3C39;
-$color_linkFlairLabelShowcase : #236467;
-$color_linkFlairLabelConsole : #659bf5;
-$color_linkFlairLabelLFG : #561845;
-*/
 $color_linkFlairLabelShowcase : #606060;
 $color_linkFlairLabelGameplay : saturate(darken($color_linkFlairLabelShowcase, 5), 5);
 $color_linkFlairLabelLFG : saturate(darken($color_linkFlairLabelShowcase, 10), 5);
@@ -719,7 +703,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				color: $color_inputFontActive;
 				padding: 2px;
 				&:hover {
-					background-color: #f1f1f1;
+					background-color: $color_dropdownChoiceLink;
 				}
 			}
 		}
@@ -1009,7 +993,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.message-count {
-		background-color: #f50;
+		background-color: $color_messageCount;
 		position: relative;
 		top: 0px;
 		line-height: 12px;
@@ -1038,11 +1022,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background: $color_haveMailBG url(%%sprite-alternate%%) no-repeat 269px -32px;
 		}
 		&:hover:before {
-			background-color: #ec5b5b;
+			background-color: $color_haveMailBGBefore;
 			box-shadow: 0px 3px 12px $color_buttonBoxShadowHover;
 		}
 		&:active:before {
-			background-color: #c73d3d;
+			background-color: $color_haveMailBGBeforeActive;
 			box-shadow: 0px 4px 14px $color_haveMailActiveBoxShadow;
 		}
 	}
@@ -2544,7 +2528,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.organic-listing {
-		background-color: white !important;
+		background-color: $color_white !important;
 		padding: 0;
 		z-index: 9999;
 		position: relative;
@@ -3209,7 +3193,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			border-radius: 2px;
 		}
 		.title {
-			color: #9a7d2e;
+			color: $color_goldAccentTitle;
 			margin-top: 0px !important;
 		}
 	}
@@ -3916,7 +3900,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.flair-council {
 		color: $color_white !important;
-		background-color: #228822;
+		background-color: $color_flairCouncil;
 	}
 
 	.tagline .flair-council {
@@ -4065,7 +4049,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.flair-green {
-		background-color: #009900;
+		background-color: $color_flairGreen;
 		padding: 0 6px;
 		line-height: 14px;
 
@@ -4142,7 +4126,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding-top: 0px;
 
 		position: relative;
-		border: 4px solid #fff;
+		border: 4px solid $color_white;
 		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 		background-color: $color_darkGray;
 
@@ -4424,7 +4408,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			}
 		}
 
-		border: 4px solid #fff;
+		border: 4px solid $color_white;
 		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 		background-color: darken($color_darkGray,5);
 
@@ -4463,7 +4447,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		li {
-			border-bottom: 4px solid #fff;
+			border-bottom: 4px solid $color_white;
 			border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 			background-color: darken($color_darkGray,5);
 			&:hover {
@@ -5253,29 +5237,26 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.side #moderation_tools .title h1 {
-		color: #ccc;
+		color: $color_modToolTitle;
 	}
 
 	.titlebox .tagline:after {
 		background-color: $color_titleboxTaglineBG;
 	}
 
-	.side {
-		//overflow: hidden;
-	}
 
 	.titlebox .usertext .md > h2 {
 		background-color: $color_wineRed;
 		margin: 10px -32px 5px 2px;
 		padding: 2px 0 2px 20px;
 		z-index: 10;
-		//-webkit-transform: skewX(45deg);
+
 		strong {
 			display: block;
 			font-size: 15px;
 			color: $color_white;
 			z-index: 10;
-			//-webkit-transform: skewX(-45deg) !important;
+
 		}
 	}
 
@@ -5312,7 +5293,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	.wiki-page .wiki-page-content .md.wiki h4 .comments-page .side .linkinfo, .commentarea .thing, .stylesheet-customize-container .pretty-form, #images, .submit-page .roundfield, .linefield, .btn, button, .drop-choices, .hover-bubble, .search-page .searchpane, .content.submit .info-notice, .submit-page #newlink.submit.content .tabmenu.formtab a {
-		//background-color: $color_darkGray;
 		background-color: $color_RESDialogSmallLivePreview;
 	}
 
@@ -5902,7 +5882,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		//border: 1px solid lighten($color_darkGray,10);
 
 		border-width: 4px 4px;
-		border: 4px solid #fff;
+		border: 4px solid $color_white;
 		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 
 		li {
@@ -5928,7 +5908,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 		background-image: url(%%sticky-box-bg%%);
 		background-size: cover;
-		border: 14px solid #DEC79B;
+		border: 14px solid $color_white;
 		border-width: 14px 17px;
 		border-image: url(%%sticky-box%%) 18 21 stretch;
 
@@ -6032,7 +6012,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.side .titlebox .md h3, .side .titlebox .md h4 {
 		position: relative;
-		color: #fff;
+		color: $color_white;
 		font-size: 12px;
 		font-weight: normal;
 		margin: 0 10px 0 0px;
@@ -6095,7 +6075,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			//border: 1px solid lighten($color_darkGray,10);
 
 			border-width: 4px 4px;
-			border: 4px solid #fff;
+			border: 4px solid $color_white;
 			border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 			z-index: 2000;
 		}

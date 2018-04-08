@@ -1,7 +1,13 @@
 @charset "utf-8";
 
+@mixin simple-border-image($url, $slice, $width, $repeat) {
+	-webkit-border-image: url(#{$url}) $slice $width #{$repeat} !important;
+	-moz-border-image: url(#{$url}) $slice $width #{$repeat} !important;
+	-ms-border-image: url(#{$url}) $slice $width #{$repeat} !important;	 // sass-lint:disable-line no-misspelled-properties
+	border-image: url(#{$url}) $slice $width #{$repeat} !important;
+}
+
 $color_wineRed : #DD1919;
-//$color_wineRed : #C60000;
 $color_darkGray : #212121;
 $color_darkGrayTrans : rgba(33, 33, 33, 0.8);
 $color_bodyBG : #eeeeee;
@@ -156,122 +162,6 @@ $color_linkFlairLabelGameplay : saturate(darken($color_linkFlairLabelShowcase, 5
 $color_linkFlairLabelLFG : saturate(darken($color_linkFlairLabelShowcase, 10), 5);
 $color_linkFlairLabelConsole : saturate(darken($color_linkFlairLabelShowcase, 20), 5);
 $color_linkFlairLabelUmgak : #AA3C39;
-
-//----------------------- yet unused test variables for color themes --------------------
-
-$color_inv_wineRed 	: invert($color_wineRed);
-$color_inv_darkGray 	: invert($color_darkGray);
-$color_inv_bodyBG 	: invert($color_bodyBG);
-$color_inv_headerBG 	: invert($color_headerBG);
-$color_inv_white 	: invert($color_white);
-$color_inv_black 	: invert($color_black);
-$color_inv_whiteTransp 	: invert($color_whiteTransp);
-$color_inv_transp 	: invert($color_transp);
-$color_inv_almostTransp 	: invert($color_almostTransp);
-$color_inv_flairselectorBeforeBG 	: invert($color_flairselectorBeforeBG);
-$color_inv_pagenameBGHover 	: invert($color_pagenameBGHover);
-$color_inv_textShadow 	: invert($color_textShadow);
-$color_inv_boxshadow 	: invert($color_boxshadow);
-$color_inv_headerBottomFont 	: invert($color_headerBottomFont);
-$color_inv_actionFormListBG 	: invert($color_actionFormListBG);
-$color_inv_mailBoxshadow 	: invert($color_mailBoxshadow);
-$color_inv_buttonBoxShadow 	: invert($color_buttonBoxShadow);
-$color_inv_buttonBoxShadowHover 	: invert($color_buttonBoxShadowHover);
-$color_inv_buttonBoxShadowActive 	: invert($color_buttonBoxShadowActive);
-$color_inv_fancyToggleButtonAfterBG 	: invert($color_fancyToggleButtonAfterBG);
-$color_inv_fancyToggleButtonAfterBoxShadow 	: invert($color_fancyToggleButtonAfterBoxShadow);
-$color_inv_headline3LinkHoverBoxShadow 	: invert($color_headline3LinkHoverBoxShadow);
-$color_inv_headline3LinkActiveBoxShadow 	: invert($color_headline3LinkActiveBoxShadow);
-$color_inv_headline4LinkBoxShadow 	: invert($color_headline4LinkBoxShadow);
-$color_inv_messageParent 	: invert($color_messageParent);
-$color_inv_arrowDownHoverAfter 	: invert($color_arrowDownHoverAfter);
-$color_inv_fancySettingsHeadlineFont 	: invert($color_fancySettingsHeadlineFont);
-$color_inv_titleBoxVisitedFont 	: invert($color_titleBoxVisitedFont);
-$color_inv_haveMailBG 	: invert($color_haveMailBG);
-$color_inv_haveMailActiveBoxShadow 	: invert($color_haveMailActiveBoxShadow);
-$color_inv_inputBorder 	: invert($color_inputBorder);
-$color_inv_inputFont 	: invert($color_inputFont);
-$color_inv_inputBorderHover 	: invert($color_inputBorderHover);
-$color_inv_inputBorderActive 	: invert($color_inputBorderActive);
-$color_inv_inputFontActive 	: invert($color_inputFontActive);
-$color_inv_reportedStamp 	: invert($color_reportedStamp);
-$color_inv_nsfwStampBorder 	: invert($color_nsfwStampBorder);
-$color_inv_nsfwStampFont 	: invert($color_nsfwStampFont);
-$color_inv_buttonBG 	: invert($color_buttonBG);
-$color_inv_ButtonBGActive 	: invert($color_ButtonBGActive);
-$color_inv_inputBorderDark 	: invert($color_inputBorderDark);
-$color_inv_searchExpandoCollapsed 	: invert($color_searchExpandoCollapsed);
-$color_inv_submitDisabled 	: invert($color_submitDisabled);
-$color_inv_titleBoxTaglineBG 	: invert($color_titleBoxTaglineBG);
-$color_inv_fancyToggleButtonBG 	: invert($color_fancyToggleButtonBG);
-$color_inv_fancyToggleButtonBGHover 	: invert($color_fancyToggleButtonBGHover);
-$color_inv_dropdownBorder 	: invert($color_dropdownBorder);
-$color_inv_dropdownBoxShadow 	: invert($color_dropdownBoxShadow);
-$color_inv_linkDomain 	: invert($color_linkDomain);
-$color_inv_linkUsertextBorder 	: invert($color_linkUsertextBorder);
-$color_inv_wikiPageContentHeadline4Border 	: invert($color_wikiPageContentHeadline4Border);
-$color_inv_wikiPageContentHeadline4Font 	: invert($color_wikiPageContentHeadline4Font);
-$color_inv_wikiPageContentHeadline4ActiveBoxShadow 	: invert($color_wikiPageContentHeadline4ActiveBoxShadow);
-$color_inv_wikiPageContentHeadline4ActiveFont 	: invert($color_wikiPageContentHeadline4ActiveFont);
-$color_inv_contentBg 	: invert($color_contentBg);
-$color_inv_sideAfterFont 	: invert($color_sideAfterFont);
-$color_inv_searchInputHoverBoxShadow 	: invert($color_searchInputHoverBoxShadow);
-$color_inv_searchExpandoLabelHoverBG 	: invert($color_searchExpandoLabelHoverBG);
-$color_inv_searchExpandoLabelActiveBG 	: invert($color_searchExpandoLabelActiveBG);
-$color_inv_searchExpandoCollapsedBefore 	: invert($color_searchExpandoCollapsedBefore);
-$color_inv_sideCollapseBtn 	: invert($color_sideCollapseBtn);
-$color_inv_RES_keyNavOutline 	: invert($color_RES_keyNavOutline);
-$color_inv_RESDialogSmallBorder 	: invert($color_RESDialogSmallBorder);
-$color_inv_RESDialogSmallLivePreview 	: invert($color_RESDialogSmallLivePreview);
-$color_inv_RESDropdownListBorder 	: invert($color_RESDropdownListBorder);
-$color_inv_RESDropdownListStateBorder 	: invert($color_RESDropdownListStateBorder);
-$color_inv_RESCloseButton 	: invert($color_RESCloseButton);
-$color_inv_togglebuttonOffBorder 	: invert($color_togglebuttonOffBorder);
-$color_inv_topPageContentDropsBorder 	: invert($color_topPageContentDropsBorder);
-$color_inv_topPageContentDropsBorderLinkHoverBG 	: invert($color_topPageContentDropsBorderLinkHoverBG);
-$color_inv_guiderBtnHoverBG	: invert($color_guiderBtnHoverBG);
-$color_inv_guiderFont 	: invert($color_guiderFont);
-$color_inv_dropdownLightBoxShadow 	: invert($color_dropdownLightBoxShadow);
-$color_inv_commentareaUsertextBG 	: invert($color_commentareaUsertextBG);
-$color_inv_usertextBodyBG 	: invert($color_usertextBodyBG);
-$color_inv_commentChildBorder	: invert($color_commentChildBorder);
-$color_inv_commentScoreFont 	: invert($color_commentScoreFont);
-$color_inv_blockquoteFont 	: invert($color_blockquoteFont);
-$color_inv_newlinkTabmenuLinkHoverBG 	: invert($color_newlinkTabmenuLinkHoverBG);
-$color_inv_newlinkTabmenuSelectedLinkHoverBG 	: invert($color_newlinkTabmenuSelectedLinkHoverBG);
-$color_inv_searchInputBorder 	: invert($color_searchInputBorder);
-$color_inv_searchfacetsBG 	: invert($color_searchfacetsBG);
-$color_inv_mediaContentSideAfterBoxShadow 	: invert($color_mediaContentSideAfterBoxShadow);
-$color_inv_mediaContentSideAfterFont 	: invert($color_mediaContentSideAfterFont);
-$color_inv_contentBeforeBG 	: invert($color_contentBeforeBG);
-$color_inv_headerTabmenuLinkHover 	: invert($color_headerTabmenuLinkHover);
-$color_inv_moreLinkBG 	: invert($color_moreLinkBG);
-$color_inv_moreLinkActiveBG 	: invert($color_moreLinkActiveBG);
-$color_inv_thumbnailNsfwBG 	: invert($color_thumbnailNsfwBG);
-$color_inv_headerTabmenuLinkHoverLigth 	: invert($color_headerTabmenuLinkHoverLigth);
-$color_inv_titleboxTaglineBG 	: invert($color_titleboxTaglineBG);
-$color_inv_bodyFont 	: invert($color_bodyFont);
-$color_inv_gradient50 	: invert($color_gradient50);
-$color_inv_gradient51 	: invert($color_gradient51);
-$color_inv_gradient100 	: invert($color_gradient100);
-$color_inv_sideTitleboxHeadline2BeforeBorder 	: invert($color_sideTitleboxHeadline2BeforeBorder);
-$color_inv_btnHoverBoxShadow 	: invert($color_btnHoverBoxShadow);
-$color_inv_newcommentBG 	: invert($color_newcommentBG);
-$color_inv_sidebarFlairList 	: invert($color_sidebarFlairList);
-$color_inv_sidebarFlairLinkBG 	: invert($color_sidebarFlairLinkBG);
-$color_inv_linkScoreLikes 	: invert($color_linkScoreLikes);
-$color_inv_linkScoresDislike 	: invert($color_linkScoresDislike);
-$color_inv_arrowUpmodFocus 	: invert($color_arrowUpmodFocus);
-$color_inv_expandoBtnBorder 	: invert($color_expandoBtnBorder);
-$color_inv_entryFont 	: invert($color_entryFont);
-$color_inv_prettyButtonNegativeBG 	: invert($color_prettyButtonNegativeBG);
-$color_inv_prettyButtonNegativeHoverBG 	: invert($color_prettyButtonNegativeHoverBG);
-$color_inv_prettyButtonNeutralHoverBG 	: invert($color_prettyButtonNeutralHoverBG);
-$color_inv_prettyButtonPositiveBG 	: invert($color_prettyButtonPositiveBG);
-$color_inv_prettyButtonPositiveHoverBG 	: invert($color_prettyButtonPositiveHoverBG);
-$color_inv_linkPromotedBG 	: invert($color_linkPromotedBG);
-$color_inv_flairselectorBorder 	: invert($color_flairselectorBorder);
-$color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 
 @mixin print-css($language) {
@@ -760,7 +650,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		left: 16px;
 
 		border: 4px solid #fff;
-		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+		@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 		background-color: darken($color_darkGray, 5);
 
 		&:before, &:after, &>ul:before, &>ul:after {
@@ -859,7 +749,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-repeat: no-repeat;
 		border-width: 4px;
 		border: 4px solid #fff;
-		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+		@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 
 		&:before, &:after {
 			content: "";
@@ -1016,7 +906,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background: darken($color_wineRed, 10) url(%%sprite-alternate%%) no-repeat 269px -36px;
 
 			border: 4px solid $color_white;
-			border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+			@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 		}
 		&:hover:before {
 			background-color: $color_haveMailBGBefore;
@@ -1242,8 +1132,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			pointer-events: none;
 
 			border: 9px solid #fff;
-			border-width: 9px 12px;
-			border-image: url(%%content-box-border-image%%) 13 16 stretch;
+			border-width: 9px 12px;			
+			@include simple-border-image('%%content-box-border-image%%', 13, 16, 'stretch');			
 			background-color: $color_darkGray;
 		}
 		&:hover:after {
@@ -1672,7 +1562,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		border: 4px solid #fff;
 		border-width: 4px;
 		background-color: $color_darkGray;
-		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+		@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 
 		&:before, &:after {
 			content: "";
@@ -1698,7 +1588,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.linklisting .link {
 		border-width: 4px;
 		border-bottom: 4px solid #fff;
-		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+		@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 
 		&:last-of-type {
 			border: none;
@@ -1840,7 +1730,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 				border-width: 4px;
 				border: 4px solid $color_white;
-				border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+				@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 			}
 			&:hover:after {
 				visibility: visible;
@@ -3002,7 +2892,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		border: 4px solid #fff;
 		border-width: 4px;
 		background-color: $color_darkGray;
-		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+		@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 
 		&:before, &:after {
 			content: "";
@@ -3029,7 +2919,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		border: 4px solid #fff;
 		border-width: 4px;
 		background-color: $color_RESDialogSmallLivePreview;
-		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+		@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 
 		&:before, &:after {
 			content: "";
@@ -3085,7 +2975,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			border-bottom: 4px solid #fff;
 			border-width: 4px;
 			background-color: $color_RESDialogSmallLivePreview;
-			border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+			@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 		}
 	}
 
@@ -4114,7 +4004,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 		position: relative;
 		border: 4px solid $color_white;
-		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+		@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 		background-color: $color_darkGray;
 
 		background-image: url(%%header-light%%);
@@ -4412,7 +4302,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		border: 4px solid $color_white;
-		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+		@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 		background-color: darken($color_darkGray, 5);
 
 		&:before, &:after, &>ul:before, &>ul:after {
@@ -4451,7 +4341,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 		li {
 			border-bottom: 4px solid $color_white;
-			border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+			@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 			background-color: darken($color_darkGray, 5);
 			&:hover {
 				background-color: $color_darkGray;
@@ -5910,7 +5800,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 		border-width: 4px;
 		border: 4px solid $color_white;
-		border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+		@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 
 		li {
 			max-width: 300px;
@@ -5937,7 +5827,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-size: cover;
 		border: 14px solid $color_white;
 		border-width: 14px 17px;
-		border-image: url(%%sticky-box%%) 18 21 stretch;
+		@include simple-border-image('%%sticky-box%%', 18, 21, 'stretch');		
 
 		padding: 0;
 		box-shadow: 0 1px 5px rgba(41, 15, 4, 0.5);
@@ -6100,7 +5990,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 			border-width: 4px;
 			border: 4px solid $color_white;
-			border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
+			@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 			z-index: 2000;
 		}
 	}

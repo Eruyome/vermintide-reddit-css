@@ -36,11 +36,10 @@ gulp.task('images:all', function() {
 });
 
 /* linting (css) */
-gulp.task('lintcss', function() {	
+gulp.task('lintcss', function() {
 	var linting = gulp.src('./theme/css/style.stylish.css')
 		.pipe(csslint())
-		.pipe(csslint.formatter()
-	);
+		//.pipe(csslint.formatter());
 });
 
 /* linting (scss) */
@@ -50,7 +49,7 @@ gulp.task('lint', function() {
 			configFile: 'sass-lint.yml'
 		}))
 		.pipe(sassLint.format())
-		.pipe(sassLint.failOnError())		
+		//.pipe(sassLint.failOnError())		
 	;
 
 	linting.on('finish', function(){

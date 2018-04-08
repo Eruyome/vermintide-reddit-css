@@ -22,7 +22,7 @@ rules:
   extends-before-declarations: 2
   placeholder-in-extend: 2
   mixins-before-declarations:
-    - 2
+    - 0
     -
       exclude:
         - breakpoint

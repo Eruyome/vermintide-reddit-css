@@ -3,7 +3,7 @@
 	"box-model": false,
 	"box-sizing": false,
 	"bulletproof-font-face": false,
-	"compatible-vendor-prefixes": false,
+	"compatible-vendor-prefixes": true,
 	"display-property-grouping": false,
 	"duplicate-background-images": false,
 	"duplicate-properties": false,

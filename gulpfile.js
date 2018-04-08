@@ -36,14 +36,17 @@ gulp.task('images:all', function() {
 
 /* linting */
 gulp.task('lint', function() {
-	/* Compile nested (adding @charset "utf-8") */
-	return gulp.src('./theme/scss/*.scss')		
+	var linting = gulp.src('./theme/scss/*.scss')		
 		.pipe(sassLint({
 			configFile: 'sass-lint.yml'
 		}))
 		.pipe(sassLint.format())
 		.pipe(sassLint.failOnError())		
 	;
+
+	linting.on('finish', function(){
+		gulp.start('replace');
+	});
 });
 
 /* Compile sass and minify css (gitmodified) */
@@ -67,7 +70,7 @@ gulp.task('styles:gitmodified', function() {
 	;
 	
 	compileNested.on('end', function(){
-		gulp.start('replace');
+		gulp.start('lint');
 	});
 });
 
@@ -139,14 +142,12 @@ gulp.task('styles:all', function() {
 		.pipe(sass({outputStyle: 'compressed'})
 			.on('error', sass.logError))
 		.pipe(rename({suffix: '.min'}))
-		//.pipe(nano({zindex:false}))
-		//.pipe(minifyCss())
 		.pipe(cssmin({showLog :true,debug:true}))
 		.pipe(gulp.dest('./theme/css/'))
 	;
 	
 	compileNested.on('end', function(){
-		gulp.start('replace');
+		gulp.start('lint');
 	});
 });
 

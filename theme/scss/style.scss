@@ -977,7 +977,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		top: -2px;
 		overflow: visible;
 		&.nohavemail {
-			background-position: -32px -0px;
+			background-position: -32px 0;
 		}
 		&.havemail {
 			background-position: -32px -16px;
@@ -1027,7 +1027,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	#modmail {
 		top: -3px;
 		&.nohavemail {
-			background-position: -48px -0px;
+			background-position: -48px 0;
 		}
 		&.havemail {
 			background-position: -48px -16px;
@@ -1036,7 +1036,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	}
 
 	#header-bottom-right a.pref-lang {
-		background: url(%%sprite-alternate%%) -0px -16px;
+		background: url(%%sprite-alternate%%) 0 -16px;
 		width: 16px;
 		height: 14px;
 		display: inline-block;
@@ -1056,7 +1056,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		position: relative;
 		top: -1px;
 		transition: all 0.25s ease;
-		background: url(%%sprite-alternate%%) -16px -0px;
+		background: url(%%sprite-alternate%%) -16px 0;
 	}
 
 	#search {
@@ -1498,7 +1498,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 				color: $color_white;
 				box-shadow: 0 1px 5px $color_mailBoxshadow;
 				display: block;
-				margin: 1.5em 0em;
+				margin: 1.5em 0;
 				font-size: 12px;
 				&:hover {
 					background-color: $color_fancyToggleButtonBGHover;
@@ -1528,7 +1528,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		font-weight: bold;
 		transition: all 0.15s ease;
 		display: block;
-		margin: 1.5em 0em;
+		margin: 1.5em 0;
 		font-size: 12px;
 	}
 
@@ -3561,7 +3561,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			}
 			label {
 				padding: 1em;
-				margin: 0.5em 0em;
+				margin: 0.5em 0;
 				transition: background-color 0.1s ease;
 				cursor: pointer;
 				font-size: 12px;
@@ -3856,7 +3856,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		height: 560px;
 		margin-right: 316px;
 		#image-upload {
-			margin: 0em 0em 4em 0em;
+			margin: 0 0 4em 0;
 		}
 	}
 
@@ -4547,8 +4547,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 		100% {
 			opacity: 1;
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 		}
 	}
 
@@ -4562,8 +4562,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 		100% {
 			opacity: 1;
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 		}
 	}
 
@@ -4577,8 +4577,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 		100% {
 			opacity: 1;
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 		}
 	}
 
@@ -4592,8 +4592,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 		100% {
 			opacity: 1;
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 		}
 	}
 
@@ -4720,14 +4720,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		27% {
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 			opacity: 1;
 		}
 
 		92% {
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 			opacity: 1;
 		}
 
@@ -4765,14 +4765,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		27% {
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 			opacity: 1;
 		}
 
 		92% {
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 			opacity: 1;
 		}
 
@@ -4810,14 +4810,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		27% {
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 			opacity: 1;
 		}
 
 		92% {
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 			opacity: 1;
 		}
 
@@ -4855,14 +4855,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		27% {
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 			opacity: 1;
 		}
 
 		92% {
-			transform: translateY(0px);
-			-webkit-transform: translateY(0px);
+			transform: translateY(0);
+			-webkit-transform: translateY(0);
 			opacity: 1;
 		}
 
@@ -4878,7 +4878,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			opacity: 0;
 		}
 	}
-
 
 	@-webkit-keyframes upvote {
 		0% {
@@ -4902,7 +4901,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-
 	@-moz-keyframes upvote {
 		0% {
 			transform: scale(0, 0);
@@ -4924,7 +4922,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			opacity: 0;
 		}
 	}
-
 
 	@-o-keyframes upvote {
 		0% {

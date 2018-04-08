@@ -7,7 +7,8 @@ var gulp = require('gulp'),
 	pngquant = require('imagemin-pngquant'),
 	replace = require('gulp-replace'),
 	fs = require("fs"),
-	sassLint = require('gulp-sass-lint');
+	sassLint = require('gulp-sass-lint'),
+	csslint = require('gulp-csslint');
 	
 const loadJsonFile = require('load-json-file');
 	
@@ -34,7 +35,17 @@ gulp.task('images:all', function() {
 		.pipe(gulp.dest('./theme/img/exported-minified/'));
 });
 
-/* linting */
+/* linting (css) */
+gulp.task('lintcss', function() {	
+/*
+	var linting = gulp.src('./theme/css/style.stylish.css')
+		.pipe(csslint())
+		.pipe(csslint.formatter()
+	);
+	*/
+});
+
+/* linting (scss) */
 gulp.task('lint', function() {
 	var linting = gulp.src('./theme/scss/*.scss')		
 		.pipe(sassLint({
@@ -86,7 +97,7 @@ gulp.task('replace', function() {
 
 		fs.access(file, (err) => {
 			if (!err) {
-				var replacing = gulp.src(file)
+				replacing = gulp.src(file)
 					.pipe(replace(/(%%(.*?)%%)/g, function(match, p1, p2, offset, string) {
 						var url = searchUrl(p2, urls);
 						//console.log('Found "' + match + '" and replaced with "' + url + '" at ' + offset);			
@@ -105,11 +116,11 @@ gulp.task('replace', function() {
 				;
 				
 				replacing.on('end', function(){
+					gulp.start('lintcss');
 					if (failedReplacements > 0) {
-							console.log('           ' + failedReplacements + ' replacements failed because no matching url was found.');
-							console.log('           ' + '[' + missingUrls.join(", ") + ']');
-						};
-					
+						console.log('           ' + failedReplacements + ' replacements failed because no matching url was found.');
+						console.log('           ' + '[' + missingUrls.join(", ") + ']');
+					};					
 				});
 			}
 			else if (err) {

@@ -3,6 +3,7 @@
 $color_wineRed : #DD1919;
 //$color_wineRed : #C60000;
 $color_darkGray : #212121;
+$color_darkGrayTrans : rgba(33, 33, 33, 0.8);
 $color_bodyBG : #eeeeee;
 $color_headerBG : #2A2B2E;
 $color_white : #fff;
@@ -995,7 +996,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	#mail.havemail {
 		&:before {
 			position: fixed;
-			padding: 16px 24px;
+			padding: 13px 24px;
 			bottom: 24px;
 			z-index: 100;
 			border-radius: 2px;
@@ -1012,7 +1013,10 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			-webkit-transform: translateY(112px);
 			transform: translateY(112px);
 			transition: background-color 0.25s ease, box-shadow 0.25s ease;
-			background: $color_haveMailBG url(%%sprite-alternate%%) no-repeat 269px -32px;
+			background: darken($color_wineRed, 10) url(%%sprite-alternate%%) no-repeat 269px -36px;
+
+			border: 4px solid $color_white;
+			border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
 		}
 		&:hover:before {
 			background-color: $color_haveMailBGBefore;
@@ -4158,10 +4162,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	.tb-toolbar {
-
-	}
-
 	.res {
 		.link .tagline a.voteWeight {
 			background-color: transparent !important;
@@ -5190,11 +5190,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color: $color_headerTabmenuLinkHoverLigth;
 	}
 
-	.link.last-clicked {
-		background-color: $color_darkGray;
-		box-shadow: inset -6px 0 0 $color_wineRed;
-	}
-
 	.titlebox {
 		h1 a {
 			color: $color_white;
@@ -5302,7 +5297,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 	}
 
-	#search #searchexpando, .commentarea > .usertext, .search-page .searchfacets, .link.last-clicked, .titlebox .tagline:after, .submit-page #newlink.submit.content .tabmenu.formtab a:hover, .top-page .content .menuarea .drop-choices.lightdrop a.choice:hover {
+	#search #searchexpando, .commentarea > .usertext, .search-page .searchfacets, .titlebox .tagline:after, .submit-page #newlink.submit.content .tabmenu.formtab a:hover, .top-page .content .menuarea .drop-choices.lightdrop a.choice:hover {
 		background-color: $color_RESDialogSmallLivePreview;
 	}
 
@@ -5310,6 +5305,11 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		code, pre {
 			background-color: $color_RESDialogSmallLivePreview;
 		}
+	}
+
+	.link.last-clicked {
+		background-color: darken($color_darkGray, 1);
+		border-bottom: inherit;
 	}
 
 	.pretty-form textarea, .btn:hover, button:hover, .btn:active, button:active, .new-comment .usertext-body {
@@ -5750,6 +5750,37 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding: 1px 3px;
 		text-decoration: none;
 	}
+	body {
+		&.mod-toolbox .tb-general-button, &.mod-toolbox li a.tb-general-button, &.mod-toolbox .tb-bracket-button {
+			background: none !important;
+			font: bold x-small Avenir, Verdana, Arial, sans-serif !important;
+			text-align: center;
+			border-width: 1px 1px 1px 2px;
+			border-color: transparent !important;
+			border-style: none !important;
+			padding: 1px 3px;
+			text-decoration: none;
+		}
+
+		&.mod-toolbox .tb-page-overlay a, &.mod-toolbox .tb-popup a, &.mod-toolbox .tb-toolbar a {
+			color: darken($color_wineRed, 10);
+		}
+
+		&.mod-toolbox #tb-bottombar {
+			background-color: darken($color_darkGrayTrans, 10);
+			border-color: darken($color_darkGrayTrans, 17);
+		}
+		&.mod-toolbox #tb-toolbar-mysubs, &.mod-toolbox #tb-personal-notes-button {
+			background-color: darken($color_darkGrayTrans, 13);
+			border-color: darken($color_darkGrayTrans, 17);
+
+			&:hover {
+				background-color: darken($color_darkGrayTrans, 11);
+				border-color: darken($color_darkGrayTrans, 17);				
+			}
+		}
+	}
+	
 
 	.side .md>ul:nth-of-type(1) {
 		list-style-type: none;

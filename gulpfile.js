@@ -37,12 +37,10 @@ gulp.task('images:all', function() {
 
 /* linting (css) */
 gulp.task('lintcss', function() {	
-/*
 	var linting = gulp.src('./theme/css/style.stylish.css')
 		.pipe(csslint())
 		.pipe(csslint.formatter()
 	);
-	*/
 });
 
 /* linting (scss) */

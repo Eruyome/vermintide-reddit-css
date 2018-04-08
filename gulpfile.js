@@ -1,14 +1,13 @@
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
-	//nano = require('gulp-cssnano'),
-	//minifyCss = require('gulp-minify-css'),
 	cssmin = require('gulp-cssmin'),
 	rename = require('gulp-rename'),
 	gitmodified = require('gulp-gitmodified'),
 	imagemin = require('gulp-imagemin'),
 	pngquant = require('imagemin-pngquant'),
 	replace = require('gulp-replace'),
-	fs = require("fs");
+	fs = require("fs"),
+	sassLint = require('gulp-sass-lint');
 	
 const loadJsonFile = require('load-json-file');
 	
@@ -35,6 +34,18 @@ gulp.task('images:all', function() {
 		.pipe(gulp.dest('./theme/img/exported-minified/'));
 });
 
+/* linting */
+gulp.task('lint', function() {
+	/* Compile nested (adding @charset "utf-8") */
+	return gulp.src('./theme/scss/*.scss')		
+		.pipe(sassLint({
+			configFile: 'sass-lint.yml'
+		}))
+		.pipe(sassLint.format())
+		.pipe(sassLint.failOnError())		
+	;
+});
+
 /* Compile sass and minify css (gitmodified) */
 gulp.task('styles:gitmodified', function() {
 	/* Compile nested (adding @charset "utf-8") */
@@ -44,14 +55,13 @@ gulp.task('styles:gitmodified', function() {
 			.on('error', sass.logError))
 		.pipe(gulp.dest('./theme/css/'))
 	;
+	
 	/* Compile compressed (no added charset) */
 	gulp.src('./theme/scss/*.scss')
 		.pipe(gitmodified('modified'))
 		.pipe(sass({outputStyle: 'compressed'})
 			.on('error', sass.logError))
 		.pipe(rename({suffix: '.min'}))
-		//.pipe(nano({zindex:false}))
-		//.pipe(minifyCss())
 		.pipe(cssmin({showLog :true,debug:true}))
 		.pipe(gulp.dest('./theme/css/'))
 	;

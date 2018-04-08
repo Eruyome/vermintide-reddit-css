@@ -5,3 +5,4 @@ npm-debug.log*
 /node_modules
 /test
 /theme/css
+sass-lint-report.html

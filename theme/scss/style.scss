@@ -479,6 +479,9 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			color: $color_inputFont;
 			transition: all 0.15s ease !important;
 		}
+		.recover-password {
+			margin-left: 0.5em;
+		}
 	}
 
 	input:hover, textarea:hover {
@@ -929,9 +932,14 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		right: 30px;
 		max-width: 500px;
 		background-size: auto;
-		padding: 7px 0 0 2px;
+		padding: 0 0 0 2px;
 		background-position: 0 0;
+		line-height: 35px;
 
+		a.pref-lang, #mail, .logout a {
+			top: 11px;
+		}
+			
 		&:before, &:after {
 			display: block;
 			content: "";
@@ -952,7 +960,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 		.beta-hint a {
 			margin-left: -17px;
-			margin-top: 5px;
+			margin-top: 11px;
 		}
 	}
 
@@ -2922,8 +2930,8 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		padding: 8px 16px;
 		line-height: 26px;
 		border: none;
-		margin: 0px 316px 16px 0px;
-		background-color: $color_buttonBG;
+		margin: 0 316px 11px 0 !important;
+		background-color: transparent;
 		color: $color_white;
 		box-shadow: 0px 1px 5px $color_mailBoxshadow;
 		border-radius: 2px;
@@ -3190,9 +3198,15 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		border-radius: 3px;
 	}
 
-	.gold-accent.comment-visits-box {
-		margin: 0px 0px 12px 0px;
-		border-radius: 2px;
+	.gold-accent {
+		&.comment-visits-box {
+			margin: 0px 0px 12px 0px;
+			border-radius: 2px;
+		}
+		.title {
+			color: #9a7d2e;
+			margin-top: 0px !important;
+		}
 	}
 
 	.commentarea {
@@ -4119,11 +4133,18 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		font-size: 12px;
 	}
 
-	.footer {
+	.footer-parent {
+		margin: 15px 16px -40px 16px;
+		padding-top: 0px;
+
 		position: relative;
 		border: 4px solid #fff;
     	border-image: url(%%content-box-border-image-nocorner%%) 4 4 stretch !important;
     	background-color: $color_darkGray;
+
+    	background-image: url(%%header-light%%);
+    	background-position: 0px -34px;
+    	background-blend-mode: soft-light;
 
     	&:before, &:after, & div:last-of-type:before, & div:last-of-type:after {
 			display: block;
@@ -4157,6 +4178,26 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			-webkit-transform: rotate(180deg);
 		}
 	}
+	.footer {
+		border: none;
+		.col {
+			border: none;
+		}
+		.flat-vert.title {
+			text-transform: uppercase;
+			font-size: 10px;
+			font-weight: 700;
+			letter-spacing: 2px;
+		}
+		ul.flat-vert {
+			font-size: 10px;
+			text-transform: capitalize;
+		}
+	}
+
+	.tb-toolbar {
+
+	} 
 
 	.res {
 		.link .tagline a.voteWeight {
@@ -4935,6 +4976,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.side {
 		margin-top: 446px;
+		margin-bottom: 15px;
 	}
 
 	.search-page .side {
@@ -4965,7 +5007,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		background-color: $color_headerTabmenuLinkHover;
 	}
 
-	.titlebox .fancy-toggle-button .add, .content .infobar {
+	.titlebox .fancy-toggle-button .add  {
 		background-color: $color_wineRed;
 	}
 
@@ -5316,9 +5358,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 
 	.search-page #search input[type=text] {
 		border-color: $color_inputBorderDark;
-	}
-	.footer .col {
-		border-color: darken($color_inputBorderDark,10);	
 	}
 
 	.linefield {
@@ -6007,16 +6046,16 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 		}
 
 		a {
-			background: initial;
-			box-shadow: initial;
+			background: none;
+			box-shadow: none;
 			display: inline;
 			padding: 0px;
 			margin: 0px;
 			color: $color_wineRed;
 
 			&:hover {
-				background: initial;
-				box-shadow: initial;
+				background: none;
+				box-shadow: none;
 			}
 		}
 
@@ -6148,6 +6187,18 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.side li:nth-child(1) .author {
 		margin-top: 20px;
 		display: inline-block;
+	}
+
+	.side .read-next-container {
+		.read-next.active {
+			width: 281px;
+			right: 6px;
+
+			&.fixed {
+				width: 300px;
+				right: 16px;
+			}
+		}
 	}
 
 	// https://www.reddit.com/r/Enhancement/comments/4pj28n/collapse_post_like_in_roverwatch/

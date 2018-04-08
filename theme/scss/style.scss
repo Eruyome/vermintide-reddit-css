@@ -957,12 +957,16 @@ body:not(.loggedin) #header-bottom-right {
 	top: 96px;
 	z-index: 1;
 	width: 300px;
+
+	border: 4px solid $color_white;
+	@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
+
 	input {
 		&[type=text] {
-			padding: 10px 25px 10px 16px;
-			border: 0 solid;
-			border-radius: 2px;
-			box-shadow: 0 1px 5px $color_mailBoxshadow !important;
+			padding: 7px 25px 7px 16px;
+			border: none;
+			width: 294px;
+			margin: -1px;
 			transition: all 0.25s ease;
 			&:hover {
 				box-shadow: 0 3px 12px $color_searchInputHoverBoxShadow !important;
@@ -992,23 +996,22 @@ body:not(.loggedin) #header-bottom-right {
 			}
 		}
 		&[type=submit] {
-			height: 32px;
+			height: 28px;
 			width: 32px;
 			margin-left: -38px;
 			border: none !important;
 			border-radius: 16px;
-			background: $color_fancyToggleButtonAfterBoxShadow url(%%sprite-alternate%%) no-repeat -215px -231px;
+			background: $color_fancyToggleButtonAfterBoxShadow url(%%sprite-alternate%%) no-repeat -215px -232px;
 			transition: background-color 0.15s ease;
 			&:hover {
-				background: $color_actionFormListBG url(%%sprite-alternate%%) no-repeat -215px -231px;
+				background: $color_actionFormListBG url(%%sprite-alternate%%) no-repeat -215px -232px;
 			}
 		}
 	}
 	#searchexpando {
 		background-color: $color_titleBoxTaglineBG;
 		border: none;
-		border-radius: 0 0 2px 2px;
-		margin-top: -5px;
+		margin: -5px -1px 1px 1px;
 		padding-top: 10px;
 		padding-left: 0;
 		padding-right: 0;
@@ -1088,7 +1091,7 @@ body:not(.loggedin) #header-bottom-right {
 	width: 317px;
 	height: 58px;
 	line-height: 58px;
-	top: 383px;
+	top: 382px;
 	right: 6px;
 	text-align: center;
 
@@ -1502,7 +1505,7 @@ div.titlebox span.number:after {
 	}
 }
 
-.sitetable {
+.sitetable, .search-page .search-result-listing {
 	margin-right: 316px;
 	box-shadow: 0 1px 5px $color_boxshadow;
 	position: relative;
@@ -1531,7 +1534,7 @@ body > .content .link .rank, .rank-spacer {
 	display: none;
 }
 
-.link {
+.link, .search-result-link {
 	.midcol {
 		width: 36px !important;
 		margin: 15px 14px 0 11px;
@@ -1556,7 +1559,7 @@ body > .content .link .rank, .rank-spacer {
 	position: relative;
 }
 
-.listing-page .sitetable, .wiki-page-content {
+.listing-page .sitetable, .wiki-page-content, .search-page .sitetable, .search-page .search-result-listing {
 	border: 4px solid #fff;
 	border-width: 4px;
 	background-color: $color_darkGray;
@@ -1583,7 +1586,7 @@ body > .content .link .rank, .rank-spacer {
 	}
 }
 
-.linklisting .link {
+.linklisting .link, .search-result-listing .search-result-link {
 	border-width: 4px;
 	border-bottom: 4px solid #fff;
 	@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
@@ -1661,6 +1664,11 @@ body > .content .link .rank, .rank-spacer {
 	display: block;
 	margin: 0 0 -5px 0;
 	padding: 9px;
+}
+
+.search-result-group {
+	padding-left: 16px;
+	width: 100%;
 }
 /*  linklisting border + corner and RES fixes end */
 
@@ -3430,13 +3438,16 @@ div {
 }
 
 .search-page .searchpane {
-	margin: 0 316px 0 0;
+	margin: 0 316px 10px 0;
 	background: $color_white none;
 	padding: 16px;
 	border: none;
 	border-radius: 2px 2px 0 0;
 	box-shadow: 0 1px 5px $color_mailBoxshadow;
 	position: relative;
+}
+.search-result mark {
+	line-height: inherit;
 }
 
 .raisedbox h4 {
@@ -3447,11 +3458,15 @@ div {
 
 .search-page {
 	#search {
+		border: none;
+		padding: 6px;
 		position: inherit;
 		input[type=text] {
 			box-shadow: none !important;
 			font-size: 36px;
-			padding: 0;
+			padding: 3px;
+			width: 100%;
+			max-width: 500px;
 			border-radius: 0;
 			border-bottom: 1px solid $color_searchInputBorder;
 			margin: 0 0 9px;
@@ -3465,6 +3480,7 @@ div {
 			transition: background-color 0.1s ease;
 			cursor: pointer;
 			font-size: 12px;
+			max-width: 300px;
 			&:hover {
 				background-color: $color_actionFormListBG;
 			}
@@ -3998,7 +4014,7 @@ div {
 
 .footer-parent {
 	margin: 15px 16px -40px 16px;
-	padding-top: 0;
+	padding: 0 0 12px 0;
 
 	position: relative;
 	border: 4px solid $color_white;
@@ -4227,8 +4243,10 @@ html.res-commentBoxes .comment {
 		margin-right: 0;
 	}
 	#search #searchexpando {
-		width: 300px;
-		box-shadow: 0 2px 6px $color_dropdownLightBoxShadow;
+		width: 294px;
+		margin-left: -1px;
+		margin-bottom: -1px;
+		font-size: 12px;		
 		height: auto;
 		label {
 			display: inline;
@@ -4913,7 +4931,10 @@ form.toggle.sr_style_toggle label {
 }
 
 .search-page .side {
-	margin-top: 394px;
+	margin-top: 404px;
+	&:before {
+		top: 403px;
+	}
 }
 
 .comments-page .side {
@@ -4929,7 +4950,7 @@ form.toggle.sr_style_toggle label {
 }
 
 #search, .search-page .morelink {
-	top: 342px;
+	top: 341px;
 }
 
 #header-bottom-left {

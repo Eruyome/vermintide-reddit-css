@@ -742,7 +742,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			transition: background-color 0.25s ease;
 			&:hover {
 				text-decoration: none;
-				background-color: $color_dropdownBorder $color_pagenameBGHover;
+				background-color: transparent;
 			}
 			&:before {
 				content: "/r/";
@@ -830,7 +830,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	#header .tabmenu li {
 		a:hover {
 			color: $color_white;
-			background-color: $color_dropdownBorder $color_pagenameBGHover;
 		}
 		&.selected a {
 			padding: 16px;
@@ -839,9 +838,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			border-bottom: 2px solid $color_white;
 			color: $color_white;
 			font-weight: bold;
-			&:hover {
-				background-color: $color_dropdownBorder $color_pagenameBGHover;
-			}
 		}
 	}
 
@@ -3360,7 +3356,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 	.usertext.grayed .usertext-body {
 		margin: 4px 0;
 		background-color: transparent;
-		text-transform: italic;
 		padding: 0;
 	}
 
@@ -6002,7 +5997,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			line-height: 23px;
 			font-weight: bold;
 			font-size: 11px;
-			display: inline;
 			border-radius: 1px;
 			margin-left: -30px;
 			margin-top: -4px;
@@ -6010,6 +6004,7 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			background-repeat: no-repeat;
 			background-size: contain;
 			text-shadow: 0 0 1px $color_wineRed;
+			display: block;
 		}
 
 		a {
@@ -6017,7 +6012,6 @@ $color_inv_blockquoteBorder 	: invert($color_blockquoteBorder);
 			box-shadow: none;
 			display: inline;
 			padding: 0;
-			margin: 0;
 			color: $color_wineRed;
 
 			&:hover {

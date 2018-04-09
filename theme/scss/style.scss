@@ -268,6 +268,10 @@ input:not([type="submit"]), textarea {
 	}
 }
 
+form input[type="checkbox"], form input[type="radio"] {
+	margin: 2px 3px 0 0;
+}
+
 /* subreddit sidebar formatting comments/guide */
 .create-reddit .pretty-form .linefield:nth-of-type(3) {
 	/*
@@ -2722,65 +2726,25 @@ div {
 }
 
 .top-page {
-	.content .menuarea .drop-choices.lightdrop {
-		display: inline;
-		visibility: visible;
-	}
-	.menuarea .spacer {
-		overflow: visible;
-	}
 	.content .menuarea {
-		.drop-choices.lightdrop {
-			a.choice, form {
-				display: inline;
+		margin: 0 316px 5px 0;
+		padding: 3px 10px;		
+		background-color: $color_darkGray;
+
+		.dropdown-title {
+			text-transform: uppercase;
+		}
+		.dropdown {
+			.selected {
+				padding: 2px 21px 2px 4px;
+				background-color: darken($color_darkGray, 5) !important;
+				text-transform: none;
 			}
-		}
-		.dropdown-title.lightdrop {
-			visibility: hidden;
-		}
-		border-bottom: 0;
-		padding: 0;
-		margin: 0;
-		height: 36px;
-		.dropdown.lightdrop .selected {
-			z-index: 1002;
-			position: relative;
-			left: -68px;
-			top: 11px;
-			text-decoration: none;
-			text-transform: capitalize;
-			font-size: 12px;
-			pointer-events: none;
-			padding: 10px 16px;
-			background: $color_fancyToggleButtonBGHover none;
-			overflow: visible;
-			color: $color_white;
-		}
-		.drop-choices.lightdrop {
-			padding: 10px 16px 10px 104px;
-			margin-left: 16px;
-			margin-top: 1px;
-			border-radius: 2px 2px 0 0;
-			border: none;
-			border-bottom: 1px solid $color_topPageContentDropsBorder;
-			width: calc(100% - 348px);
-			box-shadow: none;
-			a.choice {
-				padding: 10px;
-				color: $color_inputFontActive;
-				transition: all 0.25s ease;
-				&[href*="/?t=all"] {
-					border-right: 0 solid;
-				}
-				&:hover {
-					background-color: $color_topPageContentDropsBorderLinkHoverBG;
-				}
-				&.selected {
-					background-color: $color_inputBorderActive;
-					color: $color_white;
-				}
-			}
-		}
+		}		
+	}
+	.content .menuarea, .content .menuarea .drop-choices.lightdrop {
+		border: 4px solid $color_white;
+		@include simple-border-image('%%content-box-border-image-nocorner%%', 4 , 4, 'stretch');
 	}
 }
 
@@ -4091,7 +4055,7 @@ div {
 	}
 }
 
-.res {
+.res {	
 	.link .tagline a.voteWeight {
 		background-color: transparent !important;
 	}
@@ -4113,6 +4077,21 @@ div {
 		top: 1px !important;
 	}
 }
+.res-filterline {
+	margin: 0 316px 5px 0;
+	border: 4px solid $color_white;
+	@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
+	background-color: $color_darkGray;
+	color: $color_white;
+
+	.res-filterline-dropdown {
+		color: $color_black;
+	}
+	.res-filterline-toggle-powered:checked {
+		color: $color_wineRed;
+	}
+}
+
 .RESUserTag {
 	.RESUserTagImage:after {
 		display: inline-block;
@@ -4983,7 +4962,7 @@ form.toggle.sr_style_toggle label {
 	}
 }
 
-.drop-choices a.choice:hover, .linkflairlabel, .fancy-toggle-button .remove:active .expando-button:hover, .top-page .content .menuarea .dropdown.lightdrop .selected, .expando-button:hover, .side .titlebox .md h3 a {
+.drop-choices a.choice:hover, .linkflairlabel, .fancy-toggle-button .remove:active .expando-button:hover, .expando-button:hover, .side .titlebox .md h3 a {
 	background-color: $color_wineRed;
 }
 
@@ -4997,10 +4976,6 @@ form.toggle.sr_style_toggle label {
 	background-color: $color_wineRed;
 }
 
-.btn:hover, button:hover {
-	//background-color: $color_moreLinkBG;
-	// this "breaks" the report window "next" button background
-}
 .submit-page #newlink.submit.content .tabmenu.formtab .selected a:hover, .side .titlebox .md h3 a:hover {
 	background-color: $color_moreLinkBG;
 }
@@ -5262,7 +5237,7 @@ body {
 }
 
 .pretty-form textarea, .btn:hover, button:hover, .btn:active, button:active, .new-comment .usertext-body {
-	background-color: $color_RESDialogSmallLivePreview;
+	background-color: darken($color_darkGray, 15);
 }
 
 .res-commentBoxes .comment .comment {
@@ -5289,10 +5264,6 @@ body {
 	textarea, input[type=text] {
 		border-color: $color_inputBorderDark;
 	}
-}
-
-.top-page .content .menuarea .drop-choices.lightdrop {
-	border-color: $color_inputBorderDark;
 }
 
 .roundfield input {
@@ -5604,7 +5575,7 @@ body {
 	}
 }
 
-#sr-header-area .drop-choices a.choice, .comments-page .side .linkinfo .score, .pretty-form, input:not([type="submit"]), textarea, .link .usertext .md, .btn:hover, button:hover, .btn, button, .hover-bubble.multi-selector strong, .wiki-page .wikititle {
+#sr-header-area .drop-choices a.choice, .comments-page .side .linkinfo .score, .pretty-form, input:not([type="submit"]), textarea, .link .usertext .md, .btn, button, .hover-bubble.multi-selector strong, .wiki-page .wikititle {
 	color: $color_titleBoxVisitedFont;
 }
 
@@ -5655,10 +5626,6 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 .btn, button {
 	//background-color: $color_dropdownLightBoxShadow;
 	cursor: pointer;
-}
-
-.btn:hover, button:hover {
-	background-color: $color_titleboxTaglineBG;
 }
 
 .content .thing {
@@ -5823,10 +5790,10 @@ body {
 	z-index: 1000;
 	display: block;
 	position: absolute;
-	right: 325px;
+	right: 294px;
 	margin: 0;
-	padding: 15px;
-	margin-top: -24px;
+	padding: 7px;
+	margin-top: -25px;
 	background: darken($color_darkGray, 3);
 
 	border-width: 4px;
@@ -5834,7 +5801,10 @@ body {
 	@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 
 	li {
+		font-family: verdana, arial, sans-serif;
 		max-width: 300px;
+		width: 100%;
+		margin: 0;
 
 		&:after {
 			display: none;
@@ -5939,7 +5909,6 @@ body {
 .side .titlebox strong>em>a:after {
 	content: "VT2";
 }
-
 /* vermintide 1 - 2 distinction for links end */
 
 
@@ -5962,10 +5931,9 @@ body {
 	color: $color_white;
 	font-size: 12px;
 	font-weight: normal;
-	margin: 0 10px 0 0;
-	padding: 5px 5px 5px 30px;
 	transition: 0.3s all;
 	line-height: 16px;
+	cursor: help;
 
 	&:before {
 		position: absolute;
@@ -5984,6 +5952,11 @@ body {
 		background-size: contain;
 		text-shadow: 0 0 1px $color_wineRed;
 		display: block;
+	}
+	&:hover:before {
+		color: darken($color_wineRed, 10);
+		text-shadow: 0 0 2px $color_black;
+		font-weight: normal;
 	}
 
 	a {
@@ -6007,14 +5980,14 @@ body {
 		}
 	}
 
-	&:hover + blockquote {
+	&:hover + blockquote, & + blockquote:hover {
 		display: block;
-		width: 300px;
-		padding: 15px;
+		width: 350px;
+		padding: 7px;
 		position: absolute;
-		right: 310px;
+		right: 290px;
 		color: $color_white;
-		margin-top: -26px;
+		margin-top: -34px;
 		margin-right: 15px;
 		font-weight: normal;
 		background: darken($color_darkGray, 3);
@@ -6023,6 +5996,38 @@ body {
 		border: 4px solid $color_white;
 		@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 		z-index: 2000;
+
+		font-family: verdana, arial, sans-serif;
+		ul {
+			font-family: verdana, arial, sans-serif;
+		}
+		li {
+			margin-top: 5px;
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+	}
+
+	margin: 0 -5px;
+	border: 4px solid $color_white;
+	@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
+	display: block;
+	padding: 5px 5px 5px 35px;
+	background-color: darken($color_darkGray, 5);
+
+	&:after {
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		right: 5px;
+		top: 5px;
+		content: "?";
+		font-size: 8px;
+		display: inline-block;
+		text-align: center;
+		border-radius: 8px;
+		background-color: lighten($color_darkGray, 10);
 	}
 }
 

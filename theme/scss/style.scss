@@ -131,6 +131,7 @@ $color_goldAccentTitle: #9a7d2e;
 $color_flairCouncil: #228822;
 $color_flairGreen: #009900;
 $color_modToolTitle: #ccc;
+$color_spoiler: #885d1e;
 
 $color_flairPlatformFontBefore : #ad3429;
 $color_flairPlatform : rgb(104, 110, 123);
@@ -801,6 +802,7 @@ a.random.choice {
 	padding: 0 0 0 2px;
 	background-position: 0 0;
 	line-height: 35px;
+	border-radius: 0;
 
 	a.pref-lang, #mail, .logout a {
 		top: 11px;
@@ -1011,16 +1013,19 @@ body:not(.loggedin) #header-bottom-right {
 	#searchexpando {
 		background-color: $color_titleBoxTaglineBG;
 		border: none;
-		margin: -5px -1px 1px 1px;
-		padding-top: 10px;
-		padding-left: 0;
-		padding-right: 0;
-		height: 57px;
-		line-height: 45px;
+		margin: -5px -1px -1px -1px;
+		padding: 10px 0 0 0;
+		line-height: 1em;
+
+		width: 294px;
+		font-size: 12px;		
+		height: auto;
+
 		label {
-			padding: 18px 8px 17px 8px;
+			padding: 10px 8px 9px 8px;
 			cursor: pointer;
 			transition: all 0.1s ease;
+			width: 100%;
 			&:hover {
 				background-color: $color_searchExpandoLabelHoverBG;
 			}
@@ -1750,14 +1755,14 @@ body > .content .link .rank, .rank-spacer {
 	max-width: 64px;
 	max-height: 56px;
 	margin: 16px 16px 0 0;
-	a img, &.self, &.default {
+	a img, &.self, &.default, &.spoiler {
 		height: 56px;
 	}
 	&.self {
 		background: url(%%sprite-alternate%%) -73px -80px;
 	}
-	&.default {
-		background: url(%%sprite-alternate%%) -143px -80px;
+	&.default, &.spoiler {
+		background: url(%%sprite-alternate%%) -148px -80px;
 	}
 	&.nsfw {
 		background: url(%%sprite-alternate%%) -3px -140px;
@@ -2050,6 +2055,10 @@ body .content .sitetable .link .title a:hover {
 	&:hover {
 		background-color: $color_inputBorderActive;
 	}
+	&.expando-button-loading {
+		background-color: gray;
+		background-image: none !important;
+	}
 	&.selftext {
 		&.collapsed {
 			background-position: -32px -32px;
@@ -2146,6 +2155,10 @@ body .content .sitetable .link .title a:hover {
 	font-family: arial, sans-serif;
 	transition: all 0.15s ease;
 	line-height: 20px;
+}
+
+.spoiler-stamp {
+	color: $color_spoiler;
 }
 
 .link .entry .tagline {
@@ -2800,6 +2813,9 @@ div {
 	}
 }
 
+.reddit-infobar {
+	margin-right: 316px;
+}
 .content .infobar {
 	padding: 8px 16px;
 	line-height: 26px;
@@ -4249,11 +4265,6 @@ html.res-commentBoxes .comment {
 		margin-bottom: -1px;
 		font-size: 12px;		
 		height: auto;
-		label {
-			display: inline;
-			padding-top: 13px;
-			padding-bottom: 13px;
-		}
 	}
 	#searchexpando .searchexpando-submit {
 		display: none;
@@ -5689,7 +5700,7 @@ body.mod-toolbox .tb-general-button, body.mod-toolbox li a.tb-general-button, bo
 	border-color: transparent !important;
 	border-style: none !important;
 	padding: 1px 3px;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 body {
 	&.mod-toolbox .tb-general-button, &.mod-toolbox li a.tb-general-button, &.mod-toolbox .tb-bracket-button {
@@ -5700,24 +5711,24 @@ body {
 		border-color: transparent !important;
 		border-style: none !important;
 		padding: 1px 3px;
-		text-decoration: none;
+		text-decoration: none !important;
 	}
 
 	&.mod-toolbox .tb-page-overlay a, &.mod-toolbox .tb-popup a, &.mod-toolbox .tb-toolbar a {
-		color: darken($color_wineRed, 10);
+		color: darken($color_wineRed, 10) !important;
 	}
 
 	&.mod-toolbox #tb-bottombar {
-		background-color: darken($color_darkGrayTrans, 10);
-		border-color: darken($color_darkGrayTrans, 17);
+		background-color: darken($color_darkGrayTrans, 10) !important;
+		border-color: darken($color_darkGrayTrans, 17) !important;
 	}
 	&.mod-toolbox #tb-toolbar-mysubs, &.mod-toolbox #tb-personal-notes-button {
-		background-color: darken($color_darkGrayTrans, 13);
-		border-color: darken($color_darkGrayTrans, 17);
+		background-color: darken($color_darkGrayTrans, 13) !important;
+		border-color: darken($color_darkGrayTrans, 17) !important;
 
 		&:hover {
-			background-color: darken($color_darkGrayTrans, 11);
-			border-color: darken($color_darkGrayTrans, 17);
+			background-color: darken($color_darkGrayTrans, 11) !important;
+			border-color: darken($color_darkGrayTrans, 17) !important;
 		}
 	}
 }

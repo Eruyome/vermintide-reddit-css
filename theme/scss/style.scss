@@ -192,6 +192,29 @@ body {
 		text-indent: -9999px;
 		z-index: -1;
 	}
+
+	/* toolbox color overwrites */
+	&.mod-toolbox .tb-general-button, &.mod-toolbox li a.tb-general-button, &.mod-toolbox .tb-bracket-button {
+		background: none !important;
+		font: bold x-small Avenir, Verdana, Arial, sans-serif !important;
+		text-align: center;
+		border-width: 1px 1px 1px 2px;
+		border-color: transparent !important;
+		border-style: none !important;
+		padding: 1px 3px;
+		text-decoration: none !important;
+	}
+	&.mod-toolbox .tb-page-overlay a, &.mod-toolbox .tb-popup a, &.mod-toolbox .tb-toolbar a {
+		color: darken($color_wineRed, 10) !important;
+	}
+	&.mod-toolbox #tb-bottombar {
+		background-color: darken($color_darkGrayTrans, 10) !important;
+		border-color: darken($color_darkGrayTrans, 17) !important;
+	}
+	&.mod-toolbox #tb-toolbar-mysubs, &.mod-toolbox #tb-personal-notes-button {
+		background-color: darken($color_darkGrayTrans, 13) !important;
+		border-color: darken($color_darkGrayTrans, 17) !important;
+	}
 }
 
 a {
@@ -218,6 +241,14 @@ input:not([type="submit"]), textarea {
 		border: 1px solid $color_inputBorder;
 		color: $color_inputFont;
 		transition: all 0.15s ease !important;
+		&:hover {
+			border-color: $color_inputBorderHover;
+		}
+		&:active {
+			outline: none !important;
+			border-color: $color_inputBorderActive;
+			color: $color_inputFontActive;
+		}
 	}
 	input {
 		&[type=text], &[type=url], &[type=password], &[type=number] {
@@ -226,6 +257,14 @@ input:not([type="submit"]), textarea {
 			border: 1px solid $color_inputBorder;
 			color: $color_inputFont;
 			transition: all 0.15s ease !important;
+			&:hover {
+				border-color: $color_inputBorderHover;
+			}
+			&:active {
+				outline: none !important;
+				border-color: $color_inputBorderActive;
+				color: $color_inputFontActive;
+			}
 		}
 	}
 }
@@ -237,6 +276,14 @@ input:not([type="submit"]), textarea {
 		border: 1px solid $color_inputBorder;
 		color: $color_inputFont;
 		transition: all 0.15s ease !important;
+		&:hover {
+			border-color: $color_inputBorderHover;
+		}
+		&:active {
+			outline: none !important;
+			border-color: $color_inputBorderActive;
+			color: $color_inputFontActive;
+		}
 	}
 	input {
 		&[type=text], &[type=password] {
@@ -245,6 +292,14 @@ input:not([type="submit"]), textarea {
 			border: 1px solid $color_inputBorder;
 			color: $color_inputFont;
 			transition: all 0.15s ease !important;
+			&:hover {
+				border-color: $color_inputBorderHover;
+			}
+			&:active {
+				outline: none !important;
+				border-color: $color_inputBorderActive;
+				color: $color_inputFontActive;
+			}
 		}
 	}
 }
@@ -256,6 +311,14 @@ input:not([type="submit"]), textarea {
 		border: 1px solid $color_inputBorder;
 		color: $color_inputFont;
 		transition: all 0.15s ease !important;
+		&:hover {
+			border-color: $color_inputBorderHover;
+		}
+		&:active {
+			outline: none !important;
+			border-color: $color_inputBorderActive;
+			color: $color_inputFontActive;
+		}
 	}
 	input {
 		&[type=password], &[type=number] {
@@ -264,12 +327,59 @@ input:not([type="submit"]), textarea {
 			border: 1px solid $color_inputBorder;
 			color: $color_inputFont;
 			transition: all 0.15s ease !important;
+			&:hover {
+				border-color: $color_inputBorderHover;
+			}
+			&:active {
+				outline: none !important;
+				border-color: $color_inputBorderActive;
+				color: $color_inputFontActive;
+			}
 		}
 	}
 }
 
 form input[type="checkbox"], form input[type="radio"] {
 	margin: 2px 3px 0 0;
+}
+
+.login-form-side {
+	input {
+		&[type=text], &[type=password] {
+			width: 128px;
+			box-shadow: none !important;
+			background-color: $color_white;
+			border: 1px solid $color_inputBorder;
+			color: $color_inputFont;
+			transition: all 0.15s ease !important;
+			&:hover {
+				border-color: $color_inputBorderHover;
+			}
+			&:active {
+				outline: none !important;
+				border-color: $color_inputBorderActive;
+				color: $color_inputFontActive;
+			}
+		}
+		.recover-password {
+			margin-left: 0.5em;
+		}
+	}
+
+	border: none;
+	button.btn {
+		margin-right: -3px;
+	}
+}
+
+input:hover, textarea:hover {
+	border-color: $color_inputBorderHover;
+}
+
+input:active, textarea:active {
+	outline: none !important;
+	border-color: $color_inputBorderActive;
+	color: $color_inputFontActive;
 }
 
 /* subreddit sidebar formatting comments/guide */
@@ -347,121 +457,6 @@ form input[type="checkbox"], form input[type="radio"] {
 }
 /* guide end */
 
-.login-form-side input {
-	&[type=text], &[type=password] {
-		box-shadow: none !important;
-		background-color: $color_white;
-		border: 1px solid $color_inputBorder;
-		color: $color_inputFont;
-		transition: all 0.15s ease !important;
-	}
-	.recover-password {
-		margin-left: 0.5em;
-	}
-}
-
-input:hover, textarea:hover {
-	border-color: $color_inputBorderHover;
-}
-
-.roundfield {
-	textarea:hover {
-		border-color: $color_inputBorderHover;
-	}
-	input {
-		&[type=text]:hover, &[type=url]:hover, &[type=password]:hover, &[type=number]:hover {
-			border-color: $color_inputBorderHover;
-		}
-	}
-}
-
-.linefield {
-	textarea:hover {
-		border-color: $color_inputBorderHover;
-	}
-	input {
-		&[type=text]:hover, &[type=password]:hover {
-			border-color: $color_inputBorderHover;
-		}
-	}
-}
-
-.pretty-form {
-	input[type=text]:hover, textarea:hover {
-		border-color: $color_inputBorderHover;
-	}
-	input {
-		&[type=password]:hover, &[type=number]:hover {
-			border-color: $color_inputBorderHover;
-		}
-	}
-}
-
-.login-form-side input {
-	&[type=text]:hover, &[type=password]:hover {
-		border-color: $color_inputBorderHover;
-	}
-}
-
-input:active, textarea:active {
-	outline: none !important;
-	border-color: $color_inputBorderActive;
-	color: $color_inputFontActive;
-}
-
-.roundfield {
-	textarea:active {
-		outline: none !important;
-		border-color: $color_inputBorderActive;
-		color: $color_inputFontActive;
-	}
-	input {
-		&[type=text]:active, &[type=url]:active, &[type=password]:active, &[type=number]:active {
-			outline: none !important;
-			border-color: $color_inputBorderActive;
-			color: $color_inputFontActive;
-		}
-	}
-}
-
-.linefield {
-	textarea:active {
-		outline: none !important;
-		border-color: $color_inputBorderActive;
-		color: $color_inputFontActive;
-	}
-	input {
-		&[type=text]:active, &[type=password]:active {
-			outline: none !important;
-			border-color: $color_inputBorderActive;
-			color: $color_inputFontActive;
-		}
-	}
-}
-
-.pretty-form {
-	input[type=text]:active, textarea:active {
-		outline: none !important;
-		border-color: $color_inputBorderActive;
-		color: $color_inputFontActive;
-	}
-	input {
-		&[type=password]:active, &[type=number]:active {
-			outline: none !important;
-			border-color: $color_inputBorderActive;
-			color: $color_inputFontActive;
-		}
-	}
-}
-
-.login-form-side input {
-	&[type=text]:active, &[type=password]:active {
-		outline: none !important;
-		border-color: $color_inputBorderActive;
-		color: $color_inputFontActive;
-	}
-}
-
 .btn, button {
 	margin: 4px 16px 4px 0;
 	padding: 2px 18px;
@@ -502,41 +497,33 @@ input:active, textarea:active {
 	background-size: cover;
 }
 
+#header-bottom-right {
+	position: absolute;
+}
+
 #sr-header-area {
 	background: transparent;
 	border: 0;
 	height: 24px;
 	line-height: 28px;
+	
 	.width-clip {
 		right: 300px;
 	}
-}
 
-#header-bottom-right {
-	position: absolute;
-}
-
-body:not(.loggedin) #sr-header-area .width-clip {
-	right: 340px;
-}
-
-#sr-header-area {
 	.sr-list {
 		margin-right: 48px;
 	}
 	.sr-bar a {
 		background: none;
 		color: $color_whiteTransp;
+
+		&:hover {
+			background-color: transparent;
+			border: 0 solid;
+			transition: all 0.15s ease;
+		}
 	}
-}
-
-#sr-more-link {
-	background-color: transparent;
-	color: $color_whiteTransp;
-	transition: all 0.15s ease;
-}
-
-#sr-header-area {
 	.separator, .dropdown.srdrop .selected {
 		background-color: transparent;
 		color: $color_whiteTransp;
@@ -547,27 +534,6 @@ body:not(.loggedin) #sr-header-area .width-clip {
 			color: $color_white;
 		}
 	}
-	.sr-bar a:hover {
-		background-color: transparent;
-		border: 0 solid;
-		transition: all 0.15s ease;
-	}
-}
-
-#sr-more-link:hover, #sr-header-area .dropdown.srdrop .selected:hover {
-	background-color: transparent;
-	border: 0 solid;
-	transition: all 0.15s ease;
-}
-
-a.random.choice {
-	padding-top: 2px;
-	position: relative;
-	display: inline-block;
-	margin-top: -2px;
-}
-
-#sr-header-area {
 	.dropdown.srdrop .selected {
 		margin: 0 12px 0 8px;
 		padding: 0;
@@ -597,6 +563,29 @@ a.random.choice {
 			}
 		}
 	}
+}
+
+body:not(.loggedin) #sr-header-area .width-clip {
+	right: 340px;
+}
+
+#sr-more-link {
+	background-color: transparent;
+	color: $color_whiteTransp;
+	transition: all 0.15s ease;
+}
+
+#sr-more-link:hover, #sr-header-area .dropdown.srdrop .selected:hover {
+	background-color: transparent;
+	border: 0 solid;
+	transition: all 0.15s ease;
+}
+
+a.random.choice {
+	padding-top: 2px;
+	position: relative;
+	display: inline-block;
+	margin-top: -2px;
 }
 
 #header-img {
@@ -680,10 +669,7 @@ a.random.choice {
 	display: none;
 }
 
-.side {
-	margin: 200px 16px 0 0;
-	padding: 6px 12px;
-}
+
 .side, .comments-page .side .linkinfo {
 	border: 4px solid #fff;
 	@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
@@ -708,6 +694,78 @@ a.random.choice {
 		margin-top: -17px;
 	}
 }
+
+.side {
+	margin: 200px 16px 0 0;
+	padding: 6px 12px;
+
+	.wiki-page-content .md h1 {
+		padding-bottom: 20px;
+	}
+
+	.md {
+		.-blocks, .-lists, pre, blockquote, table, p, ul, ol {
+			color: $color_white;
+			font-size: 13px;
+			font-family: Arial, sans-serif;
+			line-height: 1.3333333333333333em;
+		}
+	}
+	.titlebox .md {
+		h1 {
+			line-height: 18px;
+			margin: 0.5em 0 0 0 !important;
+		}
+		h2 {
+			margin: 16px 0 2px 0;
+		}
+		h3 a, h4 a {
+			padding: 12px 16px;
+			width: 100%;
+			border-radius: 2px;
+			background-color: $color_buttonBG;
+			font-family: verdana, arial, sans-serif;
+			transition: all 0.25s ease;
+			color: $color_white;
+			box-shadow: 0 1px 5px $color_mailBoxshadow;
+			display: block;
+			margin: 1.5em 0;
+			font-size: 12px;
+			&:hover {
+				background-color: $color_fancyToggleButtonBGHover;
+				box-shadow: 0 2px 8px $color_headline3LinkHoverBoxShadow;
+			}
+			&:active {
+				background-color: $color_ButtonBGActive;
+				box-shadow: 0 4px 12px $color_headline3LinkActiveBoxShadow;
+			}
+		}
+	}
+
+	.titlebox form {
+		.md a:visited {
+			color: $color_titleBoxVisitedFont;
+		}
+	}
+
+	#moderation_tools .title {
+		h1 {
+			text-transform: capitalize;
+			color: $color_inputFontActive;
+		}
+		.collapse-button {
+			color: $color_inputFontActive;
+			vertical-align: middle;
+			border-radius: 1px;
+			border: 1px solid $color_sideCollapseBtn;
+		}
+	}
+	.sidecontentbox .content {
+		border: none;
+		padding: 8px 0;
+	}
+}
+
 .comments-page .side:before {
 	top: 581px;
 }
@@ -911,9 +969,10 @@ body:not(.loggedin) #header-bottom-right {
 			&:focus {
 				border-radius: 2px 2px 0 0;
 				outline: none;
-			}
-		}
-		&[type="text"] {
+			}			
+			&::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+				color: $color_linkDomain;
+			}			
 			&:-moz-placeholder, &::-webkit-input-placeholder, &:-ms-input-placeholder {
 				font-size: 0;
 			}
@@ -922,11 +981,6 @@ body:not(.loggedin) #header-bottom-right {
 				content: "Search..";
 				position: relative;
 				top: 1px;
-			}
-		}
-		&[type=text] {
-			&::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
-				color: $color_linkDomain;
 			}
 		}
 		&[type=submit] {
@@ -1099,18 +1153,6 @@ body:not(.loggedin) #header-bottom-right {
 	display: none;
 }
 
-.login-form-side {
-	border: none;
-	input {
-		&[type=text], &[type=password] {
-			width: 128px;
-		}
-	}
-	button.btn {
-		margin-right: -3px;
-	}
-}
-
 .titlebox {
 	h1 {
 		color: $color_inputFontActive;
@@ -1123,42 +1165,7 @@ body:not(.loggedin) #header-bottom-right {
 		top: -2px;
 		left: -2px;
 	}
-}
 
-div.titlebox span.word {
-	display: none;
-}
-
-.titlebox .users-online {
-	display: inline;
-	&:before {
-		display: none;
-	}
-}
-
-div.titlebox span.number:after {
-	content: " man-things,";
-}
-
-.titlebox .users-online .number {
-	font-style: italic;
-
-	&:before {
-		content: "";
-	}
-	&:after {
-		content: " alive";
-	}
-}
-
-.titlelebox .word {
-	display: none;
-}
-
-.titlebox {
-	.users-online, .number {
-		cursor: text;
-	}
 	.tagline {
 		font-size: 12px;
 		margin: 0;
@@ -1182,172 +1189,133 @@ div.titlebox span.number:after {
 		position: relative;
 		top: -3px;
 	}
+
+	.users-online {
+		display: inline;
+		&:before {
+			display: none;
+		}
+
+		.number {
+			cursor: text;
+			font-style: italic;
+
+			&:before {
+				content: "";
+			}
+			&:after {
+				content: " alive";
+			}
+		}
+	}
+
+	.word {
+		display: none;
+	}
+
+	.fancy-toggle-button {
+		position: relative;
+		
+		.add {
+			right: -268px;
+			top: -36px;
+			background-position: -208px -144px;
+			&:hover {
+				background-color: $color_fancyToggleButtonBGHover;
+			}
+			&:active {
+				background-position: -208px -192px;
+			}
+
+			&:after {
+				content: "Subscribe!";
+			}
+			&:hover:after {
+				visibility: visible;
+				margin-top: 40px;
+				color: $color_white;
+				background-color: $color_buttonBG;
+				box-shadow: 0 1px 5px $color_mailBoxshadow;
+			}
+		}
+		.remove {
+			&:after {
+				content: "Unsubscribe";
+			}
+			&:hover:after {
+				visibility: visible;
+				color: $color_inputFontActive;
+				background-color: $color_white;
+				margin-top: 40px;
+				box-shadow: 0 1px 5px $color_mailBoxshadow;
+			}
+		}
+	}
+}
+
+div.titlebox span.word {
+	display: none;
+}
+
+div.titlebox span.number:after {
+	content: " man-things,";
 }
 
 .leavemoderator, .titlebox .tagline a.author, .sidebox .subtitle {
 	display: none;
 }
 
-.titlebox .fancy-toggle-button {
-	position: relative;
-	.add {
-		text-indent: -9999px;
-		height: 48px;
-		width: 48px;
-		position: absolute;
-		right: -268px;
-		top: -36px;
-		border-radius: 32px;
-		background: $color_fancyToggleButtonBG url(%%sprite-alternate%%);
-		border: 0 solid;
-		box-shadow: 0 2px 4px $color_mailBoxshadow;
-		transition: all 0.25s ease, background-position 0.25s ease, background-color 0.5s ease;
-		outline: none !important;
-	}
-}
-
-.fancy-toggle-button .remove {
+.titlebox .fancy-toggle-button .add, .fancy-toggle-button .remove {
 	text-indent: -9999px;
 	height: 48px;
 	width: 48px;
 	position: absolute;
-	right: -268px;
-	top: -36px;
-	border-radius: 32px;
-	border: 0 solid;
-	box-shadow: 0 2px 4px $color_mailBoxshadow;
+	border-radius: 32px;	
 	background: $color_fancyToggleButtonBG url(%%sprite-alternate%%);
-	transition: all 0.25s ease, background-position 0.25s ease, background-color 0.5s ease;
+	box-shadow: 0 2px 4px $color_mailBoxshadow;
+	transition: all 0.25s ease, background-position 0.25s ease, background-color 0.5s ease;	
+	border: 0;	
 	outline: none !important;
-}
 
-.titlebox .fancy-toggle-button .add:hover, .fancy-toggle-button .remove:hover {
-	box-shadow: 0 3px 6px $color_buttonBoxShadowHover;
-}
-
-.titlebox .fancy-toggle-button .add:active, .fancy-toggle-button .remove:active {
-	box-shadow: 0 4px 16px $color_buttonBoxShadowActive;
-}
-
-.titlebox .fancy-toggle-button .add {
-	background-position: -208px -144px;
+	&:after {
+		display: block;
+		visibility: hidden;
+		position: absolute;
+		z-index: 1000;
+		right: -26px;
+		margin-top: 16px;
+		padding: 12px;
+		background-color: $color_fancyToggleButtonAfterBG;
+		border-radius: 2px;
+		color: $color_transp;
+		text-align: center;
+		letter-spacing: 1px;
+		font-weight: normal;
+		font-size: 13px;
+		transition: all 0.25s ease;
+		pointer-events: none;
+		text-indent: 0;
+		box-shadow: 0 0 0 $color_fancyToggleButtonAfterBoxShadow;
+	}
 	&:hover {
-		background-color: $color_fancyToggleButtonBGHover;
+		box-shadow: 0 3px 6px $color_buttonBoxShadowHover;
 	}
 	&:active {
-		background-position: -208px -192px;
+		box-shadow: 0 4px 16px $color_buttonBoxShadowActive;
 	}
 }
 
 .fancy-toggle-button .remove {
+	right: -268px;
+	top: -36px;
 	background-position: 105px 66px;
 	&:hover {
 		background-color: $color_actionFormListBG;
 	}
 }
 
-.titlebox .fancy-toggle-button .add:after, .fancy-toggle-button .remove:after {
-	display: block;
-	visibility: hidden;
-	position: absolute;
-	z-index: 1000;
-	right: -26px;
-	margin-top: 16px;
-	padding: 12px;
-	background-color: $color_fancyToggleButtonAfterBG;
-	border: none;
-	border-radius: 2px;
-	color: $color_transp;
-	text-align: center;
-	letter-spacing: 1px;
-	font-weight: normal;
-	font-size: 13px;
-	transition: all 0.25s ease;
-	pointer-events: none;
-	text-indent: 0;
-	box-shadow: 0 0 0 $color_fancyToggleButtonAfterBoxShadow;
-}
-
-.titlebox .fancy-toggle-button {
-	.add {
-		&:after {
-			content: "Subscribe!";
-		}
-		&:hover:after {
-			visibility: visible;
-			margin-top: 40px;
-			color: $color_white;
-			background-color: $color_buttonBG;
-			box-shadow: 0 1px 5px $color_mailBoxshadow;
-		}
-	}
-	.remove {
-		&:after {
-			content: "Unsubscribe";
-		}
-		&:hover:after {
-			visibility: visible;
-			color: $color_inputFontActive;
-			background-color: $color_white;
-			margin-top: 40px;
-			box-shadow: 0 1px 5px $color_mailBoxshadow;
-		}
-	}
-}
-
 .hover-bubble.multi-selector {
 	margin-top: -60px;
-}
-
-.side {
-	.wiki-page-content .md h1 {
-		padding-bottom: 20px;
-	}
-
-	.md {
-		.-blocks, .-lists, pre, blockquote, table, p, ul, ol {
-			color: $color_white;
-			font-size: 13px;
-			font-family: Arial, sans-serif;
-			line-height: 1.3333333333333333em;
-		}
-	}
-	.titlebox .md {
-		h1 {
-			line-height: 18px;
-			margin: 0.5em 0 0 0 !important;
-		}
-		h2 {
-			margin: 16px 0 2px 0;
-		}
-		h3 a, h4 a {
-			padding: 12px 16px;
-			width: 100%;
-			border-radius: 2px;
-			background-color: $color_buttonBG;
-			font-family: verdana, arial, sans-serif;
-			transition: all 0.25s ease;
-			color: $color_white;
-			box-shadow: 0 1px 5px $color_mailBoxshadow;
-			display: block;
-			margin: 1.5em 0;
-			font-size: 12px;
-			&:hover {
-				background-color: $color_fancyToggleButtonBGHover;
-				box-shadow: 0 2px 8px $color_headline3LinkHoverBoxShadow;
-			}
-			&:active {
-				background-color: $color_ButtonBGActive;
-				box-shadow: 0 4px 12px $color_headline3LinkActiveBoxShadow;
-			}
-		}
-	}
-
-	.titlebox form {
-		.md a:visited {
-			color: $color_titleBoxVisitedFont;
-		}
-	}
 }
 
 .wiki-page .wiki-page-content .md.wiki h4 {
@@ -1381,25 +1349,6 @@ div.titlebox span.number:after {
 
 .titlebox .bottom {
 	display: none;
-}
-
-.side {
-	#moderation_tools .title {
-		h1 {
-			text-transform: capitalize;
-			color: $color_inputFontActive;
-		}
-		.collapse-button {
-			color: $color_inputFontActive;
-			vertical-align: middle;
-			border-radius: 1px;
-			border: 1px solid $color_sideCollapseBtn;
-		}
-	}
-	.sidecontentbox .content {
-		border: none;
-		padding: 8px 0;
-	}
 }
 
 .icon-menu a {
@@ -5598,48 +5547,6 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 .usertext .entry.res-selected .md-container {
 	//background: $color_dropdownLightBoxShadow !important;
 	background: transparent !important;
-}
-
-/* color overwrites */
-body.mod-toolbox .tb-general-button, body.mod-toolbox li a.tb-general-button, body.mod-toolbox .tb-bracket-button {
-	background: none !important;
-	font: bold x-small Avenir, Verdana, Arial, sans-serif !important;
-	text-align: center;
-	border-width: 1px 1px 1px 2px;
-	border-color: transparent !important;
-	border-style: none !important;
-	padding: 1px 3px;
-	text-decoration: none !important;
-}
-body {
-	&.mod-toolbox .tb-general-button, &.mod-toolbox li a.tb-general-button, &.mod-toolbox .tb-bracket-button {
-		background: none !important;
-		font: bold x-small Avenir, Verdana, Arial, sans-serif !important;
-		text-align: center;
-		border-width: 1px 1px 1px 2px;
-		border-color: transparent !important;
-		border-style: none !important;
-		padding: 1px 3px;
-		text-decoration: none !important;
-	}
-
-	&.mod-toolbox .tb-page-overlay a, &.mod-toolbox .tb-popup a, &.mod-toolbox .tb-toolbar a {
-		color: darken($color_wineRed, 10) !important;
-	}
-
-	&.mod-toolbox #tb-bottombar {
-		background-color: darken($color_darkGrayTrans, 10) !important;
-		border-color: darken($color_darkGrayTrans, 17) !important;
-	}
-	&.mod-toolbox #tb-toolbar-mysubs, &.mod-toolbox #tb-personal-notes-button {
-		background-color: darken($color_darkGrayTrans, 13) !important;
-		border-color: darken($color_darkGrayTrans, 17) !important;
-
-		&:hover {
-			background-color: darken($color_darkGrayTrans, 11) !important;
-			border-color: darken($color_darkGrayTrans, 17) !important;
-		}
-	}
 }
 
 .side .md>ul:nth-of-type(1) {

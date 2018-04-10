@@ -61,6 +61,7 @@ rules:
         - 'darken'
         - 'lighten'
         - 'saturate'
+        - 'adjust-color'
   shorthand-values:
     - 1
     -

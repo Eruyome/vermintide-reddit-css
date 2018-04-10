@@ -2060,7 +2060,7 @@ body .content .sitetable .link .title a:hover {
 		background-color: $color_inputBorderActive;
 	}
 	&.expando-button-loading {
-		background-color: gray;
+		background-color: lighten($color_darkGray, 20);
 		background-image: none !important;
 	}
 	&.selftext {
@@ -2392,6 +2392,11 @@ a.pretty-button {
 		background-color: $color_linkFlairLabelMod !important;
 		border-color: $color_linkFlairLabelMod !important;
 	}
+}
+
+.thing.spam, .res-commentBoxes .comment.spam {
+	background-image: linear-gradient(45deg, rgba(255, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 0, 0, 0.15) 50%, rgba(255, 0, 0, 0.15) 75%, transparent 75%, transparent);	
+	background-color: adjust-color($color_darkGray, $red: 20);
 }
 
 .tagline .stickied-tagline {

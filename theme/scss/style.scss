@@ -3757,8 +3757,17 @@ div {
 	box-shadow: 0 1px 5px $color_boxshadow;
 	height: 560px;
 	margin-right: 316px;
+
 	#image-upload {
 		margin: 0 0 4em 0;
+		&:before {
+			display: block;
+			width: 100%;
+			height: 40px;
+			font-size: 14px;
+			font-weight: bold;
+			content: "Fucking reddit doesn't detect jpg images and defaults to png unless jpg is selected after the upload. Be careful when changing the header image.";
+		}
 	}
 }
 

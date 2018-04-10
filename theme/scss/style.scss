@@ -504,10 +504,9 @@ input:active, textarea:active {
 
 #sr-header-area {
 	background: transparent;
-	border: 0 solid;
-	transition: all 0.15s ease;
+	border: 0;
 	height: 24px;
-	line-height: 23px;
+	line-height: 28px;
 	.width-clip {
 		right: 300px;
 	}
@@ -526,9 +525,8 @@ body:not(.loggedin) #sr-header-area .width-clip {
 		margin-right: 48px;
 	}
 	.sr-bar a {
-		background-color: transparent;
+		background: none;
 		color: $color_whiteTransp;
-		transition: all 0.15s ease;
 	}
 }
 
@@ -602,20 +600,8 @@ a.random.choice {
 }
 
 #header-img {
-	&.default-header {
-		z-index: 99;
-		width: 48px;
-		padding-left: 0;
-		height: 58px;
-		position: relative;
-		top: 4px;
-		margin: -12px 0 0;
-	}
-	z-index: 99;
 	width: 40px;
-	padding-left: 0;
 	height: auto;
-	position: relative;
 	top: 0;
 	margin: 0;
 }
@@ -624,26 +610,6 @@ a.random.choice {
 	font-size: 0;
 	a {
 		display: inline-block;
-		color: $color_white;
-		font-size: 22px;
-		padding: 11px;
-		font-weight: bold;
-		position: relative;
-		top: 3px;
-		font-family: arial;
-		margin: 0 4px;
-		vertical-align: top;
-		transition: background-color 0.25s ease;
-		&:hover {
-			text-decoration: none;
-			background-color: transparent;
-		}
-		&:before {
-			content: "/r/";
-			font-size: 18px;
-			font-variant: normal;
-			letter-spacing: 1px;
-		}
 	}
 }
 
@@ -694,18 +660,11 @@ a.random.choice {
 	margin: 0;
 	li a {
 		display: inline-block;
-		margin: 0;
 		padding: 16px;
-		background-color: transparent;
-		border: 0;
-		border-radius: 0;
 		text-transform: uppercase;
 		font-weight: normal;
-		font-size: 14px;
-		font-family: Arial, sans-serif;
 		transition: color 0.25s ease, background-color 0.25s ease;
 		color: $color_white;
-		text-shadow: 0 1px 8px $color_textShadow;
 	}
 
 	.tb-metrics, .tb-queuetools-tab, .res-tabmenu-button {
@@ -717,24 +676,6 @@ a.random.choice {
 	}
 }
 
-.pagename a {
-	text-shadow: 0 1px 8px $color_textShadow;
-}
-
-#header .tabmenu li {
-	a:hover {
-		color: $color_white;
-	}
-	&.selected a {
-		padding: 16px;
-		background-color: transparent;
-		border: 0;
-		border-bottom: 2px solid $color_white;
-		color: $color_white;
-		font-weight: bold;
-	}
-}
-
 .listing-page .tabmenu li:nth-of-type(4), .wiki-page .tabmenu li:nth-of-type(4), .listing-page .tabmenu li:nth-of-type(6), .wiki-page .tabmenu li:nth-of-type(6) {
 	display: none;
 }
@@ -742,15 +683,8 @@ a.random.choice {
 .side {
 	margin: 200px 16px 0 0;
 	padding: 6px 12px;
-	background-color: $color_white;
 }
 .side, .comments-page .side .linkinfo {
-	border-radius: 2px;
-	box-shadow: 0 1px 5px $color_boxshadow;
-
-	background-size: cover;
-	background-repeat: no-repeat;
-	border-width: 4px;
 	border: 4px solid #fff;
 	@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 
@@ -974,15 +908,9 @@ body:not(.loggedin) #header-bottom-right {
 			width: 294px;
 			margin: -1px;
 			transition: all 0.25s ease;
-			&:hover {
-				box-shadow: 0 3px 12px $color_searchInputHoverBoxShadow !important;
-			}
 			&:focus {
 				border-radius: 2px 2px 0 0;
 				outline: none;
-				&:hover {
-					box-shadow: 0 1px 5px $color_mailBoxshadow !important;
-				}
 			}
 		}
 		&[type="text"] {
@@ -4079,16 +4007,16 @@ div {
 		border-radius: 1px;
 	}
 	.srSep {
-		color: $color_headerBottomFont;
+		//color: $color_headerBottomFont;
 	}
 	#RESShortcutsViewport {
-		margin-right: 312px;
+		//margin-right: 312px;
 	}
 	#RESShortcutsEditContainer {
-		margin-right: 312px;
+		//margin-right: 312px;
 		background-color: transparent !important;
-		color: $color_headerBottomFont !important;
-		top: 1px !important;
+		//color: $color_headerBottomFont !important;
+		top: 4px !important;
 	}
 }
 .res-filterline {

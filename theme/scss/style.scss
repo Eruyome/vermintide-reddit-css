@@ -187,7 +187,7 @@ body {
 		width: 100%;
 		left: 0;
 		right: 0;
-		background: url(%%header-light%%) no-repeat 50% 0;
+		background: url(%%header%%) no-repeat 50% 0;
 		content: "";
 		text-indent: -9999px;
 		z-index: -1;
@@ -494,7 +494,7 @@ input:active, textarea:active {
 
 #header {
 	border: none;
-	background: $color_headerBG url(%%header-light%%) no-repeat scroll 50% 0%;
+	background: $color_headerBG url(%%header%%) no-repeat scroll 50% 0%;
 	background-clip: border-box;
 	background-origin: padding-box;
 	height: 260px;
@@ -4007,7 +4007,7 @@ div {
 	@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 	background-color: $color_darkGray;
 
-	background-image: url(%%header-light%%);
+	background-image: url(%%header%%);
 	background-position: 0 -34px;
 	background-blend-mode: soft-light;
 
@@ -5712,23 +5712,11 @@ body {
 	padding-bottom: 3px;
 }
 
-.side .md>ul:nth-of-type(1) li {
-	margin: 0 6px;
-	padding: 2px;
-}
-
-.side .md>ul:nth-of-type(1) li {
-	margin-bottom: 2px;
-	padding: 0;
-}
-
-.side .md>ul:nth-of-type(1) li {
-	margin: 0 6px;
-	padding: 2px;
-}
-
 /* make 2 columns instead by letting the li's float */
 .side .md>ul:nth-of-type(1) li {
+	margin: 0 6px;
+	padding: 2px;
+
 	&:nth-child(2n+1), &:nth-child(1) {
 		float: left;
 		width: 125px;

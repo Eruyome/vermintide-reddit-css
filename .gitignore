@@ -6,3 +6,4 @@ npm-debug.log*
 /test
 /theme/css
 sass-lint-report.html
+*report.html

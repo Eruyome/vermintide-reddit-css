@@ -1026,9 +1026,11 @@ body:not(.loggedin) #header-bottom-right {
 }
 
 .search-result-group {
-	padding-left: 0;
 	padding-right: 30px;
 	background-color: $color_darkGray;
+
+	padding-left: 16px;
+	width: 100%;
 
 	.search-result-group-header {
 		padding-top: 21px;
@@ -1065,6 +1067,7 @@ body:not(.loggedin) #header-bottom-right {
 		color: $color_wineRed;
 	}
 }
+
 .combined-search-page .search-result mark {
 	font-weight: bold;
 }
@@ -1552,10 +1555,6 @@ body > .content .link .rank, .rank-spacer {
 	padding: 9px;
 }
 
-.search-result-group {
-	padding-left: 16px;
-	width: 100%;
-}
 /*  linklisting border + corner and RES fixes end */
 
 .arrow {
@@ -1592,16 +1591,14 @@ body > .content .link .rank, .rank-spacer {
 			-webkit-animation: upvote 0.35s ease-out forwards;
 		}
 	}
-	&.down {
-		height: 20px;
-		background-position: -160px 0;
-		transition: background-color 0.25s ease;
-	}
 	&.downmod {
 		height: 20px;
 		background-position: -224px 0;
 	}
 	&.down {
+		height: 20px;
+		background-position: -160px 0;
+		transition: background-color 0.25s ease;
 		&:after {
 			display: block;
 			visibility: hidden;
@@ -1651,24 +1648,9 @@ body > .content .link .rank, .rank-spacer {
 }
 
 .linkflairlabel {
-	padding: 1px 6px;
-	height: 17px;
-	border-radius: 2px;
-	border: 0 solid;
-	color: $color_white;
-	font-weight: bold;
-	font-style: normal;
-	font-variant: normal;
-	font-size: 13px;
-	font-family: Arial, sans-serif;
 	cursor: default;
-	vertical-align: middle;
 	position: relative;
-	top: -2px;
-	background-color: $color_inputBorderActive;
-}
 
-.linkflairlabel {
 	color: $color_white;
 	padding: 2px 4px 0 4px;
 	font-size: 12px;
@@ -1871,23 +1853,31 @@ body .content .sitetable .link .title a:hover {
 	padding: 15px 32px 14px 0;
 	border-bottom: 1px solid $color_titleBoxTaglineBG;
 	margin-left: 0;
+
+	.buttons li a.comments {
+		color: $color_inputBorderActive;
+		font-weight: bold !important;
+		opacity: 100 !important;
+		transition: all 0.25s ease-in-out !important;
+	}
+	li .comments:hover {
+		text-decoration: none;
+	}
 }
 
 .thing .title {
 	&.loggedin.click, &.click, &.loggedin {
 		color: $color_inputBorderActive;
 	}
+	&.loggedin.click:visited, &.click:visited {
+		color: $color_wineRed;
+	}
+
 	color: $color_inputBorderActive;
 }
 
 .content .thing {
 	.title:visited, &.visited .title {
-		color: $color_wineRed;
-	}
-}
-
-.thing .title {
-	&.loggedin.click:visited, &.click:visited {
 		color: $color_wineRed;
 	}
 }
@@ -2043,9 +2033,6 @@ body .content .sitetable .link .title a:hover {
 }
 
 .link .entry .tagline {
-	a {
-		color: $color_inputFontActive;
-	}
 	&:first-letter {
 		text-transform: capitalize;
 	}
@@ -2053,6 +2040,7 @@ body .content .sitetable .link .title a:hover {
 		cursor: help;
 	}
 	a {
+		color: $color_inputFontActive;
 		&:hover {
 			color: $color_inputBorderActive;
 			text-decoration: none;
@@ -2122,17 +2110,6 @@ body .content .sitetable .link .title a:hover {
 	cursor: help;
 }
 
-.link .entry {
-	.buttons li a.comments {
-		color: $color_inputBorderActive;
-		font-weight: bold !important;
-		opacity: 100 !important;
-		transition: all 0.25s ease-in-out !important;
-	}
-	li .comments:hover {
-		text-decoration: none;
-	}
-}
 .new-comment .md :not(pre)>code, .link .md :not(pre)>code, .usertext.border .md :not(pre)>code, .new-comment .md pre, .link .md pre, .usertext.border .md pre {
 	background-color: $color_RESDialogSmallLivePreview;
 }
@@ -2346,37 +2323,9 @@ body > .content .link.compressed .midcol {
 	margin: 8px 0 0 4px;
 }
 
-.flairselector {
-	position: fixed;
-	top: 20% !important;
-	left: 50% !important;
-	margin-left: -125px;
-	padding: 32px !important;
-	width: 250px !important;
-	border: none;
-	border-radius: 2px;
-	box-shadow: 0 0 16px $color_buttonBoxShadowActive;
-	&.drop-choices.active {
-		border: 1px solid $color_flairselectorBorder;
-	}
-	h2 {
-		margin-bottom: 4px;
-		background-color: transparent;
-		color: $color_wineRed;
-		text-align: left;
-		text-transform: capitalize;
-		font-weight: normal;
-		font-size: 18px;
-	}
-}
-
 .flairoptionpane {
 	max-height: 250px;
 	text-align: left;
-}
-
-.flairselector .flairoptionpane ul li {
-	padding: 0 !important;
 }
 
 .flairoptionpane ul li .linkflair {
@@ -2386,15 +2335,7 @@ body > .content .link.compressed .midcol {
 		background-color: $color_topPageContentDropsBorderLinkHoverBG;
 		border: 0 solid;
 	}
-}
 
-.flairselector li:hover {
-	background-color: $color_almostTransp;
-	border: 0 solid;
-	border-radius: 2px;
-}
-
-.flairoptionpane ul li .linkflair {
 	span.linkflairlabel {
 		line-height: 1.35;
 		margin: 8px 6px 8px 0;
@@ -2407,6 +2348,39 @@ body > .content .link.compressed .midcol {
 }
 
 .flairselector {
+	position: fixed;
+	top: 20% !important;
+	left: 50% !important;
+	margin-left: -125px;
+	padding: 32px !important;
+	width: 250px !important;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0 0 16px $color_buttonBoxShadowActive;
+
+	&.drop-choices.active {
+		border: 1px solid $color_flairselectorBorder;
+	}
+
+	h2 {
+		margin-bottom: 4px;
+		background-color: transparent;
+		color: $color_wineRed;
+		text-align: left;
+		text-transform: capitalize;
+		font-weight: normal;
+		font-size: 18px;
+	}
+
+	.flairoptionpane ul li {
+		padding: 0 !important;
+		margin: 4px 0;
+		&.flairsample-right {
+			padding: 5px 0 !important;
+			border: none;
+		}
+	}
+
 	form {
 		padding-top: 12px;
 		border-top: 1px solid $color_linkDomain;
@@ -2461,15 +2435,16 @@ body > .content .link.compressed .midcol {
 		margin-left: -9px;
 		opacity: 0.5;
 	}
-	.flairoptionpane ul li {
-		margin: 4px 0;
-	}
-	li.selected {
-		border: none;
-	}
-	.flairoptionpane ul li.flairsample-right {
-		padding: 5px 0 !important;
-		border: none;
+	li {
+		&:hover {
+			background-color: $color_almostTransp;
+			border: 0 solid;
+			border-radius: 2px;
+		}
+
+		.selected {
+			border: none;
+		}
 	}
 	li a, form .flairselection a.author {
 		color: $color_linkDomain !important;
@@ -2482,8 +2457,6 @@ body > .content .link.compressed .midcol {
 		left: 0;
 		z-index: -2;
 		overflow: hidden;
-		//width: 100%;
-		//height: 100%;
 		background-color: $color_flairselectorBeforeBG;
 		content: "";
 		cursor: default;

@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+
 @mixin simple-border-image($url, $slice, $width, $repeat) {
 	-webkit-border-image: url(#{$url}) $slice $width #{$repeat} !important;
 	-moz-border-image: url(#{$url}) $slice $width #{$repeat} !important;
@@ -177,8 +178,9 @@ $color_linkFlairLabelUmgak : #AA3C39;
 
 body {
 	overflow-x: hidden;
-	background-color: $color_bodyBG;
+	background-color: $color_black;
 	min-width: 420px;
+	color: $color_bodyFont;
 
 	&:before {
 		height: 166px;
@@ -238,7 +240,7 @@ input:not([type="submit"]), textarea {
 	textarea {
 		box-shadow: none !important;
 		background-color: $color_messageParent;
-		border: 1px solid $color_inputBorder;
+		border: 1px solid $color_inputBorderDark;
 		color: $color_inputFont;
 		transition: all 0.15s ease !important;
 		&:hover {
@@ -254,7 +256,7 @@ input:not([type="submit"]), textarea {
 		&[type=text], &[type=url], &[type=password], &[type=number] {
 			box-shadow: none !important;
 			background-color: $color_messageParent;
-			border: 1px solid $color_inputBorder;
+			border: 1px solid $color_inputBorderDark;
 			color: $color_inputFont;
 			transition: all 0.15s ease !important;
 			&:hover {
@@ -273,7 +275,7 @@ input:not([type="submit"]), textarea {
 	textarea {
 		box-shadow: none !important;
 		background-color: $color_white;
-		border: 1px solid $color_inputBorder;
+		border: 1px solid $color_inputBorderDark;
 		color: $color_inputFont;
 		transition: all 0.15s ease !important;
 		&:hover {
@@ -289,7 +291,7 @@ input:not([type="submit"]), textarea {
 		&[type=text], &[type=password] {
 			box-shadow: none !important;
 			background-color: $color_white;
-			border: 1px solid $color_inputBorder;
+			border: 1px solid $color_inputBorderDark;
 			color: $color_inputFont;
 			transition: all 0.15s ease !important;
 			&:hover {
@@ -479,7 +481,7 @@ input:active, textarea:active {
 .btn, button {
 	margin: 4px 16px 4px 0;
 	padding: 2px 18px;
-	background-color: $color_buttonBG;
+	background-color: $color_wineRed;
 	border: none;
 	border-radius: 2px;
 	box-shadow: 0 1px 3px $color_mailBoxshadow;
@@ -616,14 +618,28 @@ a.random.choice {
 
 #header .pagename {
 	font-size: 0;
+
 	a {
 		display: inline-block;
+		padding: 0;
+		position: absolute;
+		text-indent: -9999px;
+		top: -298px;
+		background: url(%%sprite-vermintidelogo%%) no-repeat 0 0;
+		margin: 52px 0 0;
+		left: 130px;
+		width: 429px;
+		height: 216px;
+
+		&:hover {
+			background: transparent url(%%sprite-vermintidelogo%%) 0 -216px;
+		}
 	}
 }
 
 #header-bottom-left {
 	position: absolute;
-	top: 36px;
+	top: 270px;
 	left: 16px;
 
 	border: 4px solid #fff;
@@ -666,13 +682,21 @@ a.random.choice {
 #header .tabmenu {
 	border: none;
 	margin: 0;
-	li a {
-		display: inline-block;
-		padding: 16px;
-		text-transform: uppercase;
-		font-weight: normal;
-		transition: color 0.25s ease, background-color 0.25s ease;
-		color: $color_white;
+
+	li {
+		a {
+			display: inline-block;
+			padding: 16px;
+			text-transform: uppercase;
+			font-weight: normal;
+			transition: color 0.25s ease, background-color 0.25s ease;
+			color: $color_white;
+			text-shadow: 0 0 4px $color_searchInputHoverBoxShadow;
+		}
+
+		&.selected a {
+			border-bottom: 2px solid $color_wineRed;
+		}
 	}
 
 	.tb-metrics, .tb-queuetools-tab, .res-tabmenu-button {
@@ -717,6 +741,7 @@ a.random.choice {
 .side {
 	margin: 446px 16px 15px 0;
 	padding: 6px 12px;
+	background-color: $color_darkGray;
 
 	.wiki-page-content .md h1 {
 		padding-bottom: 20px;
@@ -770,7 +795,7 @@ a.random.choice {
 	#moderation_tools .title {
 		h1 {
 			text-transform: capitalize;
-			color: $color_inputFontActive;
+			color: $color_modToolTitle;
 		}
 		.collapse-button {
 			color: $color_inputFontActive;
@@ -786,12 +811,6 @@ a.random.choice {
 }
 
 .comments-page .side {
-	margin-top: 322px;
-
-	&:before {
-		top: 581px;
-	}
-
 	.linkinfo {
 		&:before {
 			top: -5px;
@@ -803,14 +822,14 @@ a.random.choice {
 			right: -5px;
 		}
 
+		margin-top: 246px;
 		position: absolute;
 		right: 16px;
 		top: 200px;
 		padding: 16px;
 		width: 300px;
-		height: 130px !important;
-		background-color: $color_white;
-
+		height: 130px !important;		
+		background-color: $color_darkGray;
 		.date {
 			color: $color_linkDomain;
 			&:first-letter {
@@ -820,6 +839,12 @@ a.random.choice {
 		.score {
 			color: $color_inputFontActive;
 		}
+	}
+}
+.comments-page .side, .res .comments-page .side {
+	margin-top: 582px;	
+	&:before {
+		top: 581px;
 	}
 }
 
@@ -1218,11 +1243,14 @@ body:not(.loggedin) #header-bottom-right {
 		margin-bottom: 6px;
 	}
 	span.subscribers, .users-online, .number {
-		color: $color_wikiPageContentHeadline4ActiveFont;
+		color: $color_guiderFont;
 		font-size: 12px;
 		position: relative;
 		top: -2px;
 		left: -2px;
+	}
+	h1 a {
+		color: $color_white;
 	}
 
 	.tagline {
@@ -1279,6 +1307,7 @@ body:not(.loggedin) #header-bottom-right {
 			right: -268px;
 			top: -36px;
 			background-position: -208px -144px;
+			background-color: $color_wineRed;
 			&:hover {
 				background-color: $color_fancyToggleButtonBGHover;
 			}
@@ -1368,6 +1397,8 @@ div.titlebox span.number:after {
 	right: -268px;
 	top: -36px;
 	background-position: 105px 66px;
+	background-color: $color_titleboxTaglineBG;
+
 	&:hover {
 		background-color: $color_actionFormListBG;
 	}
@@ -1411,7 +1442,7 @@ div.titlebox span.number:after {
 }
 
 .icon-menu a {
-	background-color: transparent;
+	background: transparent;
 }
 
 #ad_sponsorship, #ad-frame, #ad_main {
@@ -1473,6 +1504,50 @@ div.titlebox span.number:after {
 	margin: 0;
 	padding: 0;
 	background-color: $color_white;
+
+	.domain a:hover {
+		color: $color_wineRed;
+	}
+
+	.entry {
+		padding: 15px 32px 14px 0;
+		border-bottom: 1px solid $color_titleBoxTaglineBG;
+		margin-left: 0;
+
+		.buttons li a, .tagline {
+			color: $color_bodyFont;
+		}
+
+		.buttons li a {
+			.comments {
+				color: $color_inputBorderActive;
+				font-weight: bold !important;
+				opacity: 100 !important;
+				transition: all 0.25s ease-in-out !important;
+			}
+			&:hover, &.flairselectbtn {
+				color: $color_wineRed;
+			}
+		}
+		li .comments:hover {
+			text-decoration: none;
+		}
+	}
+
+	.domain {
+		visibility: hidden;
+		a {
+			visibility: visible;
+			position: relative;
+			top: -1px;
+			color: $color_linkDomain;
+			transition: all 0.15s ease;
+			&:hover {
+				color: $color_inputBorderActive;
+				text-decoration: none;
+			}
+		}
+	}
 }
 
 body > .content .link .rank, .rank-spacer {
@@ -1694,17 +1769,31 @@ body > .content .link .rank, .rank-spacer {
 	max-width: 64px;
 	max-height: 56px;
 	margin: 16px 16px 0 0;
-	a img, &.self, &.default, &.spoiler {
+	width: 56px;
+		
+	a img {
 		height: 56px;
 	}
+	> img {
+		width: 100%;
+		height: auto;
+	}
+
+	&.default, &.self, &.nsfw, &.spoiler {
+		height: 56px;
+		width: 56px;
+		background: url(%%sprite-alternate%%);
+		border-radius: 50%;
+		margin-right: 20px;
+	}
 	&.self {
-		background: url(%%sprite-alternate%%) -73px -80px;
+		background-position: -77px -80px;
 	}
 	&.default, &.spoiler {
-		background: url(%%sprite-alternate%%) -148px -80px;
+		background-position: -148px -80px;
 	}
 	&.nsfw {
-		background: url(%%sprite-alternate%%) -3px -140px;
+		background-position: -6px -140px;
 	}
 }
 
@@ -1763,7 +1852,7 @@ body > .content .link .rank, .rank-spacer {
 	}
 	.thumbnail {
 		&.default, &.self {
-			background: url(%%sprite-alternate%%) -3px -80px !important;
+			background: $color_linkFlairLabelMod url(%%sprite-alternate%%) -7px -80px !important;
 		}
 	}
 }
@@ -1907,54 +1996,22 @@ html:lang(ft) .linkflair-umgak {
 }
 
 body .content .sitetable .link .title a:hover {
-	color: $color_inputBorderActive;
-}
-
-.link .entry {
-	padding: 15px 32px 14px 0;
-	border-bottom: 1px solid $color_titleBoxTaglineBG;
-	margin-left: 0;
-
-	.buttons li a.comments {
-		color: $color_inputBorderActive;
-		font-weight: bold !important;
-		opacity: 100 !important;
-		transition: all 0.25s ease-in-out !important;
-	}
-	li .comments:hover {
-		text-decoration: none;
-	}
+	color: $color_wineRed;
 }
 
 .thing .title {
+	color: $color_white;
 	&.loggedin.click, &.click, &.loggedin {
-		color: $color_inputBorderActive;
+		color: $color_white;
 	}
 	&.loggedin.click:visited, &.click:visited {
 		color: $color_wineRed;
-	}
-
-	color: $color_inputBorderActive;
+	}	
 }
 
 .content .thing {
 	.title:visited, &.visited .title {
 		color: $color_wineRed;
-	}
-}
-
-.link .domain {
-	visibility: hidden;
-	a {
-		visibility: visible;
-		position: relative;
-		top: -1px;
-		color: $color_linkDomain;
-		transition: all 0.15s ease;
-		&:hover {
-			color: $color_inputBorderActive;
-			text-decoration: none;
-		}
 	}
 }
 
@@ -1970,7 +2027,7 @@ body .content .sitetable .link .title a:hover {
 	border-radius: 2px;
 	background-color: transparent;
 	background-image: url(%%sprite-alternate%%) !important;
-	border: 1px solid $color_expandoBtnBorder;
+	border: 1px solid $color_inputBorderDark;
 	cursor: pointer;
 
 	&.image, &.video-muted {
@@ -1981,7 +2038,7 @@ body .content .sitetable .link .title a:hover {
 		border-radius: 2px;
 		background-color: transparent;
 		background-image: url(%%sprite-alternate%%) !important;
-		border: 1px solid $color_expandoBtnBorder;
+		border: 1px solid $color_inputBorderDark;
 		cursor: pointer;
 	}
 	&:hover {
@@ -2215,9 +2272,6 @@ body .content .sitetable .link .title a:hover {
 }
 
 .link .entry .buttons li {
-	a.flairselectbtn {
-		color: $color_inputBorderActive;
-	}
 	.redditSingleClick {
 		padding: 0 1px;
 		color: $color_linkDomain;
@@ -2229,7 +2283,6 @@ body .content .sitetable .link .title a:hover {
 }
 
 .entry .buttons li.reported-stamp {
-	//background-color: transparent;
 	background-color: $color_reportedStamp;
 	border: 1px solid $color_black !important;
 	border-radius: 20px;
@@ -2286,9 +2339,10 @@ a.pretty-button {
 	background-color: transparent;
 }
 
-.link.last-clicked {
-	background-color: $color_titleboxTaglineBG;
+.link.last-clicked {	
 	border: none;
+	background-color: darken($color_darkGray, 1);
+	border-bottom: inherit;
 }
 
 .thing.stickied {
@@ -2357,7 +2411,9 @@ a.pretty-button {
 	margin-bottom: 0;
 	margin-right: 316px;
 	border: none;
-	border-radius: 2px 2px 0 0;
+	border-radius: 2px;
+	box-shadow: 0 1px 5px $color_boxshadow;
+
 	.help {
 		margin-bottom: 16px;
 		margin-right: 16px;
@@ -2418,6 +2474,7 @@ body > .content .link.compressed .midcol {
 	border: none;
 	border-radius: 2px;
 	box-shadow: 0 0 16px $color_buttonBoxShadowActive;
+	background-color: $color_darkGray;
 
 	&.drop-choices.active {
 		border: 1px solid $color_flairselectorBorder;
@@ -2518,7 +2575,7 @@ body > .content .link.compressed .midcol {
 		left: 0;
 		z-index: -2;
 		overflow: hidden;
-		background-color: $color_flairselectorBeforeBG;
+		background-color: $color_darkGray;
 		content: "";
 		cursor: default;
 		transition: all 0.25s ease;
@@ -3148,7 +3205,7 @@ div {
 
 .comment {
 	.child, .showreplies {
-		border-left: 1px dotted $color_commentChildBorder;
+		border-left: 1px dotted $color_inputBorderDark;
 		margin-top: 0;
 	}
 	.midcol {
@@ -3260,6 +3317,10 @@ div {
 	}
 	pre {
 		padding: 8px;
+	}	
+	code, pre {
+		background-color: $color_RESDialogSmallLivePreview;
+		border-color: $color_inputBorderDark;
 	}
 	blockquote {
 		border-left: 2px solid darken($color_blockquoteBorder, 25);
@@ -3286,16 +3347,16 @@ div {
 	color: $color_linkDomain;
 	font-weight: normal;
 	font-size: 10px;
-	&:hover {
-		color: $color_wineRed;
+	&:hover {		
 		text-decoration: none;
 	}
 	&[onclick*="reply"] {
-		color: $color_wineRed;
 		font-weight: bold;
 		font-size: 11px;
+	}	
+	&[onclick*="reply"], &:hover {
+		color: $color_wineRed;
 	}
-	&:hover[onclick*="reply"] {}
 }
 
 .deepthread a {
@@ -3413,6 +3474,20 @@ div {
 			display: none;
 		}
 	}
+
+	#header {
+		.pagename a, .pagename a:hover {
+			top: -56px;
+		}
+		#header-img-a {
+			top: 242px;
+			position: relative;
+		}
+	}
+
+	#newlink.submit.content .tabmenu.formtab .selected a, .infobar, #newlink.submit.content .btn {
+		background-color: $color_wineRed;
+	}
 }
 
 #suggested-reddits {
@@ -3450,7 +3525,7 @@ div {
 			width: 100%;
 			max-width: 500px;
 			border-radius: 0;
-			border-bottom: 1px solid $color_searchInputBorder;
+			border-bottom: 1px solid $color_inputBorderDark;
 			margin: 0 0 9px;
 			&:hover {
 				box-shadow: none !important;
@@ -3483,7 +3558,10 @@ div {
 		top: 96px;
 	}
 	.side {
-		margin-top: 148px;
+		margin-top: 404px;
+		&:before {
+			top: 403px;
+		}
 	}
 	.searchfacets {
 		box-shadow: 0 1px 5px $color_mailBoxshadow;
@@ -3556,7 +3634,6 @@ div {
 
 .wiki-page {
 	.wikititle {
-		background-color: $color_white;
 		padding: 9px 16px 10px 16px;
 		border-radius: 2px;
 		box-shadow: 0 1px 5px $color_boxshadow;
@@ -3566,7 +3643,6 @@ div {
 		margin: 0;
 	}
 	.pageactions {
-		background-color: $color_white;
 		margin-left: 16px;
 		border-radius: 2px;
 		padding: 0 16px;
@@ -3590,7 +3666,6 @@ div {
 	}
 	.wiki-page-content {
 		margin: 16px 316px 16px 0;
-		background-color: $color_white;
 		padding: 16px;
 		border-radius: 2px;
 		box-shadow: 0 1px 5px $color_boxshadow;
@@ -3610,7 +3685,7 @@ div {
 			}
 		}
 		hr {
-			border: solid $color_inputBorder;
+			border: solid $color_inputBorderDark;
 		}
 		em {
 			color: $color_linkDomain;
@@ -3629,6 +3704,10 @@ div {
 				color: $color-white !important;
 			}
 		}
+	}
+
+	.pageactions, .wikititle, .wiki-page-content {
+		background-color: $color_darkGray;
 	}
 }
 
@@ -4684,7 +4763,6 @@ html.res-commentBoxes .comment {
 	}
 }
 
-
 form.toggle.sr_style_toggle {
 	display: block;
 	padding-top: 0;
@@ -4699,45 +4777,12 @@ form.toggle.sr_style_toggle label {
 	top: -2px;
 }
 
-.search-page .side {
-	margin-top: 404px;
-	&:before {
-		top: 403px;
-	}
-}
-
-.comments-page .side {
-	margin-top: 582px;
-}
-
-.res .comments-page .side {
-	margin-top: 582px;
-}
-
-.comments-page .side .linkinfo {
-	margin-top: 246px;
-}
-
 #search, .search-page .morelink {
 	top: 341px;
 }
 
-#header-bottom-left {
-	top: 270px;
-}
-
 #header .tabmenu li a:hover, .pagename a:hover {
-	background-color: $color_headerTabmenuLinkHover;
-}
-
-.titlebox .fancy-toggle-button .add  {
-	background-color: $color_wineRed;
-}
-
-.submit-page {
-	#newlink.submit.content .tabmenu.formtab .selected a, .infobar, #newlink.submit.content .btn {
-		background-color: $color_wineRed;
-	}
+	background-color: $color_headerTabmenuLinkHoverLigth;
 }
 
 .drop-choices a.choice:hover, .linkflairlabel, .fancy-toggle-button .remove:active .expando-button:hover, .expando-button:hover, .side .titlebox .md h3 a {
@@ -4748,10 +4793,6 @@ form.toggle.sr_style_toggle label {
 	&.RES-keyNav-activeElement, &.commentarea div.RES-keyNav-activeElement.entry div.noncollapsed {
 		background-color: $color_wineRed;
 	}
-}
-
-.btn, button {
-	background-color: $color_wineRed;
 }
 
 .submit-page #newlink.submit.content .tabmenu.formtab .selected a:hover, .side .titlebox .md h3 a:hover {
@@ -4773,140 +4814,12 @@ a, .link .entry .buttons li a.comments, .md a, .titlebox .tagline a.flairselectb
 	color: $color_wineRed;
 }
 
-.thing .title {
-	&.loggedin.click, &.click, &.loggedin {
-		color: $color_white;
-	}
-	color: $color_white;
-}
-
-body .content .sitetable .link .title a:hover {
-	color: $color_wineRed;
-}
-
-.link {
-	.domain a:hover {
-		color: $color_wineRed;
-	}
-	.entry .buttons li a {
-		&:hover, &.flairselectbtn {
-			color: $color_wineRed;
-		}
-	}
-}
-
-.comment .flat-list li a {
-	&[onclick*="reply"], &:hover {
-		color: $color_wineRed;
-	}
-}
-
-
 .tagline .submitter, .side:after, .usertext .bottom-area a.reddiquette, .side .titlebox .md h6 a, .link .entry .tagline a:hover, .comment .author:hover {
 	color: $color_wineRed;
 }
 
-#header .pagename a {
-	padding: 0;
-	position: absolute;
-	text-indent: -9999px;
-	top: -298px;
-	background: url(%%sprite-vermintidelogo%%) no-repeat 0 0;
-	margin: 52px 0 0;
-	left: 130px;
-	width: 429px;
-	height: 216px;
-	&:hover {
-		background: transparent url(%%sprite-vermintidelogo%%) 0 -216px;
-	}
-}
-.submit-page {
-	#header {
-		.pagename a, .pagename a:hover {
-			top: -56px;
-		}
-		#header-img-a {
-			top: 242px;
-			position: relative;
-		}
-	}
-
-}
-
-.organic-listing {
-	background-color: $color_white !important;
-	padding: 0;
-	z-index: 9999;
-	position: relative;
-	margin-bottom: 0;
-	margin-right: 316px;
-	border: none;
-	border-radius: 2px;
-	box-shadow: 0 1px 5px $color_boxshadow;
-}
-
-.thumbnail {
-	width: 56px;
-	> img {
-		width: 100%;
-		height: auto;
-	}
-	&.default, &.self, &.nsfw {
-		height: 56px;
-		width: 56px;
-		background: url(%%sprite-alternate%%);
-		border-radius: 50%;
-		margin-right: 20px;
-	}
-	&.self {
-		background-position: -77px -80px;
-	}
-	&.default {
-		background-position: -148px -80px;
-	}
-	&.nsfw {
-		background: $color_thumbnailNsfwBG -6px -140px;
-	}
-}
-
 .thing.stickied .thumbnail {
 	background-color: transparent;
-}
-
-.linkflair-mod .thumbnail {
-	&.default, &.self {
-		background: $color_linkFlairLabelMod url(%%sprite-alternate%%) -7px -80px !important;
-	}
-}
-
-#header .tabmenu li {
-	a {
-		text-shadow: 0 0 4px $color_searchInputHoverBoxShadow;
-	}
-	&.selected a {
-		border-bottom: 2px solid $color_wineRed;
-	}
-}
-
-#header .tabmenu li a:hover, .pagename a:hover {
-	background-color: $color_headerTabmenuLinkHoverLigth;
-}
-
-.titlebox {
-	h1 a {
-		color: $color_white;
-	}
-	span.subscribers, .users-online, .number {
-		color: $color_guiderFont;
-	}
-}
-
-.icon-menu a {
-	background: transparent;
-}
-
-.side #moderation_tools .title h1 {
-	color: $color_modToolTitle;
 }
 
 .titlebox .tagline:after {
@@ -4929,57 +4842,12 @@ body .content .sitetable .link .title a:hover {
 	}
 }
 
-.fancy-toggle-button .remove {
-	background-color: $color_titleboxTaglineBG;
-}
-
-body {
-	background-color: $color_black;
-}
-
 .link, input:not([type="submit"]), textarea {
-	background-color: $color_darkGray;
-}
-.link.reported {
-	//background-color: $color_whiteFF9;
-	//color: $color_black;
-	.link .entry .tagline a {
-		//color: $color_black;
-	}
-	.link .usertext .md {
-		//color: $color_black;
-	}
-	.md {
-		//color: $color_black !important;
-	}
-	a {
-		//color: $color_black !important;
-	}
-}
-
-.side {
 	background-color: $color_darkGray;
 }
 
 .wiki-page .wiki-page-content .md.wiki h4 .comments-page .side .linkinfo, .commentarea .thing, .stylesheet-customize-container .pretty-form, #images, .submit-page .roundfield, .linefield, .btn, button, .drop-choices, .hover-bubble, .search-page .searchpane, .content.submit .info-notice, .submit-page #newlink.submit.content .tabmenu.formtab a {
 	background-color: $color_RESDialogSmallLivePreview;
-}
-
-.flairselector {
-	&:before {
-		background-color: $color_darkGray;
-	}
-	background-color: $color_darkGray;
-}
-
-.comments-page .side .linkinfo {
-	background-color: $color_darkGray;
-}
-
-.wiki-page {
-	.pageactions, .wikititle, .wiki-page-content {
-		background-color: $color_darkGray;
-	}
 }
 
 .search-page .menuarea, .sitetable .nav-buttons {
@@ -5001,17 +4869,6 @@ body {
 
 #search #searchexpando, .commentarea > .usertext, .search-page .searchfacets, .titlebox .tagline:after, .submit-page #newlink.submit.content .tabmenu.formtab a:hover, .top-page .content .menuarea .drop-choices.lightdrop a.choice:hover {
 	background-color: $color_RESDialogSmallLivePreview;
-}
-
-.md {
-	code, pre {
-		background-color: $color_RESDialogSmallLivePreview;
-	}
-}
-
-.link.last-clicked {
-	background-color: darken($color_darkGray, 1);
-	border-bottom: inherit;
 }
 
 .pretty-form textarea, .btn:hover, button:hover, .btn:active, button:active, .new-comment .usertext-body {
@@ -5038,73 +4895,8 @@ body {
 	border-color: $color_inputBorderDark;
 }
 
-.roundfield {
-	textarea, input[type=text] {
-		border-color: $color_inputBorderDark;
-	}
-}
-
-.roundfield input {
-	&[type=url], &[type=password], &[type=number] {
-		border-color: $color_inputBorderDark;
-	}
-}
-
-.md {
-	code, pre {
-		border-color: $color_inputBorderDark;
-	}
-}
-
-.wiki-page .wiki-page-content hr {
-	border-color: $color_inputBorderDark;
-}
-
-.expando-button {
-	border-color: $color_inputBorderDark;
-	&.image, &.video-muted {
-		border-color: $color_inputBorderDark;
-	}
-}
-
-.search-page #search input[type=text] {
-	border-color: $color_inputBorderDark;
-}
-
-.linefield {
-	textarea {
-		border-color: $color_inputBorderDark;
-	}
-	input {
-		&[type=text], &[type=password] {
-			border-color: $color_inputBorderDark;
-		}
-	}
-}
-
-.comment {
-	.child, .showreplies {
-		border-color: $color_inputBorderDark;
-	}
-}
-
 .linkinfo .shortlink input, .sitetable .nav-buttons, input:hover, textarea:hover, .pretty-form textarea {
 	border-color: $color_inputBorderDark;
-}
-
-body {
-	color: $color_bodyFont;
-}
-
-.link {
-	.domain a {
-		color: $color_bodyFont;
-	}
-	.entry {
-		.buttons li a, .tagline {
-			color: $color_bodyFont;
-		}
-	}
 }
 
 .flair, .titlebox .tagline, .bottommenu, .tagline .stickied-tagline {

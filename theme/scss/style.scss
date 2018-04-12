@@ -484,23 +484,24 @@ input:active, textarea:active {
 	background-color: $color_wineRed;
 	border: none;
 	border-radius: 2px;
-	box-shadow: 0 1px 3px $color_mailBoxshadow;
+	-webkit-box-shadow: 0 1px 0 $color_searchExpandoLabelActiveBG;
+	box-shadow: 0 1px 0 $color_searchExpandoLabelActiveBG;
 	color: $color_white !important;
 	text-transform: uppercase;
 	font-weight: bold;
-	cursor: default;
 	transition: all 0.25s ease;
 	height: 32px;
 	font-size: 12px;
+	cursor: pointer;
 }
 
 .btn:hover, button:hover {
-	box-shadow: 0 2px 8px $color_buttonBoxShadow;
-	background-color: $color_fancyToggleButtonBGHover;
+	-webkit-box-shadow: 0 6px 7px 0 $color_btnHoverBoxShadow;
+	box-shadow: 0 6px 7px 0 $color_btnHoverBoxShadow;
 }
 
 .btn:active, button:active {
-	box-shadow: 0 1px 4px $color_boxshadow;
+	box-shadow: none;
 	background-color: $color_ButtonBGActive;
 }
 
@@ -1578,6 +1579,7 @@ div.titlebox span.number:after {
 			}
 			&:hover, &.flairselectbtn {
 				color: $color_wineRed;
+				text-decoration: none;
 			}
 		}
 		li .comments:hover {
@@ -2109,7 +2111,7 @@ body .content .sitetable .link .title a:hover {
 
 .content .thing {
 	.title:visited, &.visited .title {
-		color: $color_wineRed;
+		color: $color_wikiPageContentHeadline4ActiveFont;
 	}
 }
 
@@ -2271,11 +2273,6 @@ body .content .sitetable .link .title a:hover {
 	font-size: 13px;
 	font-family: Arial, sans-serif;
 	transition: all 0.15s ease;
-}
-
-.link .entry .buttons li a:hover {
-	color: $color_inputBorderActive;
-	text-decoration: none;
 }
 
 .nsfw-stamp acronym {
@@ -3323,6 +3320,10 @@ div {
 	.flat-list li a, .entry .tagline, .expand, .entry {
 		color: $color_bodyFont;
 	}
+
+	.usertext .md, .score, .author {
+		color: $color_titleBoxVisitedFont;
+	}
 }
 
 .tagline .moderator, .green {
@@ -3452,7 +3453,7 @@ div {
 				display: inline-block;
 				text-align: center;
 				background-color: $color_white;
-				color: $color_inputFontActive;
+				color: $color_titleBoxVisitedFont;
 				text-transform: uppercase;
 				font-weight: bold;
 				transition: all 0.25s ease;
@@ -3472,10 +3473,12 @@ div {
 			}
 		}
 	}
+
 	.formtabs-content {
 		border-top: 0;
 		padding-top: 0;
 	}
+
 	.roundfield {
 		padding: 16px;
 		width: 524px;
@@ -3483,11 +3486,14 @@ div {
 		border-radius: 2px;
 		margin-bottom: 16px;
 		box-shadow: 0 1px 5px $color_boxshadow;
+		color: $color_titleBoxVisitedFont;
+
 		.title {
-			color: $color_inputFontActive;
+			color: $color_titleBoxVisitedFont;
 			text-transform: capitalize;
 		}
 	}
+
 	.infobar {
 		width: 524px;
 		padding: 16px;
@@ -3573,6 +3579,7 @@ div {
 		border: none;
 		padding: 6px;
 		position: inherit;
+
 		input[type=text] {
 			box-shadow: none !important;
 			font-size: 36px;
@@ -3582,10 +3589,12 @@ div {
 			border-radius: 0;
 			border-bottom: 1px solid $color_inputBorderDark;
 			margin: 0 0 9px;
+
 			&:hover {
 				box-shadow: none !important;
 			}
 		}
+
 		label {
 			padding: 1em;
 			margin: 0.5em 0;
@@ -3593,6 +3602,8 @@ div {
 			cursor: pointer;
 			font-size: 12px;
 			max-width: 300px;
+			color: $color_titleBoxVisitedFont;
+
 			&:hover {
 				background-color: $color_actionFormListBG;
 			}
@@ -3632,13 +3643,13 @@ div {
 		border-bottom: 0;
 		margin: 16px 316px 0 0;
 		padding: 16px;
-		color: $color_linkDomain;
+		color: $color_titleBoxVisitedFont;
 		background-color: $color_white;
 		box-shadow: 0 1px 5px $color_boxshadow;
 
 		.dropdown.lightdrop .selected {
 			text-decoration: none;
-			color: $color_inputFontActive;
+			color: $color_titleBoxVisitedFont;
 			font-weight: normal;
 			cursor: pointer;
 		}
@@ -5054,38 +5065,8 @@ a, .link .entry .buttons li a.comments, .md a, .titlebox .tagline a.flairselectb
 	color: $color_titleBoxVisitedFont;
 }
 
-.comment {
-	.usertext .md, .score, .author {
-		color: $color_titleBoxVisitedFont;
-	}
-}
-
 .comments-page .side .linkinfo, #search #searchexpando, .commentarea .panestack-title .title, .hover-bubble {
 	color: $color_titleBoxVisitedFont;
-}
-
-.search-page {
-	#search label {
-		color: $color_titleBoxVisitedFont;
-	}
-	.menuarea {
-		color: $color_titleBoxVisitedFont;
-		.dropdown.lightdrop .selected {
-			color: $color_titleBoxVisitedFont;
-		}
-	}
-}
-
-.submit-page {
-	.roundfield {
-		.title {
-			color: $color_titleBoxVisitedFont;
-		}
-		color: $color_titleBoxVisitedFont;
-	}
-	#newlink.submit.content .tabmenu.formtab a {
-		color: $color_titleBoxVisitedFont;
-	}
 }
 
 #sr-header-area .drop-choices a.choice, .comments-page .side .linkinfo .score, .pretty-form, input:not([type="submit"]), textarea, .link .usertext .md, .btn, button, .hover-bubble.multi-selector strong, .wiki-page .wikititle {
@@ -5109,20 +5090,6 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 	color: $color_titleBoxVisitedFont;
 }
 
-.btn, button {
-	-webkit-box-shadow: 0 1px 0 $color_searchExpandoLabelActiveBG;
-	box-shadow: 0 1px 0 $color_searchExpandoLabelActiveBG;
-}
-
-.btn:hover, button:hover {
-	-webkit-box-shadow: 0 6px 7px 0 $color_btnHoverBoxShadow;
-	box-shadow: 0 6px 7px 0 $color_btnHoverBoxShadow;
-}
-
-.btn:active, button:active {
-	box-shadow: none;
-}
-
 .wiki-page .wiki-page-content .md.wiki h4, .wiki-page .wiki-page-content .md.wiki h4:hover {
 	box-shadow: 0 3px 8px $color_buttonBoxShadowHover;
 }
@@ -5134,17 +5101,6 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 .new-comment .usertext-body {
 	background-color: $color_newcommentBG;
 	border: 0 solid;
-}
-
-.btn, button {
-	//background-color: $color_dropdownLightBoxShadow;
-	cursor: pointer;
-}
-
-.content .thing {
-	.title:visited, &.visited .title {
-		color: $color_wikiPageContentHeadline4ActiveFont;
-	}
 }
 
 .res:not(.res-nightmode) .commentarea .comment,
@@ -5167,7 +5123,6 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 .thing .entry.res-selected .md-container,
 .usertext .entry.res-selected,
 .usertext .entry.res-selected .md-container {
-	//background: $color_dropdownLightBoxShadow !important;
 	background: transparent !important;
 }
 

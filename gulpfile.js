@@ -11,7 +11,18 @@ var gulp = require('gulp'),
 	csslint = require('gulp-csslint');
 	
 const loadJsonFile = require('load-json-file');
-	
+
+
+
+function checkFilesizeInBytes(filename) {
+    const stats = fs.statSync(filename)
+    const fileSizeInBytes = stats.size
+
+	if (fileSizeInBytes >= 105000) {
+		console.log("    WARNING: " + filename + " is bigger than 98 kb, reddits LIMIT is 100 kb.");
+	}
+}
+
 /* Compress images (only one modified in git) */
 gulp.task('images:gitmodified', function() {
 	return gulp.src('./theme/img/exported/*.+(jpg|jpeg|gif|png|svg)')
@@ -68,7 +79,7 @@ gulp.task('styles:gitmodified', function() {
 	;
 	
 	/* Compile compressed (no added charset) */
-	gulp.src('./theme/scss/*.scss')
+	var compile = gulp.src('./theme/scss/*.scss')
 		.pipe(gitmodified('modified'))
 		.pipe(sass({outputStyle: 'compressed'})
 			.on('error', sass.logError))
@@ -80,6 +91,9 @@ gulp.task('styles:gitmodified', function() {
 	compileNested.on('end', function(){
 		gulp.start('lint');
 	});
+	compile.on('end', function(){
+		checkFilesizeInBytes("./theme/css/style.min.css");		
+	});	
 });
 
 /* replace reddit url placeholders with hardcoded full urls for use in stylish */
@@ -146,7 +160,7 @@ gulp.task('styles:all', function() {
 		.pipe(gulp.dest('./theme/css/'))
 	;
 	/* Compile compressed (no added charset) */
-	gulp.src('./theme/scss/*.scss')
+	var compile = gulp.src('./theme/scss/*.scss')
 		.pipe(sass({outputStyle: 'compressed'})
 			.on('error', sass.logError))
 		.pipe(rename({suffix: '.min'}))
@@ -157,8 +171,10 @@ gulp.task('styles:all', function() {
 	compileNested.on('end', function(){
 		gulp.start('lint');
 	});
+	compile.on('end', function(){
+		checkFilesizeInBytes("./theme/css/style.min.css");		
+	});	
 });
-
 
 gulp.task('default', ['styles:all', 'images:all'], function() {
 	// Watch Stylesheets

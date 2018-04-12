@@ -1748,6 +1748,7 @@ body > .content .link .rank, .rank-spacer {
 .linklisting>div:last-of-type, .wiki-page-content>div:last-of-type, .subreddit-rules-page>div:last-of-type {
 	margin-bottom: -3px;
 	border-bottom: none;
+
 	&:before, &:after {
 		content: "";
 		display: block;
@@ -1770,6 +1771,7 @@ body > .content .link .rank, .rank-spacer {
 		transform: rotate(180deg);
 	}
 }
+
 .linklisting>.nav-buttons {
 	margin-bottom: 0 !important;
 }
@@ -5615,6 +5617,6 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 }
 
 .modtools-page>div.content {
-    margin: 342px 16px 0 16px;
-    padding: 0;
+	margin: 342px 16px 0 16px;
+	padding: 0;
 }

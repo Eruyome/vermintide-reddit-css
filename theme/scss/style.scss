@@ -2534,12 +2534,12 @@ body > .content .link.compressed .midcol {
 	padding: 32px !important;
 	width: 250px !important;
 	border: none;
-	border-radius: 2px;
 	box-shadow: 0 0 16px $color_buttonBoxShadowActive;
 	background-color: $color_darkGray;
 
 	&.drop-choices.active {
-		border: 1px solid $color_flairselectorBorder;
+		border: 4px solid $color_white;
+		@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 	}
 
 	h2 {
@@ -2564,6 +2564,11 @@ body > .content .link.compressed .midcol {
 	form {
 		padding-top: 12px;
 		border-top: 1px solid $color_linkDomain;
+
+		button {
+			background-color: lighten($color_darkGray, 10);
+		}
+
 		.flairselection {
 			text-align: left;
 			&:before {

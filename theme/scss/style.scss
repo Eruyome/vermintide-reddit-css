@@ -1680,7 +1680,7 @@ body > .content .link .rank, .rank-spacer {
 	position: relative;
 }
 
-.listing-page .sitetable, .wiki-page-content, .search-page .sitetable, .search-page .search-result-listing {
+.listing-page .sitetable, .wiki-page-content, .search-page .sitetable, .search-page .search-result-listing, .subreddit-rules-page {
 	border: 4px solid #fff;
 	border-width: 4px;
 	background-color: $color_darkGray !important;
@@ -1745,7 +1745,7 @@ body > .content .link .rank, .rank-spacer {
 	}
 }
 
-.linklisting>div:last-of-type, .wiki-page-content>div:last-of-type {
+.linklisting>div:last-of-type, .wiki-page-content>div:last-of-type, .subreddit-rules-page>div:last-of-type {
 	margin-bottom: -3px;
 	border-bottom: none;
 	&:before, &:after {
@@ -3750,8 +3750,7 @@ div {
 	.wiki-page-content {
 		margin: 16px 316px 16px 0;
 		padding: 16px;
-		border-radius: 2px;
-		box-shadow: 0 1px 5px $color_boxshadow;
+
 		.wiki {
 			> .toc > ul {
 				border: none;
@@ -5588,9 +5587,34 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 }
 
 .subreddit-rules-page {
-	margin-top: 330px;
+	margin: 16px 316px 16px 0;
+	padding: 16px;
+	position: relative;
 
 	.md {
 		color: $color_white;
 	}
+
+	.subreddit-rule-item:hover {
+		background-color: darken($color_darkGray, 2);
+	}
+
+	.md-container .md {
+		.subreddit-rule-description, .subreddit-rule-violation-reason {
+			color: $color_white;
+		}
+		.subreddit-rule-title {
+			color: $color_wineRed;
+		}
+	}
+
+	button {
+		background-color: darken($color_darkGray, 5) !important;
+		padding: 0 5px !important;
+	}
+}
+
+.modtools-page>div.content {
+    margin: 342px 16px 0 16px;
+    padding: 0;
 }

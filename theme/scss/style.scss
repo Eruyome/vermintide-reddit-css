@@ -738,6 +738,25 @@ a.random.choice {
 	}
 }
 
+.titlebox .tagline:after {
+	background-color: $color_titleboxTaglineBG;
+}
+
+.titlebox .usertext .md > h2 {
+	background-color: $color_wineRed;
+	margin: 10px -32px 5px 2px;
+	padding: 2px 0 2px 20px;
+	z-index: 10;
+
+	strong {
+		display: block;
+		font-size: 15px;
+		color: $color_white;
+		z-index: 10;
+
+	}
+}
+
 .side {
 	margin: 446px 16px 15px 0;
 	padding: 6px 12px;
@@ -749,12 +768,13 @@ a.random.choice {
 
 	.md {
 		.-blocks, .-lists, pre, blockquote, table, p, ul, ol {
-			color: $color_white;
+			color: $color_titleBoxVisitedFont;
 			font-size: 13px;
 			font-family: Arial, sans-serif;
 			line-height: 1.3333333333333333em;
 		}
 	}
+
 	.titlebox .md {
 		h1 {
 			line-height: 18px;
@@ -795,19 +815,51 @@ a.random.choice {
 	#moderation_tools .title {
 		h1 {
 			text-transform: capitalize;
-			color: $color_modToolTitle;
+			color: $color_titleBoxVisitedFont;
 		}
 		.collapse-button {
 			color: $color_inputFontActive;
 			vertical-align: middle;
 			border-radius: 1px;
 			border: 1px solid $color_sideCollapseBtn;
+			position: absolute;
+			top: 19px;
+			right: 18px;
 		}
+		position: relative;
 	}
+
 	.sidecontentbox .content {
 		border: none;
 		padding: 8px 0;
 	}
+}
+
+.side .titlebox .md h2, .side .sidecontentbox div.title h1 {
+	position: relative;
+	color: $color_white;
+	text-shadow: none;
+	padding: 0;
+	margin: 10px -16px 10px -25px;
+	border: none;
+	font-size: 16px;
+	background: url(%%skull-header%%) no-repeat;
+	height: 54px;
+	width: 320px;
+	display: block;
+	line-height: 49px;
+	text-align: center !important;
+	letter-spacing: 1px;
+}
+
+.side .sidecontentbox div.title h1 {
+	text-transform: none !important;
+	color: $color_white !important;
+}
+
+.side .titlebox .md ul {
+	list-style: none;
+	padding-left: 20px;
 }
 
 .comments-page .side {
@@ -1243,14 +1295,14 @@ body:not(.loggedin) #header-bottom-right {
 		margin-bottom: 6px;
 	}
 	span.subscribers, .users-online, .number {
-		color: $color_guiderFont;
+		color: $color_titleBoxVisitedFont;
 		font-size: 12px;
 		position: relative;
 		top: -2px;
 		left: -2px;
 	}
 	h1 a {
-		color: $color_white;
+		color: $color_titleBoxVisitedFont;
 	}
 
 	.tagline {
@@ -1414,7 +1466,7 @@ div.titlebox span.number:after {
 	border: 1px solid $color_wikiPageContentHeadline4Border;
 	border-radius: 2px;
 	box-shadow: 0 2px 5px $color_headline4LinkBoxShadow;
-	color: $color_wikiPageContentHeadline4Font;
+	color: $color_titleBoxVisitedFont;
 	font-weight: bold;
 	transition: all 0.15s ease;
 	display: block;
@@ -1519,8 +1571,7 @@ div.titlebox span.number:after {
 		}
 
 		.buttons li a {
-			.comments {
-				color: $color_inputBorderActive;
+			&.comments {
 				font-weight: bold !important;
 				opacity: 100 !important;
 				transition: all 0.25s ease-in-out !important;
@@ -1531,6 +1582,53 @@ div.titlebox span.number:after {
 		}
 		li .comments:hover {
 			text-decoration: none;
+		}
+
+		.buttons li .redditSingleClick {
+			padding: 0 1px;
+			color: $color_linkDomain;
+			font-weight: normal;
+			font-size: 13px;
+			font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+			transition: all 0.15s ease;
+		}
+
+		.tagline {
+			&:first-letter {
+				text-transform: capitalize;
+			}
+			time {
+				cursor: help;
+			}
+			a {
+				color: $color_titleBoxVisitedFont;
+				&:hover {
+					color: $color_inputBorderActive;
+					text-decoration: none;
+				}
+				&.author {
+					margin-right: inherit;
+				}
+			}
+			.userattrs {
+				visibility: hidden;
+				a {
+					visibility: visible;
+					font-size: 10px;
+					padding: 1px 3px 1px 2px;
+					margin-left: 2px;
+					background-color: $color_wineRed;
+					color: $color_white !important;
+					vertical-align: middle;
+					border-radius: 1px;
+					position: relative;
+					top: -1px;
+					cursor: help;
+					&.moderator {
+						background-color: $color_linkFlairLabelMod;
+					}
+				}
+			}
 		}
 	}
 
@@ -2150,44 +2248,6 @@ body .content .sitetable .link .title a:hover {
 	color: $color_spoiler;
 }
 
-.link .entry .tagline {
-	&:first-letter {
-		text-transform: capitalize;
-	}
-	time {
-		cursor: help;
-	}
-	a {
-		color: $color_inputFontActive;
-		&:hover {
-			color: $color_inputBorderActive;
-			text-decoration: none;
-		}
-		&.author {
-			margin-right: inherit;
-		}
-	}
-	.userattrs {
-		visibility: hidden;
-		a {
-			visibility: visible;
-			font-size: 10px;
-			padding: 1px 3px 1px 2px;
-			margin-left: 2px;
-			background-color: $color_wineRed;
-			color: $color_white !important;
-			vertical-align: middle;
-			border-radius: 1px;
-			position: relative;
-			top: -1px;
-			cursor: help;
-			&.moderator {
-				background-color: $color_linkFlairLabelMod;
-			}
-		}
-	}
-}
-
 .RESUserTagImage {
 	height: 10px !important;
 	//background: url(%%sprite-alternate%%) (-192px) -34px !important;
@@ -2268,17 +2328,6 @@ body .content .sitetable .link .title a:hover {
 	}
 	input[name="other_reason"] {
 		padding: 8px;
-	}
-}
-
-.link .entry .buttons li {
-	.redditSingleClick {
-		padding: 0 1px;
-		color: $color_linkDomain;
-		font-weight: normal;
-		font-size: 13px;
-		font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-		transition: all 0.15s ease;
 	}
 }
 
@@ -3124,12 +3173,14 @@ div {
 
 .commentarea .menuarea {
 	margin: 0 0 0 22px;
-	.spacer:nth-of-type(2) {}
+
 	span.dropdown-title.lightdrop {
-		color: $color_linkDomain;
 		&:first-letter {
 			text-transform: capitalize;
 		}
+	}
+	span.dropdown-title.lightdrop, .toggle a {
+		color: $color_bodyFont;
 	}
 	.dropdown.lightdrop .selected {
 		cursor: pointer;
@@ -3268,6 +3319,10 @@ div {
 			margin-top: 0;
 		}
 	}
+
+	.flat-list li a, .entry .tagline, .expand, .entry {
+		color: $color_bodyFont;
+	}
 }
 
 .tagline .moderator, .green {
@@ -3328,8 +3383,8 @@ div {
 	}
 	h1, h2 {
 		margin: 0.5em 0 0.25em 0;
-		border: none;
-		color: $color_inputFontActive;
+		border: none;		
+		color: $color_titleBoxVisitedFont;
 	}
 	h3 {
 		color: $color_inputFontActive;
@@ -3614,7 +3669,7 @@ div {
 		margin: 0;
 	}
 	h4.title {
-		color: $color_inputFontActive;
+		color: $color_bodyFont;
 		margin: 0 0 8px 0;
 		&:first-letter {
 			text-transform: capitalize;
@@ -3708,6 +3763,9 @@ div {
 
 	.pageactions, .wikititle, .wiki-page-content {
 		background-color: $color_darkGray;
+		em {
+			color: $color_bodyFont;
+		}
 	}
 }
 
@@ -4822,26 +4880,6 @@ a, .link .entry .buttons li a.comments, .md a, .titlebox .tagline a.flairselectb
 	background-color: transparent;
 }
 
-.titlebox .tagline:after {
-	background-color: $color_titleboxTaglineBG;
-}
-
-
-.titlebox .usertext .md > h2 {
-	background-color: $color_wineRed;
-	margin: 10px -32px 5px 2px;
-	padding: 2px 0 2px 20px;
-	z-index: 10;
-
-	strong {
-		display: block;
-		font-size: 15px;
-		color: $color_white;
-		z-index: 10;
-
-	}
-}
-
 .link, input:not([type="submit"]), textarea {
 	background-color: $color_darkGray;
 }
@@ -4903,21 +4941,10 @@ a, .link .entry .buttons li a.comments, .md a, .titlebox .tagline a.flairselectb
 	color: $color_bodyFont;
 }
 
-.comment {
-	.flat-list li a, .entry .tagline, .expand, .entry {
-		color: $color_bodyFont;
-	}
-}
-
 .comments-page .side .linkinfo .date, .usertext .bottom-area a {
 	color: $color_bodyFont;
 }
 
-.commentarea .menuarea {
-	span.dropdown-title.lightdrop, .toggle a {
-		color: $color_bodyFont;
-	}
-}
 .usertext .markhelp table.md {
 	color: $color_titleBoxVisitedFont;
 	tr:first-child {
@@ -4927,56 +4954,6 @@ a, .link .entry .buttons li a.comments, .md a, .titlebox .tagline a.flairselectb
 
 .help-hoverable, .search-page .menuarea, .link .score, .sitetable .nav-buttons .nextprev, .gray, .linefield, .top-page .content .menuarea .drop-choices.lightdrop a.choice {
 	color: $color_bodyFont;
-}
-
-.wiki-page {
-	.pageactions .wikiaction, .wiki-page-content em {
-		color: $color_bodyFont;
-	}
-}
-
-.searchfacets h4.title {
-	color: $color_bodyFont;
-}
-
-.link .entry {
-	.buttons li .redditSingleClick {
-		color: $color_bodyFont;
-	}
-	.tagline a {
-		color: $color_titleBoxVisitedFont;
-	}
-}
-
-.titlebox h1 a {
-	color: $color_titleBoxVisitedFont;
-}
-
-.md {
-	h1, h2 {
-		color: $color_titleBoxVisitedFont;
-	}
-}
-
-.titlebox {
-	span.subscribers, .users-online, .number {
-		color: $color_titleBoxVisitedFont;
-	}
-}
-
-.wiki-page .wiki-page-content .md.wiki h4 {
-	color: $color_titleBoxVisitedFont;
-}
-
-.side {
-	.md {
-		.-blocks, .-lists, pre, blockquote, table, p, ul, ol {
-			color: $color_titleBoxVisitedFont;
-		}
-	}
-	#moderation_tools .title h1 {
-		color: $color_titleBoxVisitedFont;
-	}
 }
 
 .sidecontentbox {
@@ -5071,40 +5048,6 @@ a, .link .entry .buttons li a.comments, .md a, .titlebox .tagline a.flairselectb
 		box-shadow: 0 0 0 0 rgba(228, 30, 16, 0);
 		opacity: 1;
 	}
-}
-
-.side .titlebox .md h2, .side .sidecontentbox div.title h1 {
-	position: relative;
-	color: $color_white;
-	text-shadow: none;
-	padding: 0;
-	margin: 10px -16px 10px -25px;
-	border: none;
-	font-size: 16px;
-	background: url(%%skull-header%%) no-repeat;
-	height: 54px;
-	width: 320px;
-	display: block;
-	line-height: 49px;
-	text-align: center !important;
-	letter-spacing: 1px;
-}
-.side .sidecontentbox div.title h1 {
-	text-transform: none !important;
-	color: $color_white !important;
-}
-.side #moderation_tools .title  {
-	position: relative;
-	.collapse-button {
-		position: absolute;
-		top: 19px;
-		right: 18px;
-	}
-}
-
-.side .titlebox .md ul {
-	list-style: none;
-	padding-left: 20px;
 }
 
 .flat-vert.title, .md h3 {

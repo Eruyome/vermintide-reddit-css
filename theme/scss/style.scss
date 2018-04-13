@@ -5457,7 +5457,7 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 	border: 4px solid $color_white;
 	@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 	display: block;
-	padding: 5px 5px 5px 35px;
+	padding: 5px 25px 5px 35px;
 	background-color: darken($color_darkGray, 5);
 
 	&:after {
@@ -5570,11 +5570,11 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 	color: $color_white !important;
 }
 
-.side li .author[href*="user/Eruyome87"], .side li .author[href*="user/Eruyome87"] + span {
+.sidecontentbox  li .author[href*="user/Eruyome87"], .sidecontentbox  li .author[href*="user/Eruyome87"] + span {
 	pointer-events: none;
 	opacity: .4;
 }
-.side li:nth-child(1) .author {
+.sidecontentbox  li:nth-child(1) .author {
 	margin-top: 20px;
 	display: inline-block;
 }

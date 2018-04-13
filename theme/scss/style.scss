@@ -8,10 +8,10 @@
 	border-image: url(#{$url}) $slice $width #{$repeat} !important;
 }
 
-$color_wineRed : #DD1919;
-$color_darkGray : #212121;
+$color_wineRed : #D11;
+$color_darkGray : #222;
 $color_darkGrayTrans : rgba(33, 33, 33, 0.8);
-$color_bodyBG : #eeeeee;
+$color_bodyBG : #eee;
 $color_headerBG : #2A2B2E;
 $color_white : #fff;
 $color_black : #000;
@@ -46,7 +46,7 @@ $color_haveMailBGBeforeActive: #c73d3d;
 $color_haveMailActiveBoxShadow : rgba(0, 0, 0, 0.76);
 $color_inputBorder : #e5e5e5;
 $color_inputFont : #707070;
-$color_inputBorderHover : #C5C5C5;
+$color_inputBorderHover : #CCC;
 $color_inputBorderActive : #4F8EF7;
 $color_inputFontActive : #4D5763;
 $color_reportedStamp : #FFFDCC;
@@ -1618,7 +1618,7 @@ div.titlebox span.number:after {
 				a {
 					visibility: visible;
 					font-size: 10px;
-					padding: 1px 3px 1px 2px;
+					padding: 1px 2px;
 					margin-left: 2px;
 					background-color: $color_wineRed;
 					color: $color_white !important;
@@ -3926,7 +3926,6 @@ div {
 	margin-left: 4px;
 	color: $color_white !important;
 	background-color: $color_inputBorderActive;
-	border-radius: 5px;
 	padding: 2px 6px 2px 2px;
 }
 
@@ -3995,42 +3994,54 @@ div {
 	}
 }
 
-.flair-waywatcher, .flair-witchhunter, .flair-dwarfranger, .flair-empiresoldier, .flair-brightwizard {
+/* user flairs (careers) */
+
+// sass-lint:disable indentation
+$careerList :	'dwarfranger', 'dwarf-iron', 'dwarf-slayer',
+				'ww-shade', 'waywatcher', 'ww-maiden',
+				'whunter-bounty', 'witchhunter', 'whunter-zealot',
+				'brightwizard', 'wiz-pyro', 'wiz-unchained',
+				'empiresoldier', 'soldier-hunt', 'soldier-merc',
+				'chaos', 'skaven';
+// sass-lint:enable indentation
+
+%career-flair-styles {
 	background-color: transparent;
 	color: $color_white !important;
-	line-height: 20px;
-	&:before {
-		content: "  ";
-		text-align: right;
-		float: left;
-		width: 23px;
-		height: 19px;
-		background: transparent url(%%classicons-sprite%%) repeat scroll 0% 0%;
-		position: relative;
+	line-height: 18px;
+}
+%career-flair-styles-before {
+	content: "  ";
+	text-align: right;
+	float: left;
+	width: 21px;
+	height: 18px;
+	background: transparent url(%%career-icons-sprite%%) repeat scroll 0% 0%;
+	position: relative;
+}
+
+@for $i from 1 through length($careerList) {
+	.flair-#{nth($careerList, $i)} {
+		@extend %career-flair-styles;
+	}
+
+	.flair-#{nth($careerList, $i)}:before {
+		@extend %career-flair-styles-before;
+	}
+
+	.flair-#{nth($careerList, $i)}:before {
+		background-position: 0 #{- ($i - 1) * 20px};
 	}
 }
 
-.flair-witchhunter:before {
-	background-position: 0 0;
-}
-.flair-dwarfranger:before {
-	background-position: 92px 0;
-}
-.flair-brightwizard:before {
-	background-position: 69px 0;
-}
-.flair-empiresoldier:before {
-	background-position: 46px 0;
-}
-.flair-waywatcher:before {
-	background-position: 23px 0;
-}
+/* user flairs (careers) end */
 
 .flair-steam, .flair-xbox, .flair-playstation, .flair-twitch {
 	background-color: $color_RESDialogSmallLivePreview;
 	color: $color_white !important;
 	line-height: 18px;
 	border: 1px solid $color_flairPlatform;
+
 	&:before {
 		content: "  ";
 		text-align: right;

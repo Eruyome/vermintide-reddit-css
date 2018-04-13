@@ -1723,6 +1723,7 @@ body > .content .link .rank, .rank-spacer {
 }
 
 .linklisting .link, .search-result-listing .search-result-link {
+	margin: 0 -1px;
 	border-width: 4px;
 	border-bottom: 4px solid #fff;
 	@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');

@@ -143,8 +143,9 @@ $color_linkFlairLabelUpdate : #804615;
 /* flair group 1 */
 $color_linkFlairLabelVerminScience : #577892;
 $color_linkFlairLabelVerminArt : saturate(darken($color_linkFlairLabelVerminScience, 15), 20);
-$color_linkFlairLabelGameplayGuide : saturate(darken($color_linkFlairLabelVerminScience, 20), 20);
-$color_linkFlairLabelModdedContent : saturate(darken($color_linkFlairLabelVerminScience, 25), 20);
+$color_linkFlairLabelVerminTales : saturate(darken($color_linkFlairLabelVerminScience, 20), 20);
+$color_linkFlairLabelGameplayGuide : saturate(darken($color_linkFlairLabelVerminScience, 25), 20);
+$color_linkFlairLabelModdedContent : saturate(darken($color_linkFlairLabelVerminScience, 30), 20);
 
 /* flair group 2 */
 $color_linkFlairLabelMod : #65B354;
@@ -1360,8 +1361,8 @@ body:not(.loggedin) #header-bottom-right {
 		.add {
 			right: -268px;
 			top: -36px;
-			background-position: -208px -144px;
 			background-color: $color_wineRed;
+
 			&:hover {
 				background-color: $color_fancyToggleButtonBGHover;
 			}
@@ -1447,6 +1448,11 @@ div.titlebox span.number:after {
 	}
 }
 
+.fancy-toggle-button .add {
+	right: -268px;
+	top: -36px;
+	background-position: -208px -144px !important;
+}
 .fancy-toggle-button .remove {
 	right: -268px;
 	top: -36px;
@@ -1978,45 +1984,31 @@ body > .content .link .rank, .rank-spacer {
 
 .linkflair-announce .linkflairlabel {
 	background-color: $color_linkFlairLabelMod !important;
-	a {
-		//color: $color_linkFlairLabelMod !important
-	}
 }
 
 .linkflair-suggestion .linkflairlabel {
 	background-color: $color_linkFlairLabelSuggestion !important;
 	color: $color_white;
-	a {
-		//color: $color_linkFlairLabelSuggestion !important;
-	}
 }
 
 .linkflair-verminscience .linkflairlabel {
 	background-color: $color_linkFlairLabelVerminScience !important;
-	a {
-		//color: $color_linkFlairLabelVerminScience !important;
-	}
 }
 
 .linkflair-news .linkflairlabel {
 	background-color: $color_linkFlairLabelNews;
-	a {
-		//color: $color_linkFlairLabelNews !important;
-	}
 }
 
 .linkflair-verminart .linkflairlabel {
 	background-color: $color_linkFlairLabelVerminArt;
-	a {
-		//color: $color_linkFlairLabelVerminArt !important;
-	}
+}
+
+.linkflair-vermintales .linkflairlabel {
+	background-color: $color_linkFlairLabelVerminTales;
 }
 
 .linkflair-umgak .linkflairlabel {
 	background-color: $color_linkFlairLabelUmgak !important;
-	a {
-		//color: $color_linkFlairLabelUmgak !important;
-	}
 }
 html:lang(ft) .linkflair-umgak {
 	display: none !important;
@@ -2024,86 +2016,50 @@ html:lang(ft) .linkflair-umgak {
 
 .linkflair-discussion .linkflairlabel {
 	background-color: $color_linkFlairLabelDiscussion !important;
-	a {
-		//color: $color_linkFlairLabelDiscussion !important;
-	}
 }
 
 .linkflair-moddedcontent .linkflairlabel {
 	background-color: $color_linkFlairLabelModdedContent !important;
-	a {
-		//color: $color_linkFlairLabelModdedContent !important;
-	}
 }
 
 .linkflair-question .linkflairlabel {
 	background-color: $color_linkFlairLabelQuestion !important;
-	a {
-		//color: $color_linkFlairLabelQuestion !important;
-	}
 }
 
 .linkflair-issue .linkflairlabel {
 	background-color: $color_linkFlairLabelIssue !important;
-	a {
-		//color: $color_linkFlairLabelIssue !important;
-	}
 }
 
 .linkflair-gameplayguide .linkflairlabel {
 	background-color: $color_linkFlairLabelGameplayGuide !important;
-	a {
-		//color: $color_linkFlairLabelGameplayGuide !important;
-	}
 }
 
 .linkflair-showcase .linkflairlabel {
 	background-color: $color_linkFlairLabelShowcase !important;
-	a {
-		//color: $color_linkFlairLabelShowcase !important;
-	}
 }
 
 .linkflair-gameplay .linkflairlabel {
 	background-color: $color_linkFlairLabelGameplay !important;
-	a {
-		//color: $color_linkFlairLabelGameplay !important;
-	}
 }
 
 .linkflair-solved .linkflairlabel {
 	background-color: $color_linkFlairLabelSolved !important;
-	a {
-		//color: $color_linkFlairLabelSolved !important;
-	}
 }
 
 .linkflair-update .linkflairlabel {
 	background-color: $color_linkFlairLabelUpdate !important;
-	a {
-		//color: $color_linkFlairLabelUpdate !important;
-	}
 }
 
 .linkflair-daily .linkflairlabel {
 	background-color: $color_linkFlairLabelDaily !important;
-	a {
-		//color: $color_linkFlairLabelDaily !important;
-	}
 }
 
 .linkflair-console .linkflairlabel {
 	background-color: $color_linkFlairLabelConsole !important;
-	a {
-		//color: $color_linkFlairLabelDaily !important;
-	}
 }
 
 .linkflair-lfg .linkflairlabel {
 	background-color: $color_linkFlairLabelLFG !important;
-	a {
-		//color: $color_linkFlairLabelLFG !important;
-	}
 }
 
 .link .title {
@@ -4063,8 +4019,8 @@ $careerList :	'dwarfranger', 'dwarf-iron', 'dwarf-slayer',
 	&:before {
 		display: block;
 		content: "";
-		width: 18px;
-		height: 18px;
+		width: 23px;
+		height: 19px;
 		background-image: url(%%special-user-flair-sprite%%);
 		margin: 0;
 		padding: 0;
@@ -4091,6 +4047,15 @@ $careerList :	'dwarfranger', 'dwarf-iron', 'dwarf-slayer',
 	background-position: 0 -100px;
 }
 
+.flair-settings+.tabmenu {
+	&:before {
+		display: block;
+		font-size: 12px;
+		content: "Special user flairs: 'gamedev', 'wiki', 'sweden', 'artist', 'scientist', 'modder'. Don't create them in user flair templates.";
+		margin: 10px;
+	}
+}
+
 .flair-green {
 	background-color: $color_flairGreen;
 	padding: 0 6px;
@@ -4105,31 +4070,12 @@ $careerList :	'dwarfranger', 'dwarf-iron', 'dwarf-slayer',
 	}
 }
 
-.flair-skaven {
-	background-color: transparent;
-	color: $color_white !important;
-	line-height: 20px;
-	&:before {
-		content: "  ";
-		text-align: right;
-		float: left;
-		width: 23px;
-		height: 19px;
-		background: transparent url(%%platform-flairs%%) repeat scroll 0% 0%;
-		position: relative;
-	}
-}
-
 .flair-xbox:before {
 	background-position: 0 0;
 }
 
 .flair-playstation:before {
 	background-position: 0 -18px;
-}
-
-.flair-skaven:before {
-	background-position: 0 -35px;
 }
 
 .flair-steam:before {
@@ -5153,7 +5099,7 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 .thing .entry.res-selected .md-container,
 .usertext .entry.res-selected,
 .usertext .entry.res-selected .md-container {
-	background: transparent !important;
+	background: $color_mailBoxshadow !important;
 }
 
 .side .md>ul:nth-of-type(1) {
@@ -5527,6 +5473,10 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 }
 .side .md [href*="search?q=flair%3Averminart"] {
 	background-color: $color_linkFlairLabelVerminArt;
+	color: $color_white;
+}
+.side .md [href*="search?q=flair%3Avermintales"] {
+	background-color: $color_linkFlairLabelVerminTales;
 	color: $color_white;
 }
 .side .md [href*="search?q=flair%3gameplay+AND+flair%3Aguide"] {

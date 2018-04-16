@@ -1469,11 +1469,7 @@ div.titlebox span.number:after {
 }
 
 .wiki-page .wiki-page-content .md.wiki h4 {
-	padding: 12px 16px;
-	background-color: $color_white;
-	border: 1px solid $color_wikiPageContentHeadline4Border;
-	border-radius: 2px;
-	box-shadow: 0 2px 5px $color_headline4LinkBoxShadow;
+	padding: 12px 0;
 	color: $color_titleBoxVisitedFont;
 	font-weight: bold;
 	transition: all 0.15s ease;
@@ -1483,14 +1479,12 @@ div.titlebox span.number:after {
 }
 
 .side .titlebox h4 a:hover, .wiki-page .wiki-page-content .md.wiki h4:hover {
-	box-shadow: 0 3px 8px $color_mailBoxshadow;
 	color: $color_inputFontActive;
 }
 
 .side .titlebox h4 a:active, .wiki-page .wiki-page-content .md.wiki h4:active {
 	background-color: $color_inputBorder;
 	color: $color_wikiPageContentHeadline4ActiveFont;
-	box-shadow: 0 6px 12px $color_wikiPageContentHeadline4ActiveBoxShadow;
 }
 
 .md hr {
@@ -3711,7 +3705,7 @@ div {
 		padding: 16px;
 
 		.wiki {
-			> .toc > ul {
+			&>.toc>ul, &>.toc>ul ul {
 				border: none;
 			}
 			&.md {
@@ -4119,9 +4113,8 @@ $careerList :	'dwarfranger', 'dwarf-iron', 'dwarf-slayer',
 	@include simple-border-image('%%content-box-border-image-nocorner%%', 4, 4, 'stretch');
 	background-color: $color_darkGray;
 
-	background-image: url(%%header%%);
 	background-position: 0 -34px;
-	background-blend-mode: soft-light;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(%%header%%);
 
 	&:before, &:after, & div:last-of-type:before, & div:last-of-type:after {
 		display: block;
@@ -4916,7 +4909,7 @@ a, .link .entry .buttons li a.comments, .md a, .titlebox .tagline a.flairselectb
 	}
 }
 
-.link .entry, .wiki-page .wiki-page-content .md.wiki h4, .link .usertext .md, input:not([type="submit"]), textarea, .btn, button {
+.link .entry, .link .usertext .md, input:not([type="submit"]), textarea, .btn, button {
 	border-color: $color_inputBorderDark;
 }
 
@@ -5064,10 +5057,6 @@ a, .link .entry .buttons li a.comments, .md a, .titlebox .tagline a.flairselectb
 
 input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wikiaction-current {
 	color: $color_titleBoxVisitedFont;
-}
-
-.wiki-page .wiki-page-content .md.wiki h4, .wiki-page .wiki-page-content .md.wiki h4:hover {
-	box-shadow: 0 3px 8px $color_buttonBoxShadowHover;
 }
 
 .search-page input[type="text"] {
@@ -5479,7 +5468,7 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 	background-color: $color_linkFlairLabelVerminTales;
 	color: $color_white;
 }
-.side .md [href*="search?q=flair%3gameplay+AND+flair%3Aguide"] {
+.side .md [href*="search?q=flair%3Agameplay+AND+flair%3Aguide"] {
 	background-color: $color_linkFlairLabelGameplayGuide;
 	color: $color_white;
 }
@@ -5581,4 +5570,8 @@ input:focus, textarea:focus, .pretty-form textarea, .wiki-page .pageactions .wik
 .modtools-page>div.content {
 	margin: 342px 16px 0 16px;
 	padding: 0;
+}
+
+.pinnable-content.pinned {
+	background-color: $color_darkGray !important;	
 }

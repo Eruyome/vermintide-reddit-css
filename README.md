@@ -10,7 +10,8 @@ The project includes **`package.json`** and **`gulpfile.js`** to use nodeJS for 
 
 1. Install [nodeJS](https://nodejs.org/en/download/).
 2. Open a console window in the project root or navigate to the project root.
-3. Execute **`npm install`** to download and install the node modules specified in **`package.json`**.
+3. Execute **`npm install gulp-cli -g`** to globally install the gulp-CLI.
+4. Execute **`npm install`** to download and install the node modules specified in **`package.json`**.
 
 #### Usage:
 

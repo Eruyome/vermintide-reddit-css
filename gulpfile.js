@@ -32,7 +32,7 @@ gulp.task('images:all', function() {
 });
 
 /* Compile sass and minify css (gitmodified) */
-gulp.task('styles:gitmodified', function() {
+gulp.task('styles:gitmodified', function(done) {
 	/* Compile nested (adding @charset "utf-8") */
 	gulp.src('./scss/*.scss')
 		.pipe(gitmodified('modified'))
@@ -51,10 +51,12 @@ gulp.task('styles:gitmodified', function() {
 		.pipe(cssmin({showLog :true,debug:true}))
 		.pipe(gulp.dest('./css/'))
 	;
+
+	done();
 });
 
 /* Compile sass and minify css (all) */
-gulp.task('styles:all', function() {
+gulp.task('styles:all', function(done) {
 	/* Compile nested (adding @charset "utf-8") */
 	gulp.src('./scss/*.scss')
 		.pipe(sass({outputStyle: 'nested'})
@@ -71,12 +73,17 @@ gulp.task('styles:all', function() {
 		.pipe(cssmin({showLog :true,debug:true}))
 		.pipe(gulp.dest('./css/'))
 	;
+
+	done();
 });
 
-
-gulp.task('default', ['styles:all', 'images:all'], function() {
+gulp.task('default', gulp.series('styles:all', 'images:all', function(done) {
 	// Watch Stylesheets
-	gulp.watch('./scss/*.scss', ['styles:gitmodified']);
+	//gulp.watch('./scss/*.scss', ['styles:gitmodified']);
+	gulp.watch('./scss/*.scss', gulp.series('styles:gitmodified'));
 	// Watch Images
-	gulp.watch(['./img/**/*.+(jpg|jpeg|gif|png|svg)'], ['images:gitmodified']);
-});
+	//gulp.watch(['./img/**/*.+(jpg|jpeg|gif|png|svg)'], ['images:gitmodified']);
+	gulp.watch(['./img/**/*.+(jpg|jpeg|gif|png|svg)'], gulp.series('images:gitmodified'));
+
+	done();
+}));

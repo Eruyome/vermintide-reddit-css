@@ -125,7 +125,7 @@ $color_prettyButtonNegativeHoverBG : #fc535a;
 $color_prettyButtonNeutralHoverBG : #ececec;
 $color_prettyButtonPositiveBG : #1ecd97;
 $color_prettyButtonPositiveHoverBG : #22e1a6;
-$color_linkPromotedBG : #EFF7FF;
+$color_linkPromotedBG : lighten($color_darkGray, 20%);
 $color_flairselectorBorder : #e2e2e2;
 $color_blockquoteBorder : #E5E3DA;
 $color_goldAccentTitle: #9a7d2e;
@@ -2421,7 +2421,7 @@ a.pretty-button {
 .organic-listing {
 	background-color: $color_white !important;
 	padding: 0;
-	z-index: 9999;
+	z-index: 1;
 	position: relative;
 	margin-bottom: 0;
 	margin-right: 316px;

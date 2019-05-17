@@ -1,0 +1,131 @@
+{
+	"readme" : "This assumes that placeholders are enclosed with %%. Remove them from the placeholder key.",
+	"urls" : [
+		{
+			"placeholder": "header-light",
+			"url": "https://b.thumbs.redditmedia.com/IdwOeS8PUyA0T4dPhAfqihlnwzOBQLXxt_n9gUfeS3A.png"
+		},
+		{
+			"placeholder": "header-light-default",
+			"url": "https://b.thumbs.redditmedia.com/odKOUYnB3TNZ1tqj-POoue_YrOMTCXK3wOyistwKYSs.png"
+		},{
+			"placeholder": "sprite-alternate",
+			"url": "https://a.thumbs.redditmedia.com/Amr8R2PT7zV11bYlRTYpY7HocZnfRlDrltMCe-Ewo78.png"
+		},
+		{
+			"placeholder": "fatshark-logo-big",
+			"url": "https://b.thumbs.redditmedia.com/0_sTGSTMkZ7l6BXJI8BjriB2bZpD6ENcXWhBXesos-E.png"
+		},{
+			"placeholder": "fatshark-logo",
+			"url": "https://a.thumbs.redditmedia.com/2ogynRF7JAh5uKA30J6sa1NjukPWkKpF_Q4iClEa1R8.png"
+		},
+		{
+			"placeholder": "no-result",
+			"url": "https://b.thumbs.redditmedia.com/1zJSBlRS-bvSyBP8TpEF51Z_dtXLwpCPRskN3kjRHQQ.png"
+		},
+		{
+			"placeholder": "classicons-sprite",
+			"url": "https://b.thumbs.redditmedia.com/bHopx_Z7jowt4V5NOuBLb9d3pJEspu38oCVxQDfYE7g.png"
+		},
+		{
+			"placeholder": "sprite-vermintidelogo",
+			"url": "https://b.thumbs.redditmedia.com/vBgyi3DR6XJXdLvi6xARWIaeMH4glkJzn9CKvzbkGHM.png"
+		},
+		{
+			"placeholder": "additional-icons",
+			"url": "https://b.thumbs.redditmedia.com/oH98W_MkqlAHWOAKRse1r6tklhit2blPbQgaIyWChOo.png"
+		},
+		{
+			"placeholder": "skaven",
+			"url": "https://b.thumbs.redditmedia.com/y1wxkloAD9eikEpjJqa6g_nUHTG-xGJrSY9YaDisUeU.png"
+		},
+		{
+			"placeholder": "platform-flairs",
+			"url": "https://b.thumbs.redditmedia.com/QI_Mj77MP1wVwvxQtM1fIbjUdjVRqCln4y7p-XXLZDQ.png"
+		},
+		{
+			"placeholder": "bg-dot",
+			"url": "https://b.thumbs.redditmedia.com/JQgfgZVmHIlgdo2CxcGI8hSgFlFTJxXPYiXS2kUT7PY.png"
+		},
+		{
+			"placeholder": "sticky-box",
+			"url": "https://a.thumbs.redditmedia.com/inWgQkKvRNJgOd3HwJzJCodH0qv_myqQ0xdYBsw6xT4.png"
+		},
+		{
+			"placeholder": "sticky-box-bg",
+			"url": "https://b.thumbs.redditmedia.com/yc67XnPpCiwsl4dCjfgYVNhT-EcNDpt5MgpzLFqV0Nw.png"
+		},
+		{
+			"placeholder": "sprites",
+			"url": "https://b.thumbs.redditmedia.com/mEqvHzTca4aGFqwmqElbO4HwunlxNJoO_xuylwZW7Qo.png"
+		},
+		{
+			"placeholder": "sprite-reddit-default",
+			"url": "https://b.thumbs.redditmedia.com/ETwTZx6FEq5AStNgxHmYcBxuj4IyV9gvmt_f9NWWV-M.png"
+		},
+		{
+			"placeholder": "sidebar-guide",
+			"url": "https://a.thumbs.redditmedia.com/zgXRO_liVl-1ztpFhWq-9wojrxqyeQH3vnOkAxMDQ24.png"
+		},
+		{
+			"placeholder": "cloudy-bg",
+			"url": "https://a.thumbs.redditmedia.com/2WIf77WvpIsPyESUSr0UUpVc8L88e7whU219Yj5bHN8.png"
+		},
+		{
+			"placeholder": "special-user-flair-sprite",
+			"url": "https://b.thumbs.redditmedia.com/HHf51h_4M17tZUd6Za4piZALpAM2fWjhRVL2uWRpTGk.png"
+		},
+		{
+			"placeholder": "sidebar-corners",
+			"url": "https://b.thumbs.redditmedia.com/fgQumnZk-kVq-3d9lXoT5V2HOHTX-gzk-PTq62yT3ms.png"
+		},
+		{
+			"placeholder": "prominent-content-box-border-image",
+			"url": "https://a.thumbs.redditmedia.com/Urq1GTIvJoqsbRDnqYaur_RDFSK_iCcA9GExgASd9F4.png"
+		},
+		{
+			"placeholder": "content-box-border-image",
+			"url": "https://b.thumbs.redditmedia.com/d__czh5R8zEbkIvaSv0ZTh4538zmNd1LdJeT96vZOMw.png"
+		},
+		{
+			"placeholder": "content-box-border-image-nocorner",
+			"url": "https://b.thumbs.redditmedia.com/8mbXzEGE2rliIm4okMfycdF87zuFw6XoAljz6CONefg.png"
+		},
+		{
+			"placeholder": "skull-header",
+			"url": "https://b.thumbs.redditmedia.com/xJuHNL42GTBDlL4ZAW4sEm_ZTHmpL_vUvpHG2GH_ePg.png"
+		},
+		{
+			"placeholder": "message",
+			"url": "https://b.thumbs.redditmedia.com/Q14nzrk0d7LtU84sEyCD8wd_IOhycUW__Tk-WIGCdyg.png"
+		},
+		{
+			"placeholder": "shield-icon",
+			"url": "https://b.thumbs.redditmedia.com/onitvN04i30prPdNND-NA1NTmRBOvGPHMt8A99z84XA.png"
+		},
+		{
+			"placeholder": "submit-button",
+			"url": "https://b.thumbs.redditmedia.com/4U9RqqJdDO4bgUnVDBBAsyiLcujIMKH4g06OddXvGrA.png"
+		},
+		{
+			"placeholder": "meme-button",
+			"url": "https://b.thumbs.redditmedia.com/k1cKSCU0WBfKrgPxZMbQEUO1kp9ddUDOWddGVbKozVk.png"
+		},
+		{
+			"placeholder": "corner",
+			"url": "https://a.thumbs.redditmedia.com/adl6fY9VttGIypXIvA9JrmLLrucpQrTYUD00KGRygs4.png"
+		},
+		{
+			"placeholder": "skull-bar-small",
+			"url": "https://b.thumbs.redditmedia.com/2S6tIrZCUKk3voQ1Og8fWWcPK6GhWg4ghfC2J3foEmQ.png"
+		},
+		{
+			"placeholder": "header",
+			"url": "https://b.thumbs.redditmedia.com/-Uh64IC_fV5BGrmuvSZQ3h2oLbey4mXnKhBEECVUk4U.jpg"
+		},
+		{
+			"placeholder": "career-icons-sprite",
+			"url": "https://b.thumbs.redditmedia.com/XDiAE6M5kZv4TDoCukDIwrRN4huAWvpNuq1OIMIL6mg.png"
+		}
+	]
+}

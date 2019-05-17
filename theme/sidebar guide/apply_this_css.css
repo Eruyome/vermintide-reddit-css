@@ -1,0 +1,61 @@
+html {
+	color: lightblue !important;
+    font-family: Verdana, "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+body {
+	font-size: 11px !important;
+    line-height: 1.5rem !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, li, ul {
+	font-family: Verdana, "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+h5 {
+	font-size: 14px !important;
+}
+
+#preview1, .split-preview {
+	background-color: #212121 !important;
+}
+
+s, strike {
+	text-decoration: none;
+}
+s>code {
+	text-decoration: none;
+    font-family: Verdana, "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    color: rgb(12, 134, 19) !important;
+    font-weight: bold;
+    background: none;
+}
+
+ul, ol {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    padding-top: .16001rem !important;
+	padding-left: 1.5rem;
+}
+
+li ul {
+	padding-left: 0.5rem;	
+}
+
+p, pre {
+	margin-bottom: .13999rem !important;
+}
+
+li p, li pre {
+	padding: 0;
+	margin: 0;
+	background: initial;
+	border: none;
+}
+
+li p code, li pre code {
+	font-size: 12px !important;
+	padding: 5px;
+	background: #423f3f;
+	color: white;
+}

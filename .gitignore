@@ -4,4 +4,6 @@
 npm-debug.log*
 /node_modules
 /test
-/css
+/theme/css
+sass-lint-report.html
+*report.html
